@@ -172,3 +172,33 @@
 
 * *3 hours* Finished restructuring components and parts
 * *3 hours* Set up programming instructions into the assembly
+
+### 5 Jan 2024
+
+* *4 hours* Continued work on programming instructions
+
+### 6 Jan 2024
+
+* *2 hours* Continued work on instructions
+
+### 13 Jan 2024
+
+* *2 hours* Continued work on instructions
+
+### 15 Jan 2024
+
+* *1 hour* Returned Hololens and viewed room 303
+* *2 hours* Worked on fixing ordering issue
+
+### 16 Jan 2024
+
+*1 hour* Attended supervisor meeting
+
+### 17 Jan 2024
+
+*2 hours* Continued fixing issues with ordering
+
+### 19 Jan 2024
+
+*1 hour* Migrated to new repo
+*2 hours* Worked on ordering issues
