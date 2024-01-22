@@ -588,7 +588,7 @@ MonoBehaviour:
       parentPosition: {x: 0, y: 0, z: 0}
     - gameObject: {fileID: 1888331893}
       parentPosition: {x: 0, y: 0, z: 0}
-    putAside: 1
+    putAside: 0
     whenToAdd: 1
     built: 0
   - gameObject: {fileID: 776737289}
@@ -604,7 +604,7 @@ MonoBehaviour:
       parentPosition: {x: 0, y: 0, z: 0}
     - gameObject: {fileID: 728943699}
       parentPosition: {x: 0, y: 0, z: 0}
-    putAside: 1
+    putAside: 0
     whenToAdd: 2
     built: 0
   - gameObject: {fileID: 1722727203}
@@ -620,7 +620,7 @@ MonoBehaviour:
       parentPosition: {x: 0, y: 0, z: 0}
     - gameObject: {fileID: 1458948816}
       parentPosition: {x: 0, y: 0, z: 0}
-    putAside: 1
+    putAside: 0
     whenToAdd: 3
     built: 0
   - gameObject: {fileID: 1767754333}
@@ -636,7 +636,7 @@ MonoBehaviour:
       parentPosition: {x: 0, y: 0, z: 0}
     - gameObject: {fileID: 241899244}
       parentPosition: {x: 0, y: 0, z: 0}
-    putAside: 1
+    putAside: 0
     whenToAdd: 4
     built: 0
   - gameObject: {fileID: 1799982575}
@@ -652,7 +652,7 @@ MonoBehaviour:
       parentPosition: {x: 0, y: 0, z: 0}
     - gameObject: {fileID: 1760153466}
       parentPosition: {x: 0, y: 0, z: 0}
-    putAside: 1
+    putAside: 0
     whenToAdd: 5
     built: 0
   - gameObject: {fileID: 1577541715}
@@ -668,7 +668,7 @@ MonoBehaviour:
       parentPosition: {x: 0, y: 0, z: 0}
     - gameObject: {fileID: 1425818757}
       parentPosition: {x: 0, y: 0, z: 0}
-    putAside: 1
+    putAside: 0
     whenToAdd: 6
     built: 0
   - gameObject: {fileID: 1323774896}
@@ -684,7 +684,7 @@ MonoBehaviour:
       parentPosition: {x: 0, y: 0, z: 0}
     - gameObject: {fileID: 2047564273}
       parentPosition: {x: 0, y: 0, z: 0}
-    putAside: 1
+    putAside: 0
     whenToAdd: 7
     built: 0
   - gameObject: {fileID: 1178981904}
@@ -700,7 +700,7 @@ MonoBehaviour:
       parentPosition: {x: 0, y: 0, z: 0}
     - gameObject: {fileID: 422418836}
       parentPosition: {x: 0, y: 0, z: 0}
-    putAside: 1
+    putAside: 0
     whenToAdd: 8
     built: 0
   - gameObject: {fileID: 1872959557}
@@ -716,7 +716,7 @@ MonoBehaviour:
       parentPosition: {x: 0, y: 0, z: 0}
     - gameObject: {fileID: 193231523}
       parentPosition: {x: 0, y: 0, z: 0}
-    putAside: 1
+    putAside: 0
     whenToAdd: 9
     built: 0
   parts:

@@ -202,3 +202,7 @@
 
 *1 hour* Migrated to new repo
 *2 hours* Worked on ordering issues
+
+### 22 Jan 2024
+
+*1 hour* Selected final piece of furniture to use for tests

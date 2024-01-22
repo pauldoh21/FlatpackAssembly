@@ -49,15 +49,20 @@ public class Component : Part
     }
 
     public void NextStep() {
-        //TODO: add end checks
-        currentStep.EndStep();
+        if (currentStep.GetTrackingPart().GetGameObject() != null) {
+            currentStep.EndStep();
+        }
 
         // If next step is component do steps of component first
 
         Step nextStep = currentStep.GetNextStep();
-        
-        currentStep = nextStep;
-        currentStep.ActivateStep();
+
+        if (nextStep == null) {
+            Debug.Log("Done");
+        } else {
+            currentStep = nextStep;
+            currentStep.ActivateStep();
+        }
     }
 
     public List<Part> GetParts() {
@@ -79,8 +84,6 @@ public class Component : Part
     // Insert put aside components after their when to add value in the list
     // 
     public void AdjustSteps() {
-        Step lastStep;
-        Step returnStep;
         foreach (Step s in GetSteps()) {
             if (s.GetPart() is Component) {
                 Component c = (Component)s.GetPart();
