@@ -206,3 +206,4 @@
 ### 22 Jan 2024
 
 *1 hour* Selected final piece of furniture to use for tests
+*3 hours* Attempted to fix ordering issues
