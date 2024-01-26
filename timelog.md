@@ -207,3 +207,11 @@
 
 *1 hour* Selected final piece of furniture to use for tests
 *3 hours* Attempted to fix ordering issues
+
+### 23 Jan 2024
+
+*1 hour* started work on integrating VisionLib tracking to instructions
+
+### 26 Jan 2024
+
+*2 hours* Picked up furniture for testing
