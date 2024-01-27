@@ -215,3 +215,4 @@
 ### 26 Jan 2024
 
 *2 hours* Picked up furniture for testing
+*3 hours* 3D modelled parts of the bedside table
