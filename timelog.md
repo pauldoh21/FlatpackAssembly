@@ -224,3 +224,4 @@
 ### 29 Jan 2024
 
 *1 hour* Modelled last parts of bedside table
+*2 hours* Assembled part models into one full bedside table model
