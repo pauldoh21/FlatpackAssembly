@@ -220,3 +220,7 @@
 ### 27 Jan 2024
 
 *4 hours* Continued modelling bedside table parts
+
+### 29 Jan 2024
+
+*1 hour* Modelled last parts of bedside table
