@@ -9,8 +9,8 @@ public class Component : Part
 {
     
     [SerializeField] List<Part> parts;
-    [SerializeField] public bool putAside;
-    [SerializeField] public int whenToAdd;
+    [HideInInspector] public bool putAside;
+    [HideInInspector] public int whenToAdd;
     Step currentStep;
     List<Step> steps;
 

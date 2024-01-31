@@ -22,6 +22,14 @@ public class TrackingPart : Part {
     public TrackingPart(GameObject gameObject) : base(gameObject)
     {
         // Additional Initialization for TrackingPart if needed
+        //gameObject.transform.localScale = new Vector3(1,1,1);
+
+        GameObject trackingAnchor = GameObject.Find("VLTrackingAnchor");
+        if (trackingAnchor != null) {
+            gameObject.transform.parent = trackingAnchor.transform;
+        }
+
+        
     }
 
     protected override Color GetColor()

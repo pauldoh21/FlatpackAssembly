@@ -225,3 +225,9 @@
 
 *1 hour* Modelled last parts of bedside table
 *2 hours* Assembled part models into one full bedside table model
+
+### 30 Jan 2024
+
+*1 hour* Set up instructions on bedside table model in Unity
+*0.5 hours* Calibrated webcam to work with VisionLib model tracking
+*2 hours* Created new scene to test tracking current part on webcam

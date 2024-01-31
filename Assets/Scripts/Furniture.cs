@@ -17,7 +17,7 @@ public class Furniture : Component
         //}
     }
 
-    public void CombineParts(List<Component> components, List<Part> parts) {
+    public void CombineParts(List<Component> components, List<Part> parts, bool partsFirst) {
         List<Part> newParts = new List<Part>();
 
         // Adds an initial filler object to the assembly to assure that the first part is not a component
@@ -27,12 +27,22 @@ public class Furniture : Component
         initialPart.parentPosition = new Vector3(0,0,0);
         newParts.Add(initialPart);
 
-        foreach(Component c in components) {
+        if (partsFirst) {
+            foreach (Part p in parts) {
+                newParts.Add(p);
+            }
+        } 
+
+        foreach (Component c in components) {
             newParts.Add(c);
         }
-        foreach(Part p in parts) {
-            newParts.Add(p);
+
+        if (!partsFirst) {
+            foreach (Part p in parts) {
+                newParts.Add(p);
+            }
         }
+
         SetParts(newParts);
     }
 

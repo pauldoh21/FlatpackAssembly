@@ -5,6 +5,7 @@ using UnityEngine;
 public class Instructions : MonoBehaviour
 {
     [HideInInspector] public GameObject FurnitureObject;
+    [SerializeField] public bool partsFirst;
     [SerializeField] public Vector3 asidePosition;
     [SerializeField] public List<Component> components = new List<Component>();
     [SerializeField] public List<Part> parts = new List<Part>();
@@ -13,7 +14,7 @@ public class Instructions : MonoBehaviour
     void Awake() {
         furniture = new Furniture(FurnitureObject);
 
-        furniture.CombineParts(components, parts);
+        furniture.CombineParts(components, parts, partsFirst);
 
         Dictionary<Component, int> componentQueue = new Dictionary<Component, int>();
         foreach (Part p in furniture.GetParts()) {

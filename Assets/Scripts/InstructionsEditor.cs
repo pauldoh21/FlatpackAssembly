@@ -23,6 +23,12 @@ public class InstructionsEditor : Editor
 
         Instructions instructions = (Instructions)target;
 
+
+        // Maybe change so that BeginChangeCheck code happens in here
+        if (instructions.FurnitureObject == null) {
+            instructions.FurnitureObject = instructions.gameObject;
+        }
+
         List<Component> components = instructions.components;
 
         List<Part> parts = instructions.parts;
