@@ -24,6 +24,7 @@ public class TrackingPart : Part {
         // Additional Initialization for TrackingPart if needed
         //gameObject.transform.localScale = new Vector3(1,1,1);
 
+        // Find way to automatically set up tracking mesh
         GameObject trackingAnchor = GameObject.Find("VLTrackingAnchor");
         if (trackingAnchor != null) {
             gameObject.transform.parent = trackingAnchor.transform;
