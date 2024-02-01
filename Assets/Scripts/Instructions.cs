@@ -72,14 +72,8 @@ public class Instructions : MonoBehaviour
         var currentPart = furniture.GetCurrentStep().GetPart();
         var currentTrackingPart = furniture.GetCurrentStep().GetTrackingPart();
         furniture.GetCurrentStep().CheckOverlap();
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT)
         {
-            /*if (currentPart.GetState() == States.WAITING) {
-                currentPart.SetState(States.CORRECT);
-                currentTrackingPart.SetState(States.CORRECT);
-            } else {
-                furniture.NextStep();
-            }*/
             furniture.NextStep();
         }
     }

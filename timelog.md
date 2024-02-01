@@ -231,3 +231,13 @@
 *1 hour* Set up instructions on bedside table model in Unity
 *0.5 hours* Calibrated webcam to work with VisionLib model tracking
 *2 hours* Created new scene to test tracking current part on webcam
+
+### 31 Jan 2024
+
+*2 hours* Set up distance detection on tracked part to correct location
+
+### 01 Feb 2024
+
+*1 hour* Attended supervisor meeting
+*0.5 hours* Added rotation detection to tracking part validity checks
+*0.5 hours* Adjusted instructions to match paper instructions
