@@ -90,5 +90,17 @@ public class Step : ScriptableObject
     }
 
     //CHECK COMPLETED: check for similar position and rotation
+    public void CheckOverlap() {
+        float threshold = 0.05f;
+        float distance = Vector3.Distance(part.GetGameObject().transform.position, trackingPart.GetGameObject().transform.position);
+
+        if ((distance <= threshold) && (part.GetState() != States.CORRECT)) {
+            part.SetState(States.CORRECT);
+            trackingPart.SetState(States.CORRECT);
+        } else if ((distance > threshold) && (part.GetState() != States.WAITING)) {
+            part.SetState(States.WAITING);
+            trackingPart.SetState(States.WAITING);
+        }
+    }
     
 }
