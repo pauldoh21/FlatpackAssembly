@@ -82,3 +82,16 @@ crashlytics-build.properties
 
 # Packages
 /Packages/
+
+# MRTK
+/[Aa]ssets/MRTK
+/[Aa]ssets/MixedRealityToolkit.Generated
+
+# TMP
+/[Aa]ssets/TextMesh Pro
+
+# XR Interaction Toolkit
+/[Aa]ssets/XR
+/[Aa]ssets/XRI
+/[Aa]ssets/Samples
+

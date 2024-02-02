@@ -6,4 +6,8 @@ To use you must import these Unity Packages:
 - VisionLib
 - VisionLib Hololens
 - ARFoundation
-- Mixed Reality Feature Tool - Open XR
+- TextMeshPro
+- Mixed Reality Feature Tool - Open XR Plugin
+- Mixed Reality Feature Tool - Mixed Reality Toolkit Foundation
+- Mixed Reality Feature Tool - Mixed Reality Toolkit Standard Assets
+- XR Interaction Toolkit package
