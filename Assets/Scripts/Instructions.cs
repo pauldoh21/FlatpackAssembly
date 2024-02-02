@@ -6,7 +6,8 @@ public class Instructions : MonoBehaviour
 {
     [HideInInspector] public GameObject FurnitureObject;
     [SerializeField] public bool partsFirst;
-    [SerializeField] public Vector3 asidePosition;
+    [SerializeField] private GameObject inputObject;
+    [HideInInspector] public Vector3 asidePosition;
     [SerializeField] public List<Component> components = new List<Component>();
     [SerializeField] public List<Part> parts = new List<Part>();
     [HideInInspector] public Furniture furniture;
@@ -69,10 +70,18 @@ public class Instructions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var currentPart = furniture.GetCurrentStep().GetPart();
-        var currentTrackingPart = furniture.GetCurrentStep().GetTrackingPart();
+
         furniture.GetCurrentStep().CheckOverlap();
-        if (Input.GetKeyDown(KeyCode.Space) && furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT)
+        if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT)
+        {
+            inputObject.SetActive(true);
+        } else {
+            inputObject.SetActive(false);
+        }
+    }
+
+    public void NextStep() {
+        if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT)
         {
             furniture.NextStep();
         }

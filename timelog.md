@@ -241,3 +241,4 @@
 *1 hour* Attended supervisor meeting
 *0.5 hours* Added rotation detection to tracking part validity checks
 *0.5 hours* Adjusted instructions to match paper instructions
+*0.5 hours* Changed input system to be able to dynamically take new methods of input
