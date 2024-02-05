@@ -242,3 +242,11 @@
 *0.5 hours* Added rotation detection to tracking part validity checks
 *0.5 hours* Adjusted instructions to match paper instructions
 *0.5 hours* Changed input system to be able to dynamically take new methods of input
+
+### 02 Feb 2024
+
+*2 hours* Worked on setting up receiving input from hands in Hololens
+
+### 05 Feb 2024
+
+*1 hour* Temporarily changed validation system to time based

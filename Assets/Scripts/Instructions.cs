@@ -72,6 +72,9 @@ public class Instructions : MonoBehaviour
     {
 
         furniture.GetCurrentStep().CheckOverlap();
+        if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT) {
+            StartCoroutine(CheckNextStep());
+        }
         if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT)
         {
             inputObject.SetActive(true);
@@ -84,6 +87,20 @@ public class Instructions : MonoBehaviour
         if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT)
         {
             furniture.NextStep();
+        }
+    }
+
+    IEnumerator CheckNextStep() {
+        bool breakOut = false;
+        for (int i = 0; i <= 3; i++) {
+            if (furniture.GetCurrentStep().GetPart().GetState() != States.CORRECT) {
+                breakOut = true;
+                break;
+            }
+            yield return new WaitForSeconds(1);
+        }
+        if (!breakOut) {
+            NextStep();
         }
     }
 }
