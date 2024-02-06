@@ -13,6 +13,9 @@ public class Instructions : MonoBehaviour
     [HideInInspector] public Furniture furniture;
 
     void Awake() {
+
+        DeactivateTrackingParts();
+
         furniture = new Furniture(FurnitureObject);
 
         furniture.CombineParts(components, parts, partsFirst);
@@ -59,6 +62,12 @@ public class Instructions : MonoBehaviour
         furniture.AdjustSteps();
         furniture.GetCurrentStep().ActivateStep();
         Debug.Log(furniture.DisplaySteps());
+    }
+
+    void DeactivateTrackingParts() {
+        foreach (Transform t in GameObject.Find("VLTrackingAnchor").transform) {
+            t.gameObject.SetActive(false);
+        }
     }
 
     // Start is called before the first frame update

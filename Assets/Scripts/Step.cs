@@ -65,8 +65,15 @@ public class Step : ScriptableObject
         // Set the position and rotation of the parent object while the step is active
         partObject.transform.parent.position = parentPosition;
         part.SetState(States.WAITING);
-        trackingPart = new TrackingPart(Instantiate(partObject));
-        trackingPart.SetState(States.WAITING);
+
+        GameObject trackingAnchor = GameObject.Find("VLTrackingAnchor");
+        if (trackingAnchor != null && partObject.name != "Initial") {
+            trackingPart = new TrackingPart(trackingAnchor.transform.Find(partObject.name).gameObject);
+            trackingPart.SetState(States.WAITING);
+        } else {
+            trackingPart = new TrackingPart(Instantiate(partObject));
+            trackingPart.SetState(States.WAITING);
+        }
     }
 
     public void EndStep() {

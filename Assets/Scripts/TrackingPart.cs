@@ -1,7 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Visometry.VisionLib.SDK.Core;
 
 public class TrackingPart : Part {
+
+    private TrackingMesh model;
 
     private static List<Color> trackingColors = new List<Color>
     {
@@ -24,6 +27,23 @@ public class TrackingPart : Part {
         // Additional Initialization for TrackingPart if needed
         //gameObject.transform.localScale = new Vector3(1,1,1);
 
+        model = gameObject.GetComponent<TrackingMesh>();
+        
+        if (gameObject.name != "Initial(Clone)") {
+            gameObject.transform.position = new Vector3(0,1,0);
+        }
+
+        if (model != null) {
+            SetModelAndComponentsEnabled(model, true);
+        } else if (gameObject.GetComponent<TrackingAnchor>() != null) {
+            foreach (Transform t in gameObject.transform) {
+                gameObject.SetActive(true);
+                SetModelAndComponentsEnabled(t.GetComponent<TrackingMesh>(), true);
+            }
+        } else {
+            gameObject.SetActive(true);
+        }
+
         // Find way to automatically set up tracking mesh
         GameObject trackingAnchor = GameObject.Find("VLTrackingAnchor");
         if (trackingAnchor != null) {
@@ -32,6 +52,13 @@ public class TrackingPart : Part {
 
         
     }
+
+    private static void SetModelAndComponentsEnabled(TrackingMesh model, bool enable)
+        {
+            model.enabled = enable;
+            model.gameObject.SetActive(enable);
+            model.GetComponent<MeshRenderer>().enabled = enable;
+        }
 
     protected override Color GetColor()
     {
@@ -44,7 +71,8 @@ public class TrackingPart : Part {
     }
 
     public void DestroyTracking() {
-        GameObject.Destroy(GetGameObject());
+        //GameObject.Destroy(GetGameObject());
+        GetGameObject().SetActive(false);
     }
 
 }
