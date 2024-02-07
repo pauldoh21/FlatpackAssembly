@@ -20,13 +20,6 @@ public class Furniture : Component
     public void CombineParts(List<Component> components, List<Part> parts, bool partsFirst) {
         List<Part> newParts = new List<Part>();
 
-        // Adds an initial filler object to the assembly to assure that the first part is not a component
-        GameObject initialObject = GameObject.Find("Initial");
-        initialObject.transform.SetParent(GetGameObject().transform);
-        Part initialPart = new Part(initialObject);
-        initialPart.parentPosition = new Vector3(0,0,0);
-        newParts.Add(initialPart);
-
         if (partsFirst) {
             foreach (Part p in parts) {
                 newParts.Add(p);
@@ -38,6 +31,14 @@ public class Furniture : Component
         }
 
         if (!partsFirst) {
+
+            // Adds an initial filler object to the assembly to assure that the first part is not a component
+            GameObject initialObject = GameObject.Find("Initial");
+            initialObject.transform.SetParent(GetGameObject().transform);
+            Part initialPart = new Part(initialObject);
+            initialPart.parentPosition = new Vector3(0,0,0);
+            newParts.Add(initialPart);
+
             foreach (Part p in parts) {
                 newParts.Add(p);
             }

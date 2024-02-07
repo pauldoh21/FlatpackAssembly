@@ -29,9 +29,9 @@ public class TrackingPart : Part {
 
         model = gameObject.GetComponent<TrackingMesh>();
         
-        if (gameObject.name != "Initial(Clone)") {
+        /*if (gameObject.name != "Initial(Clone)") {
             gameObject.transform.position = new Vector3(0,1,0);
-        }
+        }*/
 
         if (model != null) {
             SetModelAndComponentsEnabled(model, true);

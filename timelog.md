@@ -250,4 +250,9 @@
 ### 05 Feb 2024
 
 *1 hour* Temporarily changed validation system to time based
+*2 hours* Attempted to get project to build from laptop
 *3 hours* Tried to fix issues with tracking parts not appearing in Hololens build
+
+### 06 Feb 2024
+
+*5 hours* Fixed issues with making tracking parts appear and be tracked in Hololens build

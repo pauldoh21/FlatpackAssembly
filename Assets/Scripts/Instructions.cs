@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using Visometry.VisionLib.SDK.Core;
 
 public class Instructions : MonoBehaviour
 {
     [HideInInspector] public GameObject FurnitureObject;
+
+    [SerializeField] public TMP_Text currentPartDisplay; // REMOVE PROBS
+    [SerializeField] public TMP_Text trackingDisplay; // REMOVE PROBS
+    [SerializeField] public ModelTracker modelTracker;
     [SerializeField] public bool partsFirst;
     [SerializeField] private GameObject inputObject;
     [HideInInspector] public Vector3 asidePosition;
@@ -15,6 +21,10 @@ public class Instructions : MonoBehaviour
     void Awake() {
 
         DeactivateTrackingParts();
+
+        TrackingAnchor trackingAnchor = GameObject.Find("VLTrackingAnchor").GetComponent<TrackingAnchor>();
+        trackingAnchor.OnTracked.AddListener(UpdateTrackingTextTrue);
+        trackingAnchor.OnTrackingLost.AddListener(UpdateTrackingTextFalse);
 
         furniture = new Furniture(FurnitureObject);
 
@@ -62,6 +72,7 @@ public class Instructions : MonoBehaviour
         furniture.AdjustSteps();
         furniture.GetCurrentStep().ActivateStep();
         Debug.Log(furniture.DisplaySteps());
+        modelTracker.ResetTrackingHard();
     }
 
     void DeactivateTrackingParts() {
@@ -76,9 +87,18 @@ public class Instructions : MonoBehaviour
         
     }
 
+    private void UpdateTrackingTextTrue() {
+        trackingDisplay.text = "Tracking";
+    }
+
+    private void UpdateTrackingTextFalse() {
+        trackingDisplay.text = "Not Tracking";
+    }
+
     // Update is called once per frame
     void Update()
     {
+        currentPartDisplay.text = furniture.GetCurrentStep().GetPart().GetGameObject().name;
 
         furniture.GetCurrentStep().CheckOverlap();
         if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT) {
@@ -96,6 +116,7 @@ public class Instructions : MonoBehaviour
         if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT)
         {
             furniture.NextStep();
+            modelTracker.ResetTrackingHard();
         }
     }
 
