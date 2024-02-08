@@ -256,3 +256,8 @@
 ### 06 Feb 2024
 
 *5 hours* Fixed issues with making tracking parts appear and be tracked in Hololens build
+
+
+### 08 Feb 2024
+
+*0.5 hours* Fixed materials not showing properly in Hololens build

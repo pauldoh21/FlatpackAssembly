@@ -19,6 +19,10 @@ public class Part
 
     // The position that this part is a sub part of should be while this part is being added
     [SerializeField] public Vector3 parentPosition;
+    // Same as parentPosition but for rotation
+    [SerializeField] public Vector3 parentRotation;
+
+    [HideInInspector] public bool showOutline;
 
     private static List<Color> colors = new List<Color>
     {
@@ -83,7 +87,7 @@ public class Part
             if (outline == null) {
                 outline = g.AddComponent<Outline>() as Outline;
             }
-            outline.enabled = true;
+            outline.enabled = showOutline;
             outline.OutlineWidth = 10;
             outline.OutlineColor = GetColor();
         }

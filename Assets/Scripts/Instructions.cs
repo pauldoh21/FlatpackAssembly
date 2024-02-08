@@ -12,6 +12,7 @@ public class Instructions : MonoBehaviour
     [SerializeField] public TMP_Text trackingDisplay; // REMOVE PROBS
     [SerializeField] public ModelTracker modelTracker;
     [SerializeField] public bool partsFirst;
+    [SerializeField] public bool showOutlines;
     [SerializeField] private GameObject inputObject;
     [HideInInspector] public Vector3 asidePosition;
     [SerializeField] public List<Component> components = new List<Component>();
@@ -32,6 +33,8 @@ public class Instructions : MonoBehaviour
 
         Dictionary<Component, int> componentQueue = new Dictionary<Component, int>();
         foreach (Part p in furniture.GetParts()) {
+            
+            p.showOutline = showOutlines;
 
             if (p is Component) {
                 // Adding the steps of the component
