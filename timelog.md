@@ -264,3 +264,5 @@
 
 ### 09 Feb 2024
 
+*2 hours* Added new part type, animation part, which shows where to add the part without tracking the model
+*0.5 hours* Added voice input for moving to next step

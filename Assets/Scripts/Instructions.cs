@@ -78,7 +78,7 @@ public class Instructions : MonoBehaviour
         furniture.GetCurrentStep().ActivateStep();
         Debug.Log(furniture.DisplaySteps());
         modelTracker.ResetTrackingHard();
-        
+
         if (!useTracking)
         StartCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
     }
@@ -134,19 +134,19 @@ public class Instructions : MonoBehaviour
     }
 
     public void NextStep() {
-        if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT)
-        {
+        //if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT)
+        //{
 
-            if (!useTracking)
-            StopCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
+        if (!useTracking)
+        StopCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
 
-            furniture.NextStep();
-            modelTracker.ResetTrackingHard();
+        furniture.NextStep();
+        modelTracker.ResetTrackingHard();
 
-            if (!useTracking)
-            StartCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
+        if (!useTracking)
+        StartCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
 
-        }
+        //}
     }
 
     private bool checking;

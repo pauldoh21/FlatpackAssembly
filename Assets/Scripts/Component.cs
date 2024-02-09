@@ -49,8 +49,14 @@ public class Component : Part
     }
 
     public void NextStep() {
-        if (currentStep.GetTrackingPart().GetGameObject() != null) {
-            currentStep.EndStep();
+        if (currentStep.UsesTracking()) {
+            if (currentStep.GetTrackingPart().GetGameObject() != null) {
+                currentStep.EndStep();
+            }
+        } else {
+            if (currentStep.GetAnimationPart().GetGameObject() != null) {
+                currentStep.EndStep();
+            }
         }
 
         // If next step is component do steps of component first

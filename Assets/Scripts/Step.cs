@@ -70,6 +70,10 @@ public class Step : ScriptableObject
         this.nextStep = nextStep;
     }
 
+    public bool UsesTracking() {
+        return useTracking;
+    }
+
     public void ActivateStep() {
         //name object in game "trackingObject"
         //give outline material

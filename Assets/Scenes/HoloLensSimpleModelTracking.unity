@@ -509,6 +509,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218351916}
   m_Mesh: {fileID: 2693017574283448710, guid: d111d99f92974794a8e615232c3020c6, type: 3}
+--- !u!114 &242989367 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3641821613278090224, guid: 3961a75fad128d54b9845386de8cdb33, type: 3}
+  m_PrefabInstance: {fileID: 1193662953}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad118ff1699e1744883890b6cadf66d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &293068652
 GameObject:
   m_ObjectHideFlags: 0
@@ -3803,6 +3814,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1495420347}
   m_Mesh: {fileID: 4530198156333295049, guid: d111d99f92974794a8e615232c3020c6, type: 3}
+--- !u!1 &1518379056 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1444628823334026281, guid: 939e192f599d9904b8b8bd6dece3e30e, type: 3}
+  m_PrefabInstance: {fileID: 192231547}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1518379058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518379056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36923868d6fd5c84aa6f14a8912deff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voiceCommands:
+  - keyWord: Next Step
+    command:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 242989367}
+          m_TargetAssemblyTypeName: Instructions, Assembly-CSharp
+          m_MethodName: NextStep
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1518379059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518379056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6557eeb04022344af7b652fa552015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyCode: 32
+  keyDownEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 242989367}
+        m_TargetAssemblyTypeName: Instructions, Assembly-CSharp
+        m_MethodName: NextStep
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1537618978
 GameObject:
   m_ObjectHideFlags: 0
