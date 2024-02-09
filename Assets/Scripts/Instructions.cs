@@ -8,6 +8,7 @@ public class Instructions : MonoBehaviour
 {
     [HideInInspector] public GameObject FurnitureObject;
 
+    [SerializeField] public bool useTracking;
     [SerializeField] public TMP_Text currentPartDisplay; // REMOVE PROBS
     [SerializeField] public TMP_Text trackingDisplay; // REMOVE PROBS
     [SerializeField] public ModelTracker modelTracker;
@@ -22,6 +23,7 @@ public class Instructions : MonoBehaviour
     void Awake() {
 
         DeactivateTrackingParts();
+        DeactivateAnimationParts();
 
         TrackingAnchor trackingAnchor = GameObject.Find("VLTrackingAnchor").GetComponent<TrackingAnchor>();
         trackingAnchor.OnTracked.AddListener(UpdateTrackingTextTrue);
@@ -40,14 +42,14 @@ public class Instructions : MonoBehaviour
                 // Adding the steps of the component
                 Component c = (Component)p;
                 foreach (Part sp in c.GetParts()) {
-                    Step newStep = c.AddStep(sp);
+                    Step newStep = c.AddStep(sp, useTracking);
                     if (c.putAside) {
                         //Debug.Log(sp.GetGameObject());
                         newStep.SetNewParentPosition(asidePosition);
                     }
                 }
 
-                furniture.AddStep(p);
+                furniture.AddStep(p, useTracking);
 
                 /* // This step here should be determined by whether put aside is selected or not
                 // If it is selected then it should be inserted later into the list
@@ -57,7 +59,7 @@ public class Instructions : MonoBehaviour
                     furniture.AddStep(p);
                 } */
             } else {
-                furniture.AddStep(p);
+                furniture.AddStep(p, useTracking);
             }
 
             /* List<Component> tempKeys = new List<Component>(componentQueue.Keys);
@@ -76,10 +78,19 @@ public class Instructions : MonoBehaviour
         furniture.GetCurrentStep().ActivateStep();
         Debug.Log(furniture.DisplaySteps());
         modelTracker.ResetTrackingHard();
+        
+        if (!useTracking)
+        StartCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
     }
 
     void DeactivateTrackingParts() {
         foreach (Transform t in GameObject.Find("VLTrackingAnchor").transform) {
+            t.gameObject.SetActive(false);
+        }
+    }
+
+    void DeactivateAnimationParts() {
+        foreach (Transform t in GameObject.Find("AnimationParts").transform) {
             t.gameObject.SetActive(false);
         }
     }
@@ -98,43 +109,62 @@ public class Instructions : MonoBehaviour
         trackingDisplay.text = "Not Tracking";
     }
 
+
     // Update is called once per frame
     void Update()
     {
         currentPartDisplay.text = furniture.GetCurrentStep().GetPart().GetGameObject().name;
-
         furniture.GetCurrentStep().CheckOverlap();
-        if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT) {
-            StartCoroutine(CheckNextStep());
-        }
-        if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT)
-        {
-            inputObject.SetActive(true);
+
+        if (useTracking) {
+
+            if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT) {
+                if (!checking)
+                StartCoroutine(CheckNextStep());
+            }
+            if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT)
+            {
+                inputObject.SetActive(true);
+            } else {
+                inputObject.SetActive(false);
+            }
         } else {
-            inputObject.SetActive(false);
+            
         }
     }
 
     public void NextStep() {
         if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT)
         {
+
+            if (!useTracking)
+            StopCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
+
             furniture.NextStep();
             modelTracker.ResetTrackingHard();
+
+            if (!useTracking)
+            StartCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
+
         }
     }
 
+    private bool checking;
     IEnumerator CheckNextStep() {
         bool breakOut = false;
         for (int i = 0; i <= 3; i++) {
             if (furniture.GetCurrentStep().GetPart().GetState() != States.CORRECT) {
                 breakOut = true;
+                checking = false;
                 break;
             }
             yield return new WaitForSeconds(1);
         }
         if (!breakOut) {
+            checking = false;
             NextStep();
         }
     }
+
 }
 

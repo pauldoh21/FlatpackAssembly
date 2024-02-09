@@ -10,7 +10,10 @@ public class Step : ScriptableObject
     int stepNo;
     Part part;
     TrackingPart trackingPart;
+    AnimationPart animationPart;
     Step nextStep;
+
+    bool useTracking;
 
     Vector3 parentPosition;
     Vector3 originalParentPosition;
@@ -20,10 +23,11 @@ public class Step : ScriptableObject
 
     Vector3 asidePosition;
 
-    public void Init(Part part, int num, Vector3 parentPosition, Vector3 parentRotation) {
+    public void Init(Part part, int num, Vector3 parentPosition, Vector3 parentRotation, bool useTracking) {
         this.part = part;
         //Debug.Log(num);
         this.stepNo = num;
+        this.useTracking = useTracking;
         this.parentPosition = parentPosition;
         originalParentPosition = this.part.GetGameObject().transform.parent.position;
         this.parentRotation = parentRotation;
@@ -32,9 +36,9 @@ public class Step : ScriptableObject
     }
 
     //Overrides Unity ScriptableObject CreateInstance to take parameters and act as a constructor
-    public static Step CreateInstance(Part part, int num, Vector3 parentPosition, Vector3 parentRotation) {
+    public static Step CreateInstance(Part part, int num, Vector3 parentPosition, Vector3 parentRotation, bool useTracking) {
         Step step = ScriptableObject.CreateInstance<Step>();
-        step.Init(part, num, parentPosition, parentRotation);
+        step.Init(part, num, parentPosition, parentRotation, useTracking);
         return step;
     }
 
@@ -48,6 +52,10 @@ public class Step : ScriptableObject
 
     public TrackingPart GetTrackingPart() {
         return trackingPart;
+    }
+
+    public AnimationPart GetAnimationPart() {
+        return animationPart;
     }
 
     public void SetNewParentPosition(Vector3 newParentPosition) {
@@ -73,14 +81,25 @@ public class Step : ScriptableObject
         partObject.transform.parent.rotation = Quaternion.Euler(parentRotation);
         part.SetState(States.WAITING);
 
-        GameObject trackingAnchor = GameObject.Find("VLTrackingAnchor");
-        if (trackingAnchor != null && partObject.name != "Initial") {
-            trackingPart = new TrackingPart(trackingAnchor.transform.Find(partObject.name).gameObject);
-            trackingPart.SetState(States.WAITING);
+        if (useTracking) {
+
+            GameObject trackingAnchor = GameObject.Find("VLTrackingAnchor");
+            if (trackingAnchor != null && partObject.name != "Initial") {
+                trackingPart = new TrackingPart(trackingAnchor.transform.Find(partObject.name).gameObject);
+            } else {
+                trackingPart = new TrackingPart(Instantiate(partObject));
+            }
+
         } else {
-            trackingPart = new TrackingPart(Instantiate(partObject));
-            trackingPart.SetState(States.WAITING);
+            GameObject animationParts = GameObject.Find("AnimationParts");
+            if (animationParts != null && partObject.name != "Initial") {
+                animationPart = new AnimationPart(animationParts.transform.Find(partObject.name).gameObject, partObject.transform);
+            } else {
+                animationPart = new AnimationPart(Instantiate(partObject), partObject.transform);
+            }
         }
+
+        GetSecondPart().SetState(States.WAITING);
     }
 
     public void EndStep() {
@@ -102,26 +121,38 @@ public class Step : ScriptableObject
         }
         
         part.SetState(States.FINISHED);
-        trackingPart.SetState(States.FINISHED);
-        trackingPart.DestroyTracking();
+        GetSecondPart().SetState(States.FINISHED);
+        if (useTracking) {
+            trackingPart.DestroyTracking();
+        } else {
+            animationPart.DestroyTracking();
+        }
     }
 
     //CHECK COMPLETED: check for similar position and rotation
     public void CheckOverlap() {
         float distanceThreshold = 0.01f;
-        float distance = Vector3.Distance(part.GetGameObject().transform.position, trackingPart.GetGameObject().transform.position);
+        float distance = Vector3.Distance(part.GetGameObject().transform.position, GetSecondPart().GetGameObject().transform.position);
 
         float angleThreshold = 5f;
-        float angle = Quaternion.Angle(part.GetGameObject().transform.rotation, trackingPart.GetGameObject().transform.rotation);
+        float angle = Quaternion.Angle(part.GetGameObject().transform.rotation, GetSecondPart().GetGameObject().transform.rotation);
         bool close = (distance <= distanceThreshold) && (angle <= angleThreshold);
 
 
         if (close && (part.GetState() != States.CORRECT)) {
             part.SetState(States.CORRECT);
-            trackingPart.SetState(States.CORRECT);
+            GetSecondPart().SetState(States.CORRECT);
         } else if (!close && (part.GetState() != States.WAITING)) {
             part.SetState(States.WAITING);
-            trackingPart.SetState(States.WAITING);
+            GetSecondPart().SetState(States.WAITING);
+        }
+    }
+
+    Part GetSecondPart() {
+        if (useTracking) {
+            return trackingPart;
+        } else {
+            return animationPart;
         }
     }
     

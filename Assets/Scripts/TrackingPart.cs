@@ -54,11 +54,11 @@ public class TrackingPart : Part {
     }
 
     private static void SetModelAndComponentsEnabled(TrackingMesh model, bool enable)
-        {
-            model.enabled = enable;
-            model.gameObject.SetActive(enable);
-            model.GetComponent<MeshRenderer>().enabled = enable;
-        }
+    {
+        model.enabled = enable;
+        model.gameObject.SetActive(enable);
+        model.GetComponent<MeshRenderer>().enabled = enable;
+    }
 
     protected override Color GetColor()
     {

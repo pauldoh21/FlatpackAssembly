@@ -261,3 +261,6 @@
 
 *0.5 hours* Fixed materials not showing properly in Hololens build
 *1 hour* Made parts display in correct locations and rotations for each step
+
+### 09 Feb 2024
+
