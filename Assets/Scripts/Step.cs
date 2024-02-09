@@ -14,21 +14,27 @@ public class Step : ScriptableObject
 
     Vector3 parentPosition;
     Vector3 originalParentPosition;
+
+    Vector3 parentRotation;
+    Vector3 originalParentRotation;
+
     Vector3 asidePosition;
 
-    public void Init(Part part, int num, Vector3 parentPosition) {
+    public void Init(Part part, int num, Vector3 parentPosition, Vector3 parentRotation) {
         this.part = part;
         //Debug.Log(num);
         this.stepNo = num;
         this.parentPosition = parentPosition;
         originalParentPosition = this.part.GetGameObject().transform.parent.position;
+        this.parentRotation = parentRotation;
+        originalParentRotation = this.part.GetGameObject().transform.parent.rotation.eulerAngles;
         asidePosition = originalParentPosition;
     }
 
     //Overrides Unity ScriptableObject CreateInstance to take parameters and act as a constructor
-    public static Step CreateInstance(Part part, int num, Vector3 parentPosition) {
+    public static Step CreateInstance(Part part, int num, Vector3 parentPosition, Vector3 parentRotation) {
         Step step = ScriptableObject.CreateInstance<Step>();
-        step.Init(part, num, parentPosition);
+        step.Init(part, num, parentPosition, parentRotation);
         return step;
     }
 
@@ -64,6 +70,7 @@ public class Step : ScriptableObject
         partObject.SetActive(true);
         // Set the position and rotation of the parent object while the step is active
         partObject.transform.parent.position = parentPosition;
+        partObject.transform.parent.rotation = Quaternion.Euler(parentRotation);
         part.SetState(States.WAITING);
 
         GameObject trackingAnchor = GameObject.Find("VLTrackingAnchor");
@@ -80,6 +87,7 @@ public class Step : ScriptableObject
         if (part is Component) {
             Component c = (Component)part;
             part.GetGameObject().transform.parent.position = originalParentPosition;
+            part.GetGameObject().transform.parent.rotation = Quaternion.Euler(originalParentRotation);
             if (c.putAside) {
                 Debug.Log(c);
                 Debug.Log(c.GetGameObject());
@@ -88,7 +96,9 @@ public class Step : ScriptableObject
                 c.GetGameObject().transform.position = c.GetSteps()[^1].originalParentPosition;
             }
         } else {
-            part.GetGameObject().transform.parent.position = asidePosition;
+            //part.GetGameObject().transform.parent.position = asidePosition;
+            part.GetGameObject().transform.parent.position = originalParentPosition;
+            part.GetGameObject().transform.parent.rotation = Quaternion.Euler(originalParentRotation);
         }
         
         part.SetState(States.FINISHED);

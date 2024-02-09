@@ -28,7 +28,7 @@ public class Component : Part
         }
 
         part.SetState(States.DISABLED);
-        Step newStep = Step.CreateInstance(part, steps.Count, part.parentPosition);
+        Step newStep = Step.CreateInstance(part, steps.Count, part.parentPosition, part.parentRotation);
         steps.Add(newStep);
 
         if (steps.Count > 1) {
