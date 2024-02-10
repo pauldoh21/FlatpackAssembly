@@ -21,14 +21,14 @@ public class Component : Part
         steps = new List<Step>();
     } 
 
-    public Step AddStep(Part part, bool useTracking) {
+    public Step AddStep(Part part) {
 
         if (steps == null) {
             steps = new List<Step>();
         }
 
         part.SetState(States.DISABLED);
-        Step newStep = Step.CreateInstance(part, steps.Count, part.parentPosition, part.parentRotation, useTracking);
+        Step newStep = Step.CreateInstance(part, steps.Count, part.parentPosition, part.parentRotation);
         steps.Add(newStep);
 
         if (steps.Count > 1) {

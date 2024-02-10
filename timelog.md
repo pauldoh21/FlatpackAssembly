@@ -266,3 +266,4 @@
 
 *2 hours* Added new part type, animation part, which shows where to add the part without tracking the model
 *0.5 hours* Added voice input for moving to next step
+*1 hour* Added option to activate tracking or animation per part instead of for whole assembly

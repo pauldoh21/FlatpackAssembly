@@ -7,8 +7,6 @@ using Visometry.VisionLib.SDK.Core;
 public class Instructions : MonoBehaviour
 {
     [HideInInspector] public GameObject FurnitureObject;
-
-    [SerializeField] public bool useTracking;
     [SerializeField] public TMP_Text currentPartDisplay; // REMOVE PROBS
     [SerializeField] public TMP_Text trackingDisplay; // REMOVE PROBS
     [SerializeField] public ModelTracker modelTracker;
@@ -42,14 +40,14 @@ public class Instructions : MonoBehaviour
                 // Adding the steps of the component
                 Component c = (Component)p;
                 foreach (Part sp in c.GetParts()) {
-                    Step newStep = c.AddStep(sp, useTracking);
+                    Step newStep = c.AddStep(sp);
                     if (c.putAside) {
                         //Debug.Log(sp.GetGameObject());
                         newStep.SetNewParentPosition(asidePosition);
                     }
                 }
 
-                furniture.AddStep(p, useTracking);
+                furniture.AddStep(p);
 
                 /* // This step here should be determined by whether put aside is selected or not
                 // If it is selected then it should be inserted later into the list
@@ -59,7 +57,7 @@ public class Instructions : MonoBehaviour
                     furniture.AddStep(p);
                 } */
             } else {
-                furniture.AddStep(p, useTracking);
+                furniture.AddStep(p);
             }
 
             /* List<Component> tempKeys = new List<Component>(componentQueue.Keys);
@@ -79,7 +77,7 @@ public class Instructions : MonoBehaviour
         Debug.Log(furniture.DisplaySteps());
         modelTracker.ResetTrackingHard();
 
-        if (!useTracking)
+        if (!furniture.GetCurrentStep().UsesTracking())
         StartCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
     }
 
@@ -116,9 +114,9 @@ public class Instructions : MonoBehaviour
         currentPartDisplay.text = furniture.GetCurrentStep().GetPart().GetGameObject().name;
         furniture.GetCurrentStep().CheckOverlap();
 
-        if (useTracking) {
+        if (furniture.GetCurrentStep().UsesTracking()) {
 
-            if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT) {
+            /*if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT) {
                 if (!checking)
                 StartCoroutine(CheckNextStep());
             }
@@ -127,7 +125,7 @@ public class Instructions : MonoBehaviour
                 inputObject.SetActive(true);
             } else {
                 inputObject.SetActive(false);
-            }
+            }*/
         } else {
             
         }
@@ -137,13 +135,13 @@ public class Instructions : MonoBehaviour
         //if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT)
         //{
 
-        if (!useTracking)
+        if (!furniture.GetCurrentStep().UsesTracking())
         StopCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
 
         furniture.NextStep();
         modelTracker.ResetTrackingHard();
 
-        if (!useTracking)
+        if (!furniture.GetCurrentStep().UsesTracking())
         StartCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
 
         //}

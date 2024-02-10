@@ -23,11 +23,11 @@ public class Step : ScriptableObject
 
     Vector3 asidePosition;
 
-    public void Init(Part part, int num, Vector3 parentPosition, Vector3 parentRotation, bool useTracking) {
+    public void Init(Part part, int num, Vector3 parentPosition, Vector3 parentRotation) {
         this.part = part;
         //Debug.Log(num);
         this.stepNo = num;
-        this.useTracking = useTracking;
+        useTracking = part.UsesTracking();
         this.parentPosition = parentPosition;
         originalParentPosition = this.part.GetGameObject().transform.parent.position;
         this.parentRotation = parentRotation;
@@ -36,9 +36,9 @@ public class Step : ScriptableObject
     }
 
     //Overrides Unity ScriptableObject CreateInstance to take parameters and act as a constructor
-    public static Step CreateInstance(Part part, int num, Vector3 parentPosition, Vector3 parentRotation, bool useTracking) {
+    public static Step CreateInstance(Part part, int num, Vector3 parentPosition, Vector3 parentRotation) {
         Step step = ScriptableObject.CreateInstance<Step>();
-        step.Init(part, num, parentPosition, parentRotation, useTracking);
+        step.Init(part, num, parentPosition, parentRotation);
         return step;
     }
 
@@ -97,6 +97,7 @@ public class Step : ScriptableObject
         } else {
             GameObject animationParts = GameObject.Find("AnimationParts");
             if (animationParts != null && partObject.name != "Initial") {
+                Debug.Log(partObject.name);
                 animationPart = new AnimationPart(animationParts.transform.Find(partObject.name).gameObject, partObject.transform);
             } else {
                 animationPart = new AnimationPart(Instantiate(partObject), partObject.transform);

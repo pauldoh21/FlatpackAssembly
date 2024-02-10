@@ -13,6 +13,7 @@ public enum States {
 public class Part
 {
     [SerializeField] GameObject gameObject;
+    [SerializeField] bool useTracking;
     List<GameObject> meshes;
     States state;
     Material material;
@@ -62,6 +63,10 @@ public class Part
     protected virtual string GetMaterial()
     {
         return materials[(int)GetState()];
+    }
+
+    public bool UsesTracking() {
+        return useTracking;
     }
 
     //Returns a list of all objects which have a mesh. If parent object has a mesh it will not return children
