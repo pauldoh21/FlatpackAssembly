@@ -17,6 +17,7 @@ public class Instructions : MonoBehaviour
     [SerializeField] public List<Component> components = new List<Component>();
     [SerializeField] public List<Part> parts = new List<Part>();
     [HideInInspector] public Furniture furniture;
+    [HideInInspector] private bool done;
 
     void Awake() {
 
@@ -111,8 +112,12 @@ public class Instructions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentPartDisplay.text = furniture.GetCurrentStep().GetPart().GetGameObject().name;
-        furniture.GetCurrentStep().CheckOverlap();
+        if (!done) {
+            currentPartDisplay.text = furniture.GetCurrentStep().GetPart().GetGameObject().name;
+            furniture.GetCurrentStep().CheckOverlap();
+        } else {
+            currentPartDisplay.text = "Done";
+        }
 
         if (furniture.GetCurrentStep().UsesTracking()) {
 
@@ -141,7 +146,11 @@ public class Instructions : MonoBehaviour
         furniture.NextStep();
         modelTracker.ResetTrackingHard();
 
-        if (!furniture.GetCurrentStep().UsesTracking())
+        if (furniture.GetCurrentStep().GetNextStep() == null && furniture.GetCurrentStep().IsComplete()) {
+            done = true;
+        }
+
+        if (!furniture.GetCurrentStep().UsesTracking() && !done)
         StartCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
 
         //}

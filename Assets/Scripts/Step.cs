@@ -22,6 +22,7 @@ public class Step : ScriptableObject
     Vector3 originalParentRotation;
 
     Vector3 asidePosition;
+    bool done;
 
     public void Init(Part part, int num, Vector3 parentPosition, Vector3 parentRotation) {
         this.part = part;
@@ -72,6 +73,10 @@ public class Step : ScriptableObject
 
     public bool UsesTracking() {
         return useTracking;
+    }
+
+    public bool IsComplete() {
+        return done;
     }
 
     public void ActivateStep() {
@@ -127,10 +132,13 @@ public class Step : ScriptableObject
         
         part.SetState(States.FINISHED);
         GetSecondPart().SetState(States.FINISHED);
+
+        done = true;
+
         if (useTracking) {
             trackingPart.DestroyTracking();
         } else {
-            animationPart.DestroyTracking();
+            animationPart.DestroyAnimation();
         }
     }
 

@@ -66,7 +66,7 @@ public class AnimationPart : Part {
         }
     }
 
-    public void DestroyTracking() {
+    public void DestroyAnimation() {
         //GameObject.Destroy(GetGameObject());
         GetGameObject().SetActive(false);
     }
