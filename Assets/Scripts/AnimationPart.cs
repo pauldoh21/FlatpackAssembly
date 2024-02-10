@@ -11,6 +11,8 @@ public class AnimationPart : Part {
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
+    private bool viewing;
+    private Transform originalParent;
 
     private static List<Color> animationColors = new List<Color>
     {
@@ -36,6 +38,8 @@ public class AnimationPart : Part {
         originalPosition = gameObject.transform.position;
         originalRotation = gameObject.transform.rotation;
 
+        originalParent = gameObject.transform.parent;
+
         gameObject.SetActive(true);
 
     }
@@ -52,17 +56,36 @@ public class AnimationPart : Part {
 
     public IEnumerator AnimatePart() {
         while (true) {
-            float distance = Vector3.Distance(targetPosition, GetGameObject().transform.position);
+            if (!viewing) {
+                float distance = Vector3.Distance(targetPosition, GetGameObject().transform.position);
 
-            if (distance < 0.001f) {
-                GetGameObject().transform.position = originalPosition;
-                GetGameObject().transform.rotation = originalRotation;
+                if (distance < 0.001f) {
+                    GetGameObject().transform.position = originalPosition;
+                    GetGameObject().transform.rotation = originalRotation;
+                } else {
+                    GetGameObject().transform.position = Vector3.Lerp(GetGameObject().transform.position, targetPosition, Time.deltaTime * 3);
+                    GetGameObject().transform.rotation = Quaternion.Lerp(GetGameObject().transform.rotation, targetRotation, Time.deltaTime * 3);
+                }
             } else {
-                GetGameObject().transform.position = Vector3.Lerp(GetGameObject().transform.position, targetPosition, Time.deltaTime * 3);
-                GetGameObject().transform.rotation = Quaternion.Lerp(GetGameObject().transform.rotation, targetRotation, Time.deltaTime * 3);
+                //GetGameObject().transform.rotation = Quaternion.RotateTowards(GetGameObject().transform.rotation, Quaternion.LookRotation(Vector3.right), Time.deltaTime * 10);
+                GetGameObject().transform.RotateAround(GetGameObject().transform.position, Vector3.up, Time.deltaTime * 20);
             }
 
             yield return new WaitForFixedUpdate();
+        }
+    }
+
+    public void ViewPart() {
+        if (!viewing) {
+            viewing = true;
+            GetGameObject().transform.SetParent(GameObject.Find("Canvas").transform);
+            GetGameObject().transform.localPosition = new Vector3(0,0,0.5f);
+            GetGameObject().transform.rotation = Quaternion.Euler(30f, 0, 30f);
+        } else {
+            viewing = false;
+            GetGameObject().transform.SetParent(originalParent);
+            GetGameObject().transform.position = originalPosition;
+            GetGameObject().transform.rotation = originalRotation;
         }
     }
 

@@ -268,3 +268,10 @@
 *0.5 hours* Added voice input for moving to next step
 *1 hour* Added option to activate tracking or animation per part instead of for whole assembly
 *1 hour* Fixed issue with assembly not showing as finished properly
+*1.5 hours* Started feature which allows user to get a closer view of part which is animating
+
+### 10 Feb 2024
+
+*0.5 hours* Finished close view feature
+*2 hours* Modelled extra parts such as dowels and screws
+*0.5 hours* Adjusted instructions to suit new parts

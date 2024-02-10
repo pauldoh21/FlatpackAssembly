@@ -7,12 +7,12 @@ using Visometry.VisionLib.SDK.Core;
 public class Instructions : MonoBehaviour
 {
     [HideInInspector] public GameObject FurnitureObject;
-    [SerializeField] public TMP_Text currentPartDisplay; // REMOVE PROBS
-    [SerializeField] public TMP_Text trackingDisplay; // REMOVE PROBS
+    [SerializeField] public TMP_Text currentPartDisplay;
+    [SerializeField] public TMP_Text trackingDisplay;
     [SerializeField] public ModelTracker modelTracker;
     [SerializeField] public bool partsFirst;
     [SerializeField] public bool showOutlines;
-    [SerializeField] private GameObject inputObject;
+    //[SerializeField] private GameObject inputObject;
     [HideInInspector] public Vector3 asidePosition;
     [SerializeField] public List<Component> components = new List<Component>();
     [SerializeField] public List<Part> parts = new List<Part>();
@@ -154,6 +154,12 @@ public class Instructions : MonoBehaviour
         StartCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
 
         //}
+    }
+
+    public void ViewPart() {
+        if (!furniture.GetCurrentStep().UsesTracking()) {
+            furniture.GetCurrentStep().GetAnimationPart().ViewPart();
+        }
     }
 
     private bool checking;
