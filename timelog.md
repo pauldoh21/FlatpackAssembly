@@ -275,3 +275,4 @@
 *0.5 hours* Finished close view feature
 *2 hours* Modelled extra parts such as dowels and screws
 *0.5 hours* Adjusted instructions to suit new parts
+*1 hour* Created a system which allows parts and components to be interspersed for specific assemblies

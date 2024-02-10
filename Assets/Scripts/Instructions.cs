@@ -10,6 +10,8 @@ public class Instructions : MonoBehaviour
     [SerializeField] public TMP_Text currentPartDisplay;
     [SerializeField] public TMP_Text trackingDisplay;
     [SerializeField] public ModelTracker modelTracker;
+    [Tooltip("Components and parts must be in correct order relative to each other")]
+    [SerializeField] public bool usePrewrittenOrder;
     [SerializeField] public bool partsFirst;
     [SerializeField] public bool showOutlines;
     //[SerializeField] private GameObject inputObject;
@@ -30,7 +32,11 @@ public class Instructions : MonoBehaviour
 
         furniture = new Furniture(FurnitureObject);
 
-        furniture.CombineParts(components, parts, partsFirst);
+        if (usePrewrittenOrder) {
+            furniture.PresetInstructions(FurnitureObject.name, components, parts);
+        } else {
+            furniture.CombineParts(components, parts, partsFirst);
+        }
 
         Dictionary<Component, int> componentQueue = new Dictionary<Component, int>();
         foreach (Part p in furniture.GetParts()) {
