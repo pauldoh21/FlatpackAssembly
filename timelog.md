@@ -26,6 +26,8 @@
 
 * *0.5 hours* Created GitHub repository
 
+## Week 2
+
 ### 28 Sep 2023
 
 * *1 hour* Had first meeting with supervisor
@@ -33,6 +35,8 @@
 ### 29 Sep 2023
 
 * *2 hours* Researched hardware such as Hololense and others for image recognition capabilities
+
+## Week 3
 
 ### 02 Oct 2023
 
@@ -49,6 +53,8 @@
 * *1 hour* Access Azure Object Anchors with student account and set up Unity project
 * *0.5 hours* Attempted to set up a 3D model for testing object anchors
 
+## Week 4
+
 ### 09 Oct 2023
 
 * *0.5 hours* Gained access to VisionLib trial
@@ -62,6 +68,8 @@
 ### 12 Oct 2023
 
 * *1 hour* Met with Thomas to get introduced to using and building to the Hololens
+
+## Week 5
 
 ### 16 Oct 2023
 
@@ -85,6 +93,8 @@
 
 * *0.5 hours* Sent VisionLib details to activate academic license
 
+## Week 6
+
 ### 31 Oct 2023
 
 * *1 hour* Picked up Hololens then had meeting with supervisor 
@@ -94,13 +104,19 @@
 * *1 hour* Created plan and checklist on where to take development from current position
 * *1 hour* Tried setting up Object Anchors with custom 3D model
 
+## Week 7
+
 ### 7 Nov 2023
 
 * *1 hour* Attended supervisor meeting
 
+## Week 8
+
 ### 13 Nov 2023
 
 * *3 hours* Built and tested Object Anchors project using custom 3D model
+
+## Week 9
 
 ### 21 Nov 2023
 
@@ -109,6 +125,8 @@
 ### 25 Nov 2023
 
 * *0.5 hours* Contacted VisionLib regarding academic license
+
+## Week 11
 
 ### 10 Dec 2023
 
@@ -126,6 +144,8 @@
 ### 15 Dec 2023
 
 * *2 hours* Completed semester 1 status report
+
+## Week 12
 
 ### 18 Dec 2023
 
@@ -150,6 +170,8 @@
 
 * *1 hour* Planned design pattern for the project
 
+## Week 13
+
 ### 26 Dec 2023
 
 * *3 hours* Set up basic scripts for assembly functionality
@@ -157,6 +179,8 @@
 ### 27 Dec 2023
 
 * *3 hours* Improved scripts and started work on making each step visible
+
+## Week 14
 
 ### 2 Jan 2024
 
@@ -181,9 +205,13 @@
 
 * *2 hours* Continued work on instructions
 
+## Week 15
+
 ### 13 Jan 2024
 
 * *2 hours* Continued work on instructions
+
+## Week 16
 
 ### 15 Jan 2024
 
@@ -203,6 +231,8 @@
 *1 hour* Migrated to new repo
 *2 hours* Worked on ordering issues
 
+## Week 17
+
 ### 22 Jan 2024
 
 *1 hour* Selected final piece of furniture to use for tests
@@ -220,6 +250,8 @@
 ### 27 Jan 2024
 
 *4 hours* Continued modelling bedside table parts
+
+## Week 18
 
 ### 29 Jan 2024
 
@@ -246,6 +278,8 @@
 ### 02 Feb 2024
 
 *2 hours* Worked on setting up receiving input from hands in Hololens
+
+## Week 19
 
 ### 05 Feb 2024
 
@@ -278,3 +312,9 @@
 *1 hour* Created a system which allows parts and components to be interspersed for specific assemblies
 *1 hour* Set positions for each part during each step
 *2 hours* Set up scene for final use
+
+## Week 20
+
+### 11 Feb 2024
+
+*1 hour* Dropped off Hololens in room 303
