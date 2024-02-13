@@ -318,3 +318,7 @@
 ### 11 Feb 2024
 
 *1 hour* Dropped off Hololens in room 303
+
+### 13 Feb 2024
+
+*1 hour* Started introduction to dissertation
