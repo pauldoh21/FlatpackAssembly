@@ -21,6 +21,8 @@ public class Instructions : MonoBehaviour
     [HideInInspector] public Furniture furniture;
     [HideInInspector] private bool done;
 
+    private Coroutine animation;
+
     void Awake() {
 
         DeactivateTrackingParts();
@@ -85,7 +87,7 @@ public class Instructions : MonoBehaviour
         modelTracker.ResetTrackingHard();
 
         if (!furniture.GetCurrentStep().UsesTracking())
-        StartCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
+        animation = StartCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
     }
 
     void DeactivateTrackingParts() {
@@ -147,7 +149,7 @@ public class Instructions : MonoBehaviour
         //{
 
         if (!furniture.GetCurrentStep().UsesTracking())
-        StopCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
+        StopCoroutine(animation);
 
         furniture.NextStep();
         modelTracker.ResetTrackingHard();
@@ -157,7 +159,7 @@ public class Instructions : MonoBehaviour
         }
 
         if (!furniture.GetCurrentStep().UsesTracking() && !done)
-        StartCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
+        animation = StartCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
 
         //}
     }

@@ -322,3 +322,7 @@
 ### 13 Feb 2024
 
 *1 hour* Started introduction to dissertation
+
+### 14 Feb 2024
+
+*1 hour* Fixed issue with coroutines not stopping at end of step
