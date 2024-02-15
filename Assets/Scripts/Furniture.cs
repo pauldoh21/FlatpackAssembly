@@ -63,7 +63,7 @@ public class Furniture : Component
         initialPart.parentPosition = new Vector3(0,0,0);
         newParts.Add(initialPart);
 
-        if (name == "bedsideTable") {
+        if (name.Contains("bedsideTable")) {
             newParts.Add(components[0]);
             for (int i = 0; i <= 12; i++) {
                 newParts.Add(parts[i]);

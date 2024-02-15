@@ -25,9 +25,6 @@ public class Instructions : MonoBehaviour
 
     void Awake() {
 
-        DeactivateTrackingParts();
-        DeactivateAnimationParts();
-
         TrackingAnchor trackingAnchor = GameObject.Find("VLTrackingAnchor").GetComponent<TrackingAnchor>();
         trackingAnchor.OnTracked.AddListener(UpdateTrackingTextTrue);
         trackingAnchor.OnTrackingLost.AddListener(UpdateTrackingTextFalse);
@@ -35,14 +32,15 @@ public class Instructions : MonoBehaviour
         furniture = new Furniture(FurnitureObject);
 
         if (usePrewrittenOrder) {
+            Debug.Log("Adding parts...");
             furniture.PresetInstructions(FurnitureObject.name, components, parts);
         } else {
             furniture.CombineParts(components, parts, partsFirst);
         }
 
         Dictionary<Component, int> componentQueue = new Dictionary<Component, int>();
+        Debug.Log("Creating steps...");
         foreach (Part p in furniture.GetParts()) {
-            
             p.showOutline = showOutlines;
 
             if (p is Component) {
@@ -81,6 +79,11 @@ public class Instructions : MonoBehaviour
                 }
             } */
         }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
         furniture.AdjustSteps();
         furniture.GetCurrentStep().ActivateStep();
         Debug.Log(furniture.DisplaySteps());
@@ -88,24 +91,6 @@ public class Instructions : MonoBehaviour
 
         if (!furniture.GetCurrentStep().UsesTracking())
         animation = StartCoroutine(furniture.GetCurrentStep().GetAnimationPart().AnimatePart());
-    }
-
-    void DeactivateTrackingParts() {
-        foreach (Transform t in GameObject.Find("VLTrackingAnchor").transform) {
-            t.gameObject.SetActive(false);
-        }
-    }
-
-    void DeactivateAnimationParts() {
-        foreach (Transform t in GameObject.Find("AnimationParts").transform) {
-            t.gameObject.SetActive(false);
-        }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     private void UpdateTrackingTextTrue() {

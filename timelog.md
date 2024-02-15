@@ -326,3 +326,7 @@
 ### 14 Feb 2024
 
 *1 hour* Fixed issue with coroutines not stopping at end of step
+
+### 15 Feb 2024
+
+*1 hour* Added option to choose at start of runtime whether to use animation prefab or tracking prefab
