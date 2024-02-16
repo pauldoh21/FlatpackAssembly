@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -79,14 +80,34 @@ public class AnimationPart : Part {
         if (!viewing) {
             viewing = true;
             GetGameObject().transform.SetParent(GameObject.Find("Canvas").transform);
-            GetGameObject().transform.localPosition = new Vector3(0,0,0.5f);
+            GetGameObject().transform.localPosition = new Vector3(0,0,CalculateDistance());
             GetGameObject().transform.rotation = Quaternion.Euler(30f, 0, 30f);
+            //float scale = CalculateDistance();
+            //GetGameObject().transform.localScale = new Vector3(scale,scale,scale);
         } else {
             viewing = false;
             GetGameObject().transform.SetParent(originalParent);
             GetGameObject().transform.position = originalPosition;
             GetGameObject().transform.rotation = originalRotation;
+            //GetGameObject().transform.localScale = new Vector3(1,1,1);
         }
+    }
+
+    public float CalculateDistance() {
+        Mesh mesh;
+        if (GetGameObject().GetComponent<MeshFilter>() != null) {
+            mesh = GetGameObject().GetComponent<MeshFilter>().mesh;
+        } else {
+            mesh = GetGameObject().GetComponentInChildren<MeshFilter>().mesh;
+        }
+
+        float size = mesh.bounds.size.y;
+        float distance = -(1.0f / size) * 14; // You can adjust the scale factor to control the effect
+
+
+        Debug.Log(distance);
+
+        return distance;
     }
 
     public void DestroyAnimation() {

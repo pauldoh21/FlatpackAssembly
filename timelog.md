@@ -330,3 +330,7 @@
 ### 15 Feb 2024
 
 *1 hour* Added option to choose at start of runtime whether to use animation prefab or tracking prefab
+
+### 16 Feb 2024
+
+*2 hours* Adjusted height of camera starting position and made view distance of animation parts automatically determined
