@@ -334,3 +334,7 @@
 ### 16 Feb 2024
 
 *2 hours* Adjusted height of camera starting position and made view distance of animation parts automatically determined
+
+### 17 Feb 2024
+
+*2 hours* Made adjustments to init poses and animation start points
