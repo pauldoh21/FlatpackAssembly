@@ -338,3 +338,14 @@
 ### 17 Feb 2024
 
 *2 hours* Made adjustments to init poses and animation start points
+
+## Week 21
+
+### 18 Feb 2024
+
+*1.5 hours* Tested implementation and fixed bugs
+
+### 19 Feb 2024
+
+*1 hour* Dropped off Hololens and bedsde table
+*1 hour* Planned structure for disseration
