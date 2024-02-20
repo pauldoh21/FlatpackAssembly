@@ -347,5 +347,10 @@
 
 ### 19 Feb 2024
 
-*1 hour* Dropped off Hololens and bedsde table
+*1 hour* Dropped off Hololens and bedside table
 *1 hour* Planned structure for disseration
+
+### 20 Feb 2024
+
+*1 hour* Conducted pilot test on animation prefab
+*4 hours* Attempted to fix issue with tracking parts no longer tracking

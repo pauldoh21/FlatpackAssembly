@@ -29,6 +29,7 @@ public class Manager : MonoBehaviour
 
     void DeactivateTrackingParts() {
         foreach (Transform t in GameObject.Find("VLTrackingAnchor").transform) {
+            if (t.gameObject.name != "default")
             t.gameObject.SetActive(false);
         }
     }

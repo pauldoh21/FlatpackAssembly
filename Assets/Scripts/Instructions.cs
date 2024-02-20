@@ -29,6 +29,8 @@ public class Instructions : MonoBehaviour
         trackingAnchor.OnTracked.AddListener(UpdateTrackingTextTrue);
         trackingAnchor.OnTrackingLost.AddListener(UpdateTrackingTextFalse);
 
+        GameObject.Find("default").SetActive(false);
+
         furniture = new Furniture(FurnitureObject);
 
         if (usePrewrittenOrder) {
