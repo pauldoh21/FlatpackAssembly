@@ -220,144 +220,144 @@
 
 ### 16 Jan 2024
 
-*1 hour* Attended supervisor meeting
+* *1 hour* Attended supervisor meeting
 
 ### 17 Jan 2024
 
-*2 hours* Continued fixing issues with ordering
+* *2 hours* Continued fixing issues with ordering
 
 ### 19 Jan 2024
 
-*1 hour* Migrated to new repo
-*2 hours* Worked on ordering issues
+* *1 hour* Migrated to new repo
+* *2 hours* Worked on ordering issues
 
 ## Week 17
 
 ### 22 Jan 2024
 
-*1 hour* Selected final piece of furniture to use for tests
-*3 hours* Attempted to fix ordering issues
+* *1 hour* Selected final piece of furniture to use for tests
+* *3 hours* Attempted to fix ordering issues
 
 ### 23 Jan 2024
 
-*1 hour* started work on integrating VisionLib tracking to instructions
+* *1 hour* started work on integrating VisionLib tracking to instructions
 
 ### 26 Jan 2024
 
-*2 hours* Picked up furniture for testing
-*3 hours* 3D modelled parts of the bedside table
+* *2 hours* Picked up furniture for testing
+* *3 hours* 3D modelled parts of the bedside table
 
 ### 27 Jan 2024
 
-*4 hours* Continued modelling bedside table parts
+* *4 hours* Continued modelling bedside table parts
 
 ## Week 18
 
 ### 29 Jan 2024
 
-*1 hour* Modelled last parts of bedside table
-*2 hours* Assembled part models into one full bedside table model
+* *1 hour* Modelled last parts of bedside table
+* *2 hours* Assembled part models into one full bedside table model
 
 ### 30 Jan 2024
 
-*1 hour* Set up instructions on bedside table model in Unity
-*0.5 hours* Calibrated webcam to work with VisionLib model tracking
-*2 hours* Created new scene to test tracking current part on webcam
+* *1 hour* Set up instructions on bedside table model in Unity
+* *0.5 hours* Calibrated webcam to work with VisionLib model tracking
+* *2 hours* Created new scene to test tracking current part on webcam
 
 ### 31 Jan 2024
 
-*2 hours* Set up distance detection on tracked part to correct location
+* *2 hours* Set up distance detection on tracked part to correct location
 
 ### 01 Feb 2024
 
-*1 hour* Attended supervisor meeting
-*0.5 hours* Added rotation detection to tracking part validity checks
-*0.5 hours* Adjusted instructions to match paper instructions
-*0.5 hours* Changed input system to be able to dynamically take new methods of input
+* *1 hour* Attended supervisor meeting
+* *0.5 hours* Added rotation detection to tracking part validity checks
+* *0.5 hours* Adjusted instructions to match paper instructions
+* *0.5 hours* Changed input system to be able to dynamically take new methods of input
 
 ### 02 Feb 2024
 
-*2 hours* Worked on setting up receiving input from hands in Hololens
+* *2 hours* Worked on setting up receiving input from hands in Hololens
 
 ## Week 19
 
 ### 05 Feb 2024
 
-*1 hour* Temporarily changed validation system to time based
-*2 hours* Attempted to get project to build from laptop
-*3 hours* Tried to fix issues with tracking parts not appearing in Hololens build
+* *1 hour* Temporarily changed validation system to time based
+* *2 hours* Attempted to get project to build from laptop
+* *3 hours* Tried to fix issues with tracking parts not appearing in Hololens build
 
 ### 06 Feb 2024
 
-*5 hours* Fixed issues with making tracking parts appear and be tracked in Hololens build
+* *5 hours* Fixed issues with making tracking parts appear and be tracked in Hololens build
 
 ### 08 Feb 2024
 
-*0.5 hours* Fixed materials not showing properly in Hololens build
-*1 hour* Made parts display in correct locations and rotations for each step
+* *0.5 hours* Fixed materials not showing properly in Hololens build
+* *1 hour* Made parts display in correct locations and rotations for each step
 
 ### 09 Feb 2024
 
-*2 hours* Added new part type, animation part, which shows where to add the part without tracking the model
-*0.5 hours* Added voice input for moving to next step
-*1 hour* Added option to activate tracking or animation per part instead of for whole assembly
-*1 hour* Fixed issue with assembly not showing as finished properly
-*1.5 hours* Started feature which allows user to get a closer view of part which is animating
+* *2 hours* Added new part type, animation part, which shows where to add the part without tracking the model
+* *0.5 hours* Added voice input for moving to next step
+* *1 hour* Added option to activate tracking or animation per part instead of for whole assembly
+* *1 hour* Fixed issue with assembly not showing as finished properly
+* *1.5 hours* Started feature which allows user to get a closer view of part which is animating
 
 ### 10 Feb 2024
 
-*0.5 hours* Finished close view feature
-*2 hours* Modelled extra parts such as dowels and screws
-*0.5 hours* Adjusted instructions to suit new parts
-*1 hour* Created a system which allows parts and components to be interspersed for specific assemblies
-*1 hour* Set positions for each part during each step
-*2 hours* Set up scene for final use
+* *0.5 hours* Finished close view feature
+* *2 hours* Modelled extra parts such as dowels and screws
+* *0.5 hours* Adjusted instructions to suit new parts
+* *1 hour* Created a system which allows parts and components to be interspersed for specific assemblies
+* *1 hour* Set positions for each part during each step
+* *2 hours* Set up scene for final use
 
 ## Week 20
 
 ### 11 Feb 2024
 
-*1 hour* Dropped off Hololens in room 303
+* *1 hour* Dropped off Hololens in room 303
 
 ### 13 Feb 2024
 
-*1 hour* Started introduction to dissertation
+* *1 hour* Started introduction to dissertation
 
 ### 14 Feb 2024
 
-*1 hour* Fixed issue with coroutines not stopping at end of step
+* *1 hour* Fixed issue with coroutines not stopping at end of step
 
 ### 15 Feb 2024
 
-*1 hour* Added option to choose at start of runtime whether to use animation prefab or tracking prefab
+* *1 hour* Added option to choose at start of runtime whether to use animation prefab or tracking prefab
 
 ### 16 Feb 2024
 
-*2 hours* Adjusted height of camera starting position and made view distance of animation parts automatically determined
+* *2 hours* Adjusted height of camera starting position and made view distance of animation parts automatically determined
 
 ### 17 Feb 2024
 
-*2 hours* Made adjustments to init poses and animation start points
+* *2 hours* Made adjustments to init poses and animation start points
 
 ## Week 21
 
 ### 18 Feb 2024
 
-*1.5 hours* Tested implementation and fixed bugs
+* *1.5 hours* Tested implementation and fixed bugs
 
 ### 19 Feb 2024
 
-*1 hour* Dropped off Hololens and bedside table
-*1 hour* Planned structure for disseration
+* *1 hour* Dropped off Hololens and bedside table
+* *1 hour* Planned structure for disseration
 
 ### 20 Feb 2024
 
-*1 hour* Conducted pilot test on animation prefab
-*4 hours* Attempted to fix issue with tracking parts no longer tracking
+* *1 hour* Conducted pilot test on animation prefab
+* *4 hours* Attempted to fix issue with tracking parts no longer tracking
 
 ### 21 Feb 2024
 
-*1 hour* Designed experiment
-*2 hours* Conducted first experiment
-*1 hour* Added functionality to display when part should be screwed in
-*0.5 hours* Adjusted minor part animation start point issues
+* *1 hour* Designed experiment
+* *2 hours* Conducted first experiment
+* *1 hour* Added functionality to display when part should be screwed in
+* *0.5 hours* Adjusted minor part animation start point issues
