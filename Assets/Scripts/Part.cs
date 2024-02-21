@@ -18,6 +18,9 @@ public class Part
     States state;
     Material material;
 
+    // Whether or not the part should be screwed in
+    [SerializeField] public bool screws;
+
     // The position that this part is a sub part of should be while this part is being added
     [SerializeField] public Vector3 parentPosition;
     // Same as parentPosition but for rotation
@@ -67,6 +70,10 @@ public class Part
 
     public bool UsesTracking() {
         return useTracking;
+    }
+
+    public bool IsScrewed() {
+        return screws;
     }
 
     //Returns a list of all objects which have a mesh. If parent object has a mesh it will not return children

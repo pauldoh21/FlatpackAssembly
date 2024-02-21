@@ -7,9 +7,10 @@ using Visometry.VisionLib.SDK.Core;
 public class Instructions : MonoBehaviour
 {
     [HideInInspector] public GameObject FurnitureObject;
-    [SerializeField] public TMP_Text currentPartDisplay;
-    [SerializeField] public TMP_Text trackingDisplay;
-    [SerializeField] public ModelTracker modelTracker;
+    [HideInInspector] public TMP_Text currentPartDisplay;
+    [HideInInspector] public TMP_Text trackingDisplay;
+    [HideInInspector] public TMP_Text screwDisplay;
+    [HideInInspector] public ModelTracker modelTracker;
     [Tooltip("Components and parts must be in correct order relative to each other")]
     [SerializeField] public bool usePrewrittenOrder;
     [SerializeField] public bool partsFirst;

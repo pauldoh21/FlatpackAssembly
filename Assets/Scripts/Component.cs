@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -69,6 +70,12 @@ public class Component : Part
         } else {
             currentStep = nextStep;
             currentStep.ActivateStep();
+        }
+
+        if (currentStep.GetPart().IsScrewed()) {
+            GameObject.Find("Screw Display").GetComponent<TMP_Text>().text = "Screw part";
+        } else {
+            GameObject.Find("Screw Display").GetComponent<TMP_Text>().text = "";
         }
     }
 

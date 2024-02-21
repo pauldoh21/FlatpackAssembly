@@ -9,6 +9,7 @@ public class Manager : MonoBehaviour
     public bool useTracking;
     public TMP_Text currentPartDisplay;
     public TMP_Text trackingDisplay;
+    public TMP_Text screwDisplay;
     public ModelTracker modelTracker;
     public GameObject animationPrefab;
     public GameObject trackingPrefab;
@@ -60,6 +61,7 @@ public class Manager : MonoBehaviour
         instructions = gameObject.GetComponent<Instructions>();
         instructions.currentPartDisplay = currentPartDisplay;
         instructions.trackingDisplay = trackingDisplay;
+        instructions.screwDisplay = screwDisplay;
         instructions.modelTracker = modelTracker;
 
     }

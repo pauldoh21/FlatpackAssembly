@@ -354,3 +354,10 @@
 
 *1 hour* Conducted pilot test on animation prefab
 *4 hours* Attempted to fix issue with tracking parts no longer tracking
+
+### 21 Feb 2024
+
+*1 hour* Designed experiment
+*2 hours* Conducted first experiment
+*1 hour* Added functionality to display when part should be screwed in
+*0.5 hours* Adjusted minor part animation start point issues
