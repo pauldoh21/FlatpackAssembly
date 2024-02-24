@@ -361,3 +361,9 @@
 * *2 hours* Conducted first experiment
 * *1 hour* Added functionality to display when part should be screwed in
 * *0.5 hours* Adjusted minor part animation start point issues
+
+### 23 Feb 2024
+
+* *1 hour* Wrote consent form, introduction script and debrief script
+* *1 hour* Conducted test
+* *2 hours* Wrote experiment design section of dissertation
