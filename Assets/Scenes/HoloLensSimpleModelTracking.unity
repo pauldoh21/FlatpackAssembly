@@ -158,7 +158,7 @@ MonoBehaviour:
   screwDisplay: {fileID: 1411278848}
   modelTracker: {fileID: 855645074}
   animationPrefab: {fileID: 2775050940899037021, guid: 32df9aaf79805984a9ca522cb241914f, type: 3}
-  trackingPrefab: {fileID: 7832601859623943640, guid: 545ec1b225a256044bcd46e370a648c2, type: 3}
+  trackingPrefab: {fileID: 6980774968402881853, guid: 94f7dea9570f45844abbc3d96de2c31a, type: 3}
 --- !u!4 &48778831
 Transform:
   m_ObjectHideFlags: 0

@@ -367,3 +367,7 @@
 * *1 hour* Wrote consent form, introduction script and debrief script
 * *1 hour* Conducted test
 * *2 hours* Wrote experiment design section of dissertation
+
+### 24 Feb 2024
+
+* *0.5 hours* Planned time slots for rest of experiments

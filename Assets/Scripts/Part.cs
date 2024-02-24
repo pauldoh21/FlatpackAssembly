@@ -108,13 +108,21 @@ public class Part
 
     public void SetMaterial() {
         foreach (GameObject g in meshes) {
-            Outline outline = g.GetComponent<Outline>();
-            if (outline == null) {
-                outline = g.AddComponent<Outline>() as Outline;
+            if (showOutline) {
+                Outline outline = g.GetComponent<Outline>();
+                if (outline == null) {
+                    outline = g.AddComponent<Outline>() as Outline;
+                }
+                outline.enabled = false;
             }
-            outline.enabled = false;
             material = Resources.Load<Material>(GetMaterial());
-            Material[] newMaterials = g.GetComponent<MeshRenderer>().materials;
+            // Just for trying to test tracking on deodorant
+            Material[] newMaterials;
+            if (g.name == "deodorant") {
+                newMaterials = g.GetComponent<MeshRenderer>().sharedMaterials;
+            } else {
+                newMaterials = g.GetComponent<MeshRenderer>().materials;
+            }
             newMaterials[0] = material;
             g.GetComponent<MeshRenderer>().materials = newMaterials;
         }
@@ -126,6 +134,7 @@ public class Part
         //Debug.Log(state);
         SetMeshes();
         SetMaterial();
+        if (showOutline)
         SetOutline();
     }
 

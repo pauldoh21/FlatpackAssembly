@@ -30,8 +30,8 @@ public class Component : Part
 
         part.SetState(States.DISABLED);
         Step newStep = Step.CreateInstance(part, steps.Count, part.parentPosition, part.parentRotation);
-        steps.Add(newStep);
         Debug.Log("Adding step: " + newStep.GetPart().GetGameObject().name);
+        steps.Add(newStep);
 
         if (steps.Count > 1) {
             // Points the previous step in the list to the first step of the component
