@@ -2093,16 +2093,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616867644323196376, guid: b1e38174f906c244e97a94b53ba4612b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.525
+      value: 0.664
       objectReference: {fileID: 0}
     - target: {fileID: 7616867644323196376, guid: b1e38174f906c244e97a94b53ba4612b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.148
+      value: 0.277
       objectReference: {fileID: 0}
     - target: {fileID: 7616867644323196383, guid: b1e38174f906c244e97a94b53ba4612b, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -2432090755550338912, guid: 8af0f7a4bfabb2f438b9d953be057294, type: 3}
+      objectReference: {fileID: 2866437113239662785, guid: d111d99f92974794a8e615232c3020c6, type: 3}
     - target: {fileID: 7616867644627438582, guid: b1e38174f906c244e97a94b53ba4612b, type: 3}
       propertyPath: slamCamera
       value: 
