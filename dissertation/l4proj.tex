@@ -174,18 +174,85 @@ What did other people do, and how is it relevant to what you want to do?
 
 %==================================================================================================================================
 \chapter{Analysis/Requirements}
-What is the problem that you want to solve, and how did you arrive at it?
-\section{Guidance}
-Make it clear how you derived the constrained form of your problem via a clear and logical process. 
+
+\section{Analysis of Problem}
+
+An AR solution to flatpack furniture instructions is required in the problem. These instructions are commonly paper-based and give a picture-by-picture guide to assembling the furniture, as shown in figure \ref{fig:instructions}. Taking this to the world of augmented reality opens up a plethora of opportunities. AR takes digital content into the real 3D world and is much more dynamic and fluid than the 2D paper methods.
+
+Creating a new AR platform to communicate instructions on assembling flatpack furniture to a user requires the translation of certain concepts into an AR environment. For this to be done effectively, a user must be able to fully follow through with the instructions without any outside help or guessing. To ensure that this is the case, a set of requirements have been created for the platform to follow.
+
+\section{Functional Requirements}
+
+\subsection{Requirements from Paper Instructions}
+
+It was important to analyse the paper instructions provided with a set of flatpack furniture to understand the baseline that the AR instructions would be compared to. The paper instructions for the IKEA HEMNES bedside table \ref{fig:instructions} were inspected to find the most important factors in helping a person assemble furniture.
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/instructions.jpg}
+    \caption{Paper instructions for IKEA HEMNES bedside table}
+    \label{fig:instructions}
+\end{figure}
+
+There are a few important techniques used in these instructions that can be carried over as requirements for the AR instructions. These features are key to making it clear to a user how to progress in assembly. The requirements gained from assessment of the paper instructions include:
+
+\begin{itemize}
+    \item Making it clear where a part goes
+    \item Showing the direction a part should be added in
+    \item Showing the orientation a part should be added in
+    \item Declaring when a part should be screwed in
+    \item Giving a position to place the work in progress assembly when adding a new part
+    \item Showing a close up view of smaller parts
+    \item Always having access to a view of the finished product
+\end{itemize}
+
+\subsection{Requirements of Augmented Reality}
+
+\subsection{Hardware Limitations}
+
+
+
+\section{Non-Functional Requirements}
+
 
 %==================================================================================================================================
 \chapter{Design}
+
+
+
 How is this problem to be approached, without reference to specific implementation details? 
 \section{Guidance}
 Design should cover the abstract design in such a way that someone else might be able to do what you did, but with a different language or library or tool.
 
 %==================================================================================================================================
 \chapter{Implementation}
+
+\section{Choosing Platforms}
+
+\section{Unity}
+
+\section{Tracking Method}
+
+\subsection{Unity Image Tacking}
+
+\subsection{Azure Object Anchors}
+
+\subsection{VisionLib}
+
+\section{Licensing Troubles}
+
+\section{Setting Up Project}
+% ^ These could be combined v
+\section{Scene Set Up}
+
+\section{Custom Framework for Instructions}
+
+\section{Input}
+
+\section{Custom 3D Models}
+
+\section{Setup of Bedside Table Prefab}
+
 What did you do to implement this idea, and what technical achievements did you make?
 \section{Guidance}
 You can't talk about everything. Cover the high level first, then cover important, relevant or impressive details.
@@ -375,6 +442,82 @@ Avoid putting large blocks of code in the report (more than a page in one block,
 \end{lstlisting}
 
 %==================================================================================================================================
+
+\chapter{Experimental Design}
+
+\section{Experiment Options}
+There are a range of options when it comes to evaluating the effectiveness of a system. Potential users in this scenario would be assembling a piece of flatpack furniture with only a set of instructions and potentially another person to work with. Each user will have different skill levels when it comes to using tools and putting together pieces which means that assessing different types of instructions can be difficult. There are different aspects of the building process which can be measured such as assembly time, error rate or user approval rating. Measuring qualitative data was an option that was considered as if done well, would provide good data and allow for a strong analysis. However, it was deemed unsuitable for this case. Qualitative data such as time taken to assemble furniture would differ greatly between participants based on skill level and ability. This could cause mixed results across different types of instructions and would be useless data. Another option was to make each participant build a piece of furniture once with the paper instructions and once with the AR instructions. This was rejected as participants would be able to assemble the furniture quicker after they already had done it once. In the end it was decided that a qualitative think aloud experiment would result in the best findings. The data consists of strong user feedback and can be categorised to allow for effective evaluation. More specifically, the idea was for participants to speak aloud any time they felt confused or unsure what to do during the assembly process. These complaints could be categorised and and results could be compared across instruction types.
+\section{Pilot Test}
+While the idea for the experiment had been considered, it still had to be refined before it could be carried out. In order to see what worked best, a pilot test was conducted which followed the basic concept of a think aloud experiment with comments on particular moments of confusion or being unsure. The test was conducted using the animated instructions on the Hololens.
+
+The pilot test highlighted issues with the format of the experiment. During the pilot test comments were noted but not categorised immediately. This resulted in too much time being spent on writing comments and difficulty in giving full attention to the ongoing assembly process. Another issue was that participants would sometimes hesitate to say if they were unsure, resulting in inaccurate results. The need for a good introductory script and tutorial on using the technology became clear as fundamental parts of the process were not being followed correctly, for example, the participant often forgot that they could use the 'view' command to get a closer look of the current part they were on.
+\section{Final Experimental Design}
+Hypothesis: Using Augmented Reality instructions will lead to less errors and difficulties in assembling flatpack furniture over paper instructions.
+
+Based on the results of the pilot test, the experiment was adjusted. Participants were tasked with assembling a full piece of flatpack furniture with a provided set of instructions. 
+
+For this study the chosen piece of flatpack furniture was the IKEA HEMNES bedside table. The chair was assembled as shown in the paper instructions minus a few steps. The rails for the drawer were screwed on at the start, the feet were never added and the drawer was never screwed to the rails. These adjustments were made to avoid difficulty in disassembly between participants.
+
+Participants were asked to think aloud as they were assembling the piece. Specifically they were asked to state if they found themselves in any moment of being unsure of confused. In the case that a participant was clearly and obviously unsure about what they were doing but never stated it, or they made a mistake without realising, this was also noted. Before the experiment, a group of categories were created that these issues could be sorted into:
+
+\begin{itemize}
+    \item \textbf{Part Identification}
+    
+    When the participant cannot find a part, initially selects a wrong part or is unsure which part to use. 
+    
+    \item \textbf{Location}
+    
+    When the participant is unsure about where to place the current part or initially places in the wrong spot.
+    
+    \item \textbf{Orientation}
+    
+    When a participant is unsure about what rotation a part should be placed in or initially places with the wrong rotation.
+    
+    \item \textbf{Progression}
+    
+    When a participant is unsure about what their next step requires them to do or if they move on to the wrong next step.
+    
+    \item \textbf{Error}
+    
+    When a participant moves on to the next step while the previous step is still incorrect.
+    
+    \item \textbf{Other}
+    
+    Any other issue that does not fit a category or any other comment the participant makes.
+    
+\end{itemize}
+
+At the start of the experiment the introduction script is read to the participant along with a brief introduction of the Hololens and how to use the application if they will be using it. The application is a prototype and does not put a strong focus on the user interface or a tutorial. This means that a user introduction is required to not allow difficulty in understanding the application or hardware to get in the way of evaluating the effectiveness of the instructions method.
+
+A short survey was conducted after the introduction of the experiment to get an initial understanding of the experience and variety of the participant group.
+
+A group of 9 participants were selected for the experiment. The group included both males and females and covered an age range of 20-25. The members of the group had varied experience in using AR technologies. Many had used simple AR applications on smartphones while others had used VR headsets and some were completely inexperienced. There was also a variance in their confidence with building flatpack furniture. % fill with rest of survey results
+
+Participants were equally split into three different groups, one control group and two experimental groups. The control group were asked to assemble the bedside table using only the paper instructions. The first experimental group used the Hololens instructions without any object tracking. This entailed assembling the bedside table exclusively using the part animations to show where parts should be added. The last experimental group used the Hololens instructions with a mix of animated parts and tracked parts. This meant that while some parts of the assembly were animated, others were tracked to help confirm the positioning of a part.
+
+During the experiment, any time the participant reached a moment of being unsure or confused, it was noted into this table \ref{tab:blankissues} with a brief description at the correct step. A category was selected in the moments but experiments were recorded and viewed later to confirm that issues were noted correctly.
+    \begin{table}[!ht]
+         \caption{
+         Blank template for recording issues from participants
+         }\label{tab:blankissues}
+        \centering
+        \rowcolors{2}{}{gray!3}
+        \begin{tabular}{@{}l|llllll@{}}
+            \textbf{Part} & \textbf{Part Identification} & \textbf{Location} & \textbf{Orientation} & \textbf{Progression}  & \textbf{Error} & \textbf{Other} \\ \hline
+            \textbf{1}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+            \textbf{2}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+            \textbf{3}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+            \textbf{4}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+            \textbf{5}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+            \textbf{.}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+            \textbf{.}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+            \textbf{.}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \end{tabular}
+    \end{table}
+
+
+
+%==================================================================================================================================
 \chapter{Evaluation} 
 How good is your solution? How well did you solve the general problem, and what evidence do you have to support that?
 
@@ -467,6 +610,73 @@ Typical inclusions in the appendices are:
 
 \textbf{Don't include your source code in the appendices}. It will be
 submitted separately.
+
+\begin{table}[!ht]
+    \centering
+    \rowcolors{2}{}{gray!3}
+    \begin{tabular}{@{}l|llllll@{}}
+        \textbf{Part} & \textbf{Part Identification} & \textbf{Location} & \textbf{Orientation} & \textbf{Progression}  & \textbf{Error} & \textbf{Other} \\ \hline
+        \textbf{1}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{2}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{3}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{4}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{5}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{6}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{7}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{8}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{9}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{10} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{11} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{12} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{13} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{14} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{15} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{16} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{17} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{18} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{19} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{20} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{21} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{22} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{23} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{24} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{25} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{26} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{27} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{28} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{29} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{30} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{31} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{32} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{33} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{34} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{35} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{36} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{37} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{38} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{39} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{40} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{41} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{42} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{43} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{44} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{45} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{46} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{47} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{48} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{49} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{50} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{51} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{52} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{53} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{54} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{55} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{56} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{57} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{58} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+        \textbf{59} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
+    \end{tabular}
+\end{table}
 
 \end{appendices}
 

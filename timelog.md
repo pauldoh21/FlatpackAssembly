@@ -375,4 +375,11 @@
 
 ## Week 22
 
+### 25 Feb 2024
+
 * *4 hours* Identified and fixed issue with tracking not working
+
+### 26 Feb 2024
+
+* *3 hours* Finished experiment design section
+* *2 hours* Completed large amount of analysis/requirements section
