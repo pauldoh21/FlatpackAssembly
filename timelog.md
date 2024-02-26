@@ -372,3 +372,7 @@
 
 * *0.5 hours* Planned time slots for rest of experiments
 * *4 hours* Worked on finding source of tracking issue
+
+## Week 22
+
+* *4 hours* Identified and fixed issue with tracking not working
