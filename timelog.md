@@ -383,3 +383,9 @@
 
 * *3 hours* Finished experiment design section
 * *2 hours* Completed large amount of analysis/requirements section
+
+### 27 Feb 2024
+
+* *2 hours* Wrote large chunk of design chapter
+* *0.5 hours* Fixed camera height issue
+* *3 hours* Added arrow to point to current part when not in view

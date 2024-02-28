@@ -200,6 +200,7 @@ There are a few important techniques used in these instructions that can be carr
     \item Making it clear where a part goes
     \item Showing the direction a part should be added in
     \item Showing the orientation a part should be added in
+    \item Communicating if a component needs to be assembled separately then added to the full assembly after
     \item Declaring when a part should be screwed in
     \item Giving a position to place the work in progress assembly when adding a new part
     \item Showing a close up view of smaller parts
@@ -218,7 +219,39 @@ There are a few important techniques used in these instructions that can be carr
 %==================================================================================================================================
 \chapter{Design}
 
+\section{Object Tracking}
 
+The biggest feature of the application is showing the user how to add a part to the assembly. It was important that this was designed in a way that took advantage of the AR environment. The first chosen method to demonstrate a step was to track the parts in real life using the camera and a 3D model tracker. When an object is detected in the view, an overlay of the 3D model in red is displayed in the same position. The same model is also displayed in the position it should be placed in a blue colour. When the real part is tracked to be in the same position and rotation as is required then it is turned greed to show that it is correct.
+
+\section{Animation Visualisation}
+
+\section{Instructions System Architecture}
+
+One of the most important goals of the project was translating a set of paper instructions to a digital, 3D format. A system was required that broke a piece of furniture up into each of its parts which would then be added in a particular step. The system would contain all of the required information about each part and step which could then be taken and visualised in the engine used.
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{dissertation//images/classDiagram.jpg}
+    \caption{Class diagram showing the set up of the instructions system}
+    \label{fig:classDiagram}
+\end{figure}
+
+% Maybe add parent position and rotation to Part ^^^
+
+The system is designed to step through parts in the order of the instructions. \textit{Furniture} is the base object that will be created in the engine. As a child of \textit{Component} it has a list of parts which can either be a \textit{Part} or \textit{Component}. It is provided with models which are set up in a particular way, as shown in chapter \ref{modelSetup}, which allows it to convert each model to a \textit{Part} or \textit{Component} and put them in the correct order into the parts list. If a model is standalone with no children, meaning it should just be added to the assembly by itself, it is a \textit{Part}. If the model has children, meaning it should be assembled separately then added to the full assembly, it is a \textit{Component}. For each item in this list there is also a \textit{Step} or list of steps. Each \textit{Component} has a list of steps and a current step. A \textit{Step} has a \textit{Part}, \textit{TrackingPart}, \textit{AnimationPart}, and a \textit{Step} which points to the next \textit{Step} in the order of the instructions. The AddStep function adds a \textit{Step} to the list based on a given \textit{Part}/\textit{Component} and automatically determines which type it is. For a \textit{Part} it will simply add a new \textit{Step} and set it as the nextStep of the previous one. For a \textit{Component} it will set the nextStep of the previous \textit{Step} to the first \textit{Step} of the \textit{Component} and the final item of its steps will point to a new \textit{Step} created for the \textit{Component} itself. A \textit{Part} has a model which would exist in the world space. It can either be tracked or animated and it can be screwed in. It has a state which can be either disabled, waiting, correct or finished. These represent the progress through a step of the instructions. If a \textit{Part} is tracked then its corresponding \textit{Step} will use a \textit{TrackingPart}, otherwise it will use an \textit{AnimationPart}. A \textit{TrackingPart} will automatically be connected to the object tracking system when created and will track its real life counterpart. An \textit{AnimationPart} automatically starts animating the motion of adding the part when created. The ActivateStep and EndStep methods of \textit{Step} will choose the right type of part to create and destroy when the step is active.
+
+\section{Model Setup} \label{modelSetup}
+
+In order to visualise the system there had to be 3D models for each part of the assembly. Each model had to be accurate and positioned correctly relative to the other models. In order to accomplish this a template was designed which would automatically integrate with the instructions system. 
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=0.2\linewidth]{dissertation//images/modelFileStructure .jpg}
+    \caption{Example model structure to be provided to the instructions system}
+    \label{fig:modelStruct}
+\end{figure}
+
+Each part is an individual 3D model which can be grouped together to make a component or left alone. All components and parts are then grouped to the full furniture model and positioned correctly. Once this model is correct, a list of each part and component is created which is ordered in the order of when parts are added. The list also contains a position and rotation which the parent of a part should moved to while the part is being added.
 
 How is this problem to be approached, without reference to specific implementation details? 
 \section{Guidance}
@@ -250,7 +283,7 @@ Design should cover the abstract design in such a way that someone else might be
 \section{Input}
 
 \section{Custom 3D Models}
-
+% Positions set relative to parent
 \section{Setup of Bedside Table Prefab}
 
 What did you do to implement this idea, and what technical achievements did you make?
