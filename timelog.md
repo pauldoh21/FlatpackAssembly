@@ -389,3 +389,8 @@
 * *2 hours* Wrote large chunk of design chapter
 * *0.5 hours* Fixed camera height issue
 * *3 hours* Added arrow to point to current part when not in view
+
+### 28 Feb 2024
+
+* *3 hours* Conducted three tests
+* *1 hour* Tested tracking capabilities
