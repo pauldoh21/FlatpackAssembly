@@ -63,7 +63,7 @@ public class Part
         return colors[(int)GetState()];
     }
 
-    protected virtual string GetMaterial()
+    public virtual string GetMaterial()
     {
         return materials[(int)GetState()];
     }

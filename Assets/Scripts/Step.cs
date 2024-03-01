@@ -144,8 +144,14 @@ public class Step : ScriptableObject
 
     //CHECK COMPLETED: check for similar position and rotation
     public void CheckOverlap() {
-        float distanceThreshold = 0.01f;
-        float distance = Vector3.Distance(part.GetGameObject().transform.position, GetSecondPart().GetGameObject().transform.position);
+        float distanceThreshold = 0.07f;
+        float distance;
+        if (useTracking) {
+            Vector3 pos = GetSecondPart().GetGameObject().transform.position;
+            distance = Vector3.Distance(part.GetGameObject().transform.position, new Vector3(pos.x, pos.y + 1.59f, pos.z));
+        } else {
+            distance = Vector3.Distance(part.GetGameObject().transform.position, GetSecondPart().GetGameObject().transform.position);
+        }
 
         float angleThreshold = 5f;
         float angle = Quaternion.Angle(part.GetGameObject().transform.rotation, GetSecondPart().GetGameObject().transform.rotation);
@@ -161,7 +167,7 @@ public class Step : ScriptableObject
         }
     }
 
-    Part GetSecondPart() {
+    public Part GetSecondPart() {
         if (useTracking) {
             return trackingPart;
         } else {

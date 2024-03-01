@@ -394,3 +394,11 @@
 
 * *3 hours* Conducted three tests
 * *1 hour* Tested tracking capabilities
+
+### 29 Feb 2024
+
+* *2 hours* Made last minute adjustments to tracking set up and tested
+* *1 hour* Attended supervisor meeting
+* *3 hours* Conducted three tests
+* *2 hours* Added pilot test subsection to implementation section
+* *2 hours* Wrote Unity decision explanation in implementation

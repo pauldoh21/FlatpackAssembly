@@ -50,7 +50,7 @@ public class AnimationPart : Part {
         return animationColors[(int)GetState()];
     }
 
-    protected override string GetMaterial()
+    public override string GetMaterial()
     {
         return animationMaterials[(int)GetState()];
     }

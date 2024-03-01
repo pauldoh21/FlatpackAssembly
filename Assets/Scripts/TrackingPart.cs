@@ -6,6 +6,8 @@ public class TrackingPart : Part {
 
     private TrackingMesh model;
 
+    private GameObject duplicateModel;
+
     private static List<Color> trackingColors = new List<Color>
     {
         new Color(0, 0, 0, 0),                      //blank
@@ -44,6 +46,10 @@ public class TrackingPart : Part {
             gameObject.SetActive(true);
         }
 
+        // Creates a duplicate model that follows tracking part to deal with height issue
+        duplicateModel = GameObject.Instantiate(GetGameObject());
+        GameObject.Destroy(duplicateModel.GetComponent<TrackingMesh>());
+
         // Find way to automatically set up tracking mesh
         GameObject trackingAnchor = GameObject.Find("VLTrackingAnchor");
         if (trackingAnchor != null) {
@@ -65,14 +71,19 @@ public class TrackingPart : Part {
         return trackingColors[(int)GetState()];
     }
 
-    protected override string GetMaterial()
+    public override string GetMaterial()
     {
         return trackingMaterials[(int)GetState()];
+    }
+
+    public GameObject GetDuplicateModel() {
+        return duplicateModel;
     }
 
     public void DestroyTracking() {
         //GameObject.Destroy(GetGameObject());
         GetGameObject().SetActive(false);
+        GameObject.Destroy(duplicateModel);
     }
 
 }

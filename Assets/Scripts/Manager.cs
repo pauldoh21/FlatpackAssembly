@@ -90,9 +90,13 @@ public class Manager : MonoBehaviour
 
         if (instructions != null) {
             if (instructions.furniture.GetCurrentStep() != null) {
-                if ((!instructions.furniture.GetCurrentStep().UsesTracking()) && (instructions.furniture.GetCurrentStep().GetPart().GetGameObject() != null)) {
-                    GameObject targetObject = instructions.furniture.GetCurrentStep().GetAnimationPart().GetGameObject();
-                    Vector3 centre = arrow.transform.parent.position;
+                if (instructions.furniture.GetCurrentStep().GetPart().GetGameObject() != null) {
+                    GameObject targetObject;
+                    if (instructions.furniture.GetCurrentStep().UsesTracking()) {
+                        targetObject = instructions.furniture.GetCurrentStep().GetPart().GetGameObject();
+                    } else {
+                        targetObject = instructions.furniture.GetCurrentStep().GetAnimationPart().GetGameObject();
+                    }
 
                     Vector3 v3Pos = Camera.main.WorldToViewportPoint(targetObject.transform.position);
                 
@@ -102,14 +106,6 @@ public class Manager : MonoBehaviour
                         arrowImg.color = new Color(1,1,1,1);
                     }
 
-                    // Calculate the direction from the arrow to the target
-                    Vector3 direction = targetObject.transform.position - centre;
-
-                    v3Pos.x -= 0.5f;  // Translate to use center of viewport
-                    v3Pos.y -= 0.5f; 
-                    v3Pos.z = 0;      // I think I can do this rather than do a 
-                                    //   a full projection onto the plane
-
                     var targetPosLocal = Camera.main.transform.InverseTransformPoint(targetObject.transform.position);
 
                     // Calculate the angle in degrees
@@ -118,6 +114,8 @@ public class Manager : MonoBehaviour
                     // Rotate the arrow to point towards the target
                     arrow.transform.localEulerAngles = new Vector3(0,0, angle);
 
+                } else {
+                    arrowImg.color = new Color(1,1,1,0);
                 }
             } else {
                 arrowImg.color = new Color(1,1,1,0);

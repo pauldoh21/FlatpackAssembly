@@ -286,6 +286,14 @@ Design should cover the abstract design in such a way that someone else might be
 % Positions set relative to parent
 \section{Setup of Bedside Table Prefab}
 
+\section{Pilot Test}
+
+After implementation was initially complete a pilot test was conducted which helped to highlight any issues with the system. One issue which became apparent during the pilot test was that the participant often was not sure if they had to screw in particular parts. Another issue was that if the location of a step was outside of the field of view of the participant, they would sometimes struggle to find the part to add. Lastly, when using the 'view' command, some parts did not appear large enough to be able to tell what they were.
+
+Before conducting final tests, these issues were solved. To help inform users when to screw a part in, a text indicator was added that would send a message to the display when a part was to be screwed in. Since there is no test when a part is not to be screwed, the text appearing on particular steps should make it clear that the step is completed in a different manner. If more time was available before final testing, a better solution to this issue would be to animate arrows pointing in the rotation to screw a part on the spot where it should be added.
+
+In order to solve the issue with parts being outside of the user's point of view, a small arrow was added to the viewport that points in the direction of where to part is to be added. When the part is not in the field of view the arrow is visible and pointing in its direction and when it enters the centre of the field of view, the arrow disappears.
+
 What did you do to implement this idea, and what technical achievements did you make?
 \section{Guidance}
 You can't talk about everything. Cover the high level first, then cover important, relevant or impressive details.
@@ -298,14 +306,14 @@ These points apply to the whole dissertation, not just this chapter.
 
 
 
-\subsection{Figures}
+\subsection{Figures}[hbt!]
 \emph{Always} refer to figures included, like Figure \ref{fig:relu}, in the body of the text. Include full, explanatory captions and make sure the figures look good on the page.
 You may include multiple figures in one float, as in Figure \ref{fig:synthetic}, using \texttt{subcaption}, which is enabled in the template.
 
 
 
 % Figures are important. Use them well.
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
     \includegraphics[width=0.5\linewidth]{images/relu.pdf}    
 
@@ -483,9 +491,8 @@ There are a range of options when it comes to evaluating the effectiveness of a 
 \section{Pilot Test}
 While the idea for the experiment had been considered, it still had to be refined before it could be carried out. In order to see what worked best, a pilot test was conducted which followed the basic concept of a think aloud experiment with comments on particular moments of confusion or being unsure. The test was conducted using the animated instructions on the Hololens.
 
-The pilot test highlighted issues with the format of the experiment. During the pilot test comments were noted but not categorised immediately. This resulted in too much time being spent on writing comments and difficulty in giving full attention to the ongoing assembly process. Another issue was that participants would sometimes hesitate to say if they were unsure, resulting in inaccurate results. The need for a good introductory script and tutorial on using the technology became clear as fundamental parts of the process were not being followed correctly, for example, the participant often forgot that they could use the 'view' command to get a closer look of the current part they were on.
+The pilot test highlighted issues with the format of the experiment. During the pilot test comments were noted but not categorised immediately. This resulted in too much time being spent on writing comments and difficulty in giving full attention to the ongoing assembly process. Another issue was that participants would sometimes hesitate to say if they were unsure, resulting in inaccurate results. Finally, the need for a good introductory script and tutorial on using the technology became clear as fundamental parts of the process were not being followed correctly, for example, the participant often forgot that they could use the 'view' command to get a closer look of the current part they were on.
 \section{Final Experimental Design}
-Hypothesis: Using Augmented Reality instructions will lead to less errors and difficulties in assembling flatpack furniture over paper instructions.
 
 Based on the results of the pilot test, the experiment was adjusted. Participants were tasked with assembling a full piece of flatpack furniture with a provided set of instructions. 
 
@@ -509,6 +516,10 @@ Participants were asked to think aloud as they were assembling the piece. Specif
     \item \textbf{Progression}
     
     When a participant is unsure about what their next step requires them to do or if they move on to the wrong next step.
+
+    \item \textbf{Tracking}
+
+    This is only used during an experiment that uses object tracking. Whether or not the participant actually used the tracking and any other issues related to it.
     
     \item \textbf{Error}
     
@@ -552,6 +563,9 @@ During the experiment, any time the participant reached a moment of being unsure
 
 %==================================================================================================================================
 \chapter{Evaluation} 
+
+Hypothesis: Using Augmented Reality instructions will lead to less errors and difficulties in assembling flatpack furniture over paper instructions.
+
 How good is your solution? How well did you solve the general problem, and what evidence do you have to support that?
 
 \section{Guidance}

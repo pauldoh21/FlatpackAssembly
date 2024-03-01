@@ -116,17 +116,20 @@ public class Instructions : MonoBehaviour
         }
 
         if (furniture.GetCurrentStep().UsesTracking()) {
+            // To fix issue with tracking parts appearing too low a visual duplicate has been created
+            TrackingPart trackingPart = furniture.GetCurrentStep().GetTrackingPart();
+            Vector3 pos = trackingPart.GetGameObject().transform.position;
 
-            /*if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT) {
-                if (!checking)
-                StartCoroutine(CheckNextStep());
-            }
-            if (furniture.GetCurrentStep().GetPart().GetState() == States.CORRECT)
-            {
-                inputObject.SetActive(true);
-            } else {
-                inputObject.SetActive(false);
-            }*/
+            trackingPart.GetDuplicateModel().transform.position = new Vector3(pos.x, pos.y + 1.59f, pos.z);
+            trackingPart.GetDuplicateModel().transform.rotation = trackingPart.GetGameObject().transform.rotation;
+
+            Material material = Resources.Load<Material>(trackingPart.GetMaterial());
+            // Just for trying to test tracking on deodorant
+            Material[] newMaterials = trackingPart.GetGameObject().GetComponent<MeshRenderer>().materials;
+
+            newMaterials[0] = material;
+            trackingPart.GetDuplicateModel().GetComponent<MeshRenderer>().materials = newMaterials;
+
         } else {
             
         }

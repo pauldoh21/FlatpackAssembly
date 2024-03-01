@@ -3922,7 +3922,7 @@ MonoBehaviour:
   asidePosition: {x: 0, y: 0, z: 0}
   components:
   - gameObject: {fileID: 7111442608384526234}
-    useTracking: 1
+    useTracking: 0
     screws: 0
     parentPosition: {x: 0, y: 0.18, z: 0}
     parentRotation: {x: 180, y: 90, z: 90}
@@ -3962,7 +3962,7 @@ MonoBehaviour:
     whenToAdd: 0
     built: 0
   - gameObject: {fileID: 199733530779518127}
-    useTracking: 1
+    useTracking: 0
     screws: 0
     parentPosition: {x: 0, y: 0.18, z: 0}
     parentRotation: {x: 180, y: 90, z: 90}
@@ -4002,7 +4002,7 @@ MonoBehaviour:
     whenToAdd: 0
     built: 0
   - gameObject: {fileID: 2243781592411659196}
-    useTracking: 1
+    useTracking: 0
     screws: 0
     parentPosition: {x: 0, y: 0.635, z: 0}
     parentRotation: {x: 0, y: 0, z: 0}
@@ -4042,7 +4042,7 @@ MonoBehaviour:
     whenToAdd: 0
     built: 0
   - gameObject: {fileID: 3225767168242745599}
-    useTracking: 1
+    useTracking: 0
     screws: 0
     parentPosition: {x: 0, y: 0.635, z: 0}
     parentRotation: {x: 0, y: 0, z: 0}
@@ -4091,13 +4091,13 @@ MonoBehaviour:
       parentRotation: {x: -180, y: 0, z: 0}
       showOutline: 0
     - gameObject: {fileID: 5997629090396152494}
-      useTracking: 1
+      useTracking: 0
       screws: 1
       parentPosition: {x: 0, y: 0.125, z: -0.593}
       parentRotation: {x: -180, y: 0, z: 0}
       showOutline: 0
     - gameObject: {fileID: 7317931913954233384}
-      useTracking: 1
+      useTracking: 0
       screws: 1
       parentPosition: {x: 0, y: 0.125, z: -0.593}
       parentRotation: {x: -180, y: 0, z: 0}
@@ -4185,13 +4185,13 @@ MonoBehaviour:
     parentRotation: {x: 180, y: 90, z: 90}
     showOutline: 0
   - gameObject: {fileID: 2732129877227109811}
-    useTracking: 1
+    useTracking: 0
     screws: 1
     parentPosition: {x: 0, y: 0.18, z: 0}
     parentRotation: {x: 180, y: 90, z: 90}
     showOutline: 0
   - gameObject: {fileID: 6871124306750658195}
-    useTracking: 1
+    useTracking: 0
     screws: 1
     parentPosition: {x: 0, y: 0.18, z: 0}
     parentRotation: {x: 180, y: 90, z: 90}
@@ -4203,13 +4203,13 @@ MonoBehaviour:
     parentRotation: {x: 180, y: 90, z: 90}
     showOutline: 0
   - gameObject: {fileID: 159549475890334732}
-    useTracking: 1
+    useTracking: 0
     screws: 1
     parentPosition: {x: 0, y: 0.18, z: 0}
     parentRotation: {x: 180, y: 90, z: 90}
     showOutline: 0
   - gameObject: {fileID: 6735127512233046810}
-    useTracking: 1
+    useTracking: 0
     screws: 1
     parentPosition: {x: 0, y: 0.18, z: 0}
     parentRotation: {x: 180, y: 90, z: 90}
@@ -4233,25 +4233,25 @@ MonoBehaviour:
     parentRotation: {x: 180, y: 90, z: 90}
     showOutline: 0
   - gameObject: {fileID: 7440280542358251475}
-    useTracking: 1
+    useTracking: 0
     screws: 1
     parentPosition: {x: 0, y: 0.18, z: 0}
     parentRotation: {x: 180, y: 90, z: 90}
     showOutline: 0
   - gameObject: {fileID: 3889417941432238011}
-    useTracking: 1
+    useTracking: 0
     screws: 1
     parentPosition: {x: 0, y: 0.18, z: 0}
     parentRotation: {x: 180, y: 90, z: 90}
     showOutline: 0
   - gameObject: {fileID: 3889562032709069296}
-    useTracking: 1
+    useTracking: 0
     screws: 1
     parentPosition: {x: 0, y: 0.18, z: 0}
     parentRotation: {x: 180, y: 90, z: 90}
     showOutline: 0
   - gameObject: {fileID: 624977769798361805}
-    useTracking: 1
+    useTracking: 0
     screws: 1
     parentPosition: {x: 0, y: 0.18, z: 0}
     parentRotation: {x: 180, y: 90, z: 90}
@@ -4269,25 +4269,25 @@ MonoBehaviour:
     parentRotation: {x: 0, y: 0, z: 0}
     showOutline: 0
   - gameObject: {fileID: 4648372211517136313}
-    useTracking: 1
+    useTracking: 0
     screws: 1
     parentPosition: {x: 0, y: 0.635, z: 0}
     parentRotation: {x: 0, y: 0, z: 0}
     showOutline: 0
   - gameObject: {fileID: 3472857828954022395}
-    useTracking: 1
+    useTracking: 0
     screws: 1
     parentPosition: {x: 0, y: 0.635, z: 0}
     parentRotation: {x: 0, y: 0, z: 0}
     showOutline: 0
   - gameObject: {fileID: 3962317668803974226}
-    useTracking: 1
+    useTracking: 0
     screws: 1
     parentPosition: {x: 0, y: 0.635, z: 0}
     parentRotation: {x: 0, y: 0, z: 0}
     showOutline: 0
   - gameObject: {fileID: 872700779458539153}
-    useTracking: 1
+    useTracking: 0
     screws: 1
     parentPosition: {x: 0, y: 0.635, z: 0}
     parentRotation: {x: 0, y: 0, z: 0}
