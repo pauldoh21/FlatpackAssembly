@@ -402,3 +402,8 @@
 * *3 hours* Conducted three tests
 * *2 hours* Added pilot test subsection to implementation section
 * *2 hours* Wrote Unity decision explanation in implementation
+
+### 01 Mar 2024
+
+* *1 hour* Conducted test
+* *4 hours* Wrote tracking section of implementation
