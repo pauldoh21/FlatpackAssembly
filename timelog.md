@@ -407,3 +407,7 @@
 
 * *1 hour* Conducted test
 * *4 hours* Wrote tracking section of implementation
+
+### 04 Mar 2024
+
+* *3 hours* Wrote input and Custom 3D Model section of Implementation

@@ -6,6 +6,7 @@
 %
 % put any additional packages here
 %
+\usepackage{multirow}
 
 \begin{document}
 
@@ -221,7 +222,7 @@ There are a few important techniques used in these instructions that can be carr
 
 \section{Object Tracking}
 
-The biggest feature of the application is showing the user how to add a part to the assembly. It was important that this was designed in a way that took advantage of the AR environment. The first chosen method to demonstrate a step was to track the parts in real life using the camera and a 3D model tracker. When an object is detected in the view, an overlay of the 3D model in red is displayed in the same position. The same model is also displayed in the position it should be placed in a blue colour. When the real part is tracked to be in the same position and rotation as is required then it is turned greed to show that it is correct.
+The biggest feature of the application is showing the user how to add a part to the assembly. It was important that this was designed in a way that took advantage of the AR environment. The first chosen method to demonstrate a step was to track the parts in real life using the camera and a 3D model tracker. When an object is detected in the camera view, an overlay of the 3D model in red is displayed in the same position. The same model is also displayed in the position it should be placed in a blue colour. When the real part is tracked to be in the same position and rotation as is required then it is turned green to show that it is correct.
 
 \section{Animation Visualisation}
 
@@ -260,19 +261,74 @@ Design should cover the abstract design in such a way that someone else might be
 %==================================================================================================================================
 \chapter{Implementation}
 
-\section{Choosing Platforms}
+\section{Choosing Unity as a Development Platform}
 
-\section{Unity}
+Selecting an appropriate development platform was a pivotal step in ensuring a successful project. It was required that the platform was capable of certain features from the start. 3D rendering was a necessary capability. It was imperative that AR development was possible on it without too much difficulty in set up. Features that made building to the Hololens an easy process were also important.
+
+In this case, Unity was the best choice for a development platform. Unity is an extremely versatile platform. At a base level it comes with capabilities to easily set up a project and render in 3D. Unity uses a system which encourages adding packages based on what the project is. It has a range of AR packages, provided by Unity, which can be installed in a click using the package manager window. Any other packages required can be installed from the same window using a link or download file. The project benefits from being able to use the enhancements provided by external packages which can be easily integrated in Unity.
+
+Moreover, Unity was the first choice based on prior experience gained in development of other projects. Having previous experience in Unity development with projects of a similar nature, including AR projects, familiarity of the functionality and features allows for a significantly smaller learning curve than trying to learn a new platform. This allows for a more efficient workflow and more time that can be dedicated to development. Unity uses C# as its development language. This has been used in previous projects which means the project will be written in a familiar language. Choosing Unity results in a stronger final project due to the extra time and higher quality implementation.
+
+The selection of Unity as the development platform was a clear decision informed by prior experience, technical suitability and versatility. These factors allow the project to reach the requirements at a high standard in a suitable amount of time.
 
 \section{Tracking Method}
 
-\subsection{Unity Image Tacking}
+Object tracking was an important part of the project design. Objects, such as parts of the furniture, were to be tracked in the camera view. These parts had to be accurately tracked in real time in order to verify the placement and highlight errors to users. This is a very complex task and requires the right framework for it to be done effectively. A selection of different options for this test were reviewed and tested.
+
+\subsection{Unity Image Tracking}
+
+One of the packages available to install in Unity is AR Foundation. This package comes with many different augmented reality capabilities such as device tracking and image tracking as shown in table \ref{tab:arfFeatures}. 
+
+Image tracking is a particularly useful feature for this project. If unique images are placed on each part in real life and then matched up in Unity, this could be used to track their position. This feature was tested with a very small prototype. Three QR codes were printed off at three different sizes, small to large. A Unity project was created that placed a 3D model on the QR codes and when this was tested on an Android phone, it proved to be very effective at each size of QR code. Unfortunately, if image tracking were to be used, images would have to be placed all over each part of the furniture, which is not a particularly realistic set up for flatpack furniture.
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[hbt!]
+\caption{List of available features across all Unity supported AR platforms. \cite{noauthor_ar_nodate}}
+\label{tab:arfFeatures}
+\centering
+%\tt 
+\rowcolors{2}{}{gray!3}
+\begin{tabular}{|l|c|cc|cc|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Feature}}} & ARCore           & \multicolumn{2}{c|}{ARKit}                            & \multicolumn{2}{c|}{OpenXR}                                  \\ \cline{2-6} 
+\multicolumn{1}{|c|}{}                                  & \textbf{Android} & \multicolumn{1}{c|}{\textbf{iOS}} & \textbf{visionOS} & \multicolumn{1}{c|}{\textbf{Hololens}} & \textbf{Meta Quest} \\ \hline
+Session                                                 & Yes              & \multicolumn{1}{c|}{Yes}          & Yes               & \multicolumn{1}{c|}{Yes}               & Yes                 \\
+Device Tracking                                         & Yes              & \multicolumn{1}{c|}{Yes}          & Yes               & \multicolumn{1}{c|}{Yes}               & Yes                 \\
+Camera                                                  & Yes              & \multicolumn{1}{c|}{Yes}          &                   & \multicolumn{1}{c|}{}                  & Yes                 \\
+Plane Detection                                         & Yes              & \multicolumn{1}{c|}{Yes}          & Yes               & \multicolumn{1}{c|}{Yes}               & Yes                 \\
+Image Tracking                                          & Yes              & \multicolumn{1}{c|}{Yes}          & Yes               & \multicolumn{1}{c|}{}                  &                     \\
+Object Tracking                                         &                  & \multicolumn{1}{c|}{Yes}          &                   & \multicolumn{1}{c|}{}                  &                     \\
+Face Tracking                                           & Yes              & \multicolumn{1}{c|}{Yes}          &                   & \multicolumn{1}{c|}{}                  &                     \\
+Body Tracking                                           &                  & \multicolumn{1}{c|}{Yes}          &                   & \multicolumn{1}{c|}{}                  &                     \\
+Point Clouds                                            & Yes              & \multicolumn{1}{c|}{Yes}          &                   & \multicolumn{1}{c|}{}                  &                     \\
+Raycasts                                                & Yes              & \multicolumn{1}{c|}{Yes}          &                   & \multicolumn{1}{c|}{Yes}               & Yes                 \\
+Anchors                                                 & Yes              & \multicolumn{1}{c|}{Yes}          & Yes               & \multicolumn{1}{c|}{Yes}               & Yes                 \\
+Meshing                                                 &                  & \multicolumn{1}{c|}{Yes}          & Yes               & \multicolumn{1}{c|}{Yes}               &                     \\
+Environment Probes                                      & Yes              & \multicolumn{1}{c|}{Yes}          &                   & \multicolumn{1}{c|}{}                  &                     \\
+Occlusion                                               & Yes              & \multicolumn{1}{c|}{Yes}          &                   & \multicolumn{1}{c|}{}                  &                     \\
+Participants                                            &                  & \multicolumn{1}{c|}{Yes}          &                   & \multicolumn{1}{c|}{}                  &                     \\ \hline
+\end{tabular}
+\end{table}
+
+Furthermore, the image tracking feature is unavailable on Hololens. If this feature were to become available it would certainly be a good option for this project.
 
 \subsection{Azure Object Anchors}
 
+Object Anchors is a Microsoft Azure service for tracking 3D models in real space. Azure Object Anchors is an SDK specifically designed for use on the Hololens. It works by uploading a 3D model to the Azure servers which then return a converted Azure Object Anchors model. This model is stored on the Hololens and is used for tracking. 
+
+There are many drawbacks to using Object Anchors which include that using the service costs money to use. There are a set amount of student credits available but the pricing of use was unclear. Another issue is that Object Anchors does not support tracking moving objects which would hinder a users ability to get a live idea on if they have a part in the correct location. When tested using a custom 3D model, the tracking proved to be very difficult to use.
+
 \subsection{VisionLib}
 
+VisionLib is a library developed for augmented reality model tracking created by Visometry. VisionLib can used across multiple platforms including Unity and Unreal Engine. When used in Unity, if the scene is set up correctly, all VisionLib needs to start tracking a model is a game object with a mesh. This means that there is no restrictions on model formats, as long as they work in Unity, and there is no conversion process. It uses init poses to detect models. This means that models are displayed in a certain pose and when this pose is matched by the real counterpart, it begins tracking it. This is very useful for the case of this project as it allows parts to be clearly displayed to the user before it can be tracked to the correct location. % more probably
+
+VisionLib requires a license to use. A trial license can be acquired that lasts 30 days but after this, Visometry must be contacted to seek a price for a full license.
+
 \section{Licensing Troubles}
+
+Visometry was contacted to request a price to use VisionLib for this project. However, they offered a free 6-month education license for this occasion. They required certain details to set it up and the license had to be sent back. Unfortunately, when the license was sent by email, the email was blocked automatically, which was not immediately clear. On attempt to get access to the license using another method, it took 6 weeks to acquire. This caused significant issues for development. During this time, the object tracking method was switched to Azure Object Anchors, however it did not suit the project very well. Once the license was gained, development could go back underway but the consequences of this delay were that there was much less time to gain a full understanding of how to use VisionLib to its full effectiveness.
 
 \section{Setting Up Project}
 % ^ These could be combined v
@@ -282,8 +338,52 @@ Design should cover the abstract design in such a way that someone else might be
 
 \section{Input}
 
+One of the features that comes with the VisionLib Unity package is Bluetooth keyboard and voice command input for the Hololens. It works as a component which can be added to game objects. New voice commands can be typed into the Unity inspector which can then be tied to a function of a script in a specified game object. These voice commands were harnessed as the primary input for using the program. Five new voice commands were created as shown in table \ref{tab:voiceComs}. These commands were also set up for keyboard use if required.
+
+\begin{table}[hbt!]
+\caption{The custom created voice commands for the project, the script and function they call and a description of their effect. It should be noted that these are separate from the default voice commands created in the VisionLib template set up.}
+\label{tab:voiceComs}
+\centering
+\rowcolors{2}{}{gray!3}
+\begin{tabular}{l|l|l}
+Voice Command   & Script.Function           & Effect                                                                                                                           \\ 
+\hline
+"Use Tracking"  & Manager.SetUseTracking    & \begin{tabular}[c]{@{}l@{}}Initialises program to use the\\object tracking variation\end{tabular}                                \\
+"Use Animation" & Manager.SetUseAnimation   & \begin{tabular}[c]{@{}l@{}}Initialises program to use the\\object animation variation\end{tabular}                               \\
+"Start"         & Manager.StartInstructions & \begin{tabular}[c]{@{}l@{}}Starts the instructions using the\\specified mode\end{tabular}                                        \\
+"Next Step"     & Manager.NextStep          & \begin{tabular}[c]{@{}l@{}}Moves the instructions on the the\\next step/part\end{tabular}                                        \\
+"View"          & Manager.ViewPart          & \begin{tabular}[c]{@{}l@{}}For animated parts only, toggles the \\mode to get a~close up view of the\\current part\end{tabular} 
+\end{tabular}
+\end{table}
+
 \section{Custom 3D Models}
 % Positions set relative to parent
+In order for VisionLib to be able to track correctly, accurate 3D models of every part of a piece of furniture had to be used. This was also important for communicating the correct part to the user. Before a final piece of furniture was selected for testing, a model which contained sub-models of its parts was used. However, when the final furniture was chosen and acquired, an entirely new, custom 3D model had to be set up. 
+
+The free 3D modelling platform Blender was used to create the model. Blender is a particularly useful tool when working on Unity projects as .blend files can be directly imported into Unity. Measurements were taken from the physical furniture to model the parts and the instructions were used as reference for assemblinag them. It was important that measurements and positions were as accurate to reality as possible. The positions of parts in the full assembly were set relative to their parent objects. This means that components had a position in the furniture and the parts of the component had their position set relative to the position of the component. For example, all of the parts of the drawer were grouped together and set as children of an empty, which represented the position of the whole drawer.
+
+\begin{figure}[hbt!]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{dissertation/images/assembledModel.jpg}
+        \caption{The fully assembled bedside table.}
+        \label{fig:syn1}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{dissertation/images/explodedModel.jpg}
+        \caption{An exploded view of the bedside table.}
+        \label{fig:syn2}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)    
+    \caption{The fully assembled model of the IKEA HEMNES bedside table, including custom 3D models for each part, a view showing parts all in accurate locations and a view showing each individual part.}
+    \label{fig:explode}
+\end{figure}
+
+% exploded view of 3D model
+
 \section{Setup of Bedside Table Prefab}
 
 \section{Pilot Test}
@@ -292,7 +392,30 @@ After implementation was initially complete a pilot test was conducted which hel
 
 Before conducting final tests, these issues were solved. To help inform users when to screw a part in, a text indicator was added that would send a message to the display when a part was to be screwed in. Since there is no test when a part is not to be screwed, the text appearing on particular steps should make it clear that the step is completed in a different manner. If more time was available before final testing, a better solution to this issue would be to animate arrows pointing in the rotation to screw a part on the spot where it should be added.
 
-In order to solve the issue with parts being outside of the user's point of view, a small arrow was added to the viewport that points in the direction of where to part is to be added. When the part is not in the field of view the arrow is visible and pointing in its direction and when it enters the centre of the field of view, the arrow disappears.
+In order to solve the issue with parts being outside of the user's point of view, a small arrow was added to the viewport that points in the direction of where to part is to be added. When the part is not in the field of view the arrow is visible and pointing in its direction and when it enters the centre of the field of view, the arrow disappears. To implement this, first an image of ann arrow was created. It is a tall transparent png image with a small arrow at the top. This means that the image can be rotated around its centre point and appear as if the arrow is rotating around in a circle at the edge of the screen. The direction for the arrow to point on the screen was calculated using the code in listing \ref{lst:arrow}.
+
+\begin{lstlisting}[language=c++, caption={The code for finding the direction of the arrow and showing/hiding the arrow if it is on or off the screen.}, label=lst:arrow]
+    Vector3 viewportPos = Camera.main.WorldToViewportPoint(targetObject.transform.position);
+                
+    if (viewportPos.x >= 0.0f && viewportPos.x <= 1.0f && viewportPos.y >= 0.0f && viewportPos.y <= 1.0f) {
+        arrowImg.color = new Color(1,1,1,0);
+    } else {
+        arrowImg.color = new Color(1,1,1,1);
+    }
+
+    var camPos = Camera.main.transform.InverseTransformPoint(targetObject.transform.position);
+
+    // Calculate the angle in degrees
+    float angle = -Mathf.Atan2(camPos.x, camPos.y) * Mathf.Rad2Deg;
+
+    // Rotate the arrow to point towards the target
+    arrow.transform.localEulerAngles = new Vector3(0,0, angle);
+
+\end{lstlisting}
+
+The world position of the part to be added is translated into a position relative to the viewport. This is then used to determine if the part is visible in the centre of the screen by checking the x and y coordinates of the relative position. The position of the part relative to the camera itself is then determined and the angle between these is calculated and converted to degrees. This angle is then set as the z rotation in the arrows local Euler angles.
+
+To fix the issue with parts appearing too small in the view command, simple adjustments were made to the values within the implementation of the 'view' command to make the parts appear closer.
 
 What did you do to implement this idea, and what technical achievements did you make?
 \section{Guidance}
@@ -496,7 +619,7 @@ The pilot test highlighted issues with the format of the experiment. During the 
 
 Based on the results of the pilot test, the experiment was adjusted. Participants were tasked with assembling a full piece of flatpack furniture with a provided set of instructions. 
 
-For this study the chosen piece of flatpack furniture was the IKEA HEMNES bedside table. The chair was assembled as shown in the paper instructions minus a few steps. The rails for the drawer were screwed on at the start, the feet were never added and the drawer was never screwed to the rails. These adjustments were made to avoid difficulty in disassembly between participants.
+For this study the chosen piece of flatpack furniture was the IKEA HEMNES bedside table. This was chosen as it is a small piece of furniture that does not have too many parts but still has a certain amount of complexity to properly test the instructions. The chair was assembled as shown in the paper instructions minus a few steps. The rails for the drawer were screwed on at the start, the feet were never added and the drawer was never screwed to the rails. These adjustments were made to avoid difficulty in disassembly between participants.
 
 Participants were asked to think aloud as they were assembling the piece. Specifically they were asked to state if they found themselves in any moment of being unsure of confused. In the case that a participant was clearly and obviously unsure about what they were doing but never stated it, or they made a mistake without realising, this was also noted. Before the experiment, a group of categories were created that these issues could be sorted into:
 
