@@ -417,3 +417,12 @@
 ### 05 Mar 2024
 
 * *3 hours* Wrote instructions framework and prefab setup section of Implementation
+
+### 07 Mar 2024
+
+* *1 hour* Attended supervisor meeting
+
+### 08 Mar 2024
+
+* *3 hours* Sorted through results and categorised and organised
+* *3 hours* Conducted more research for background section
