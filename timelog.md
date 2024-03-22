@@ -427,3 +427,58 @@
 * *3 hours* Sorted through results and categorised and organised
 * *3 hours* Conducted more research for background section
 
+### 09 Mar 2024
+
+* *4 hours* Continued writing dissertation
+
+## Week 24
+
+### 11 Mar 2024
+
+* *4 hours* Continued writing dissertation
+
+### 12 Mar 2024
+
+* *2 hours* Continued writing dissertation
+
+### 13 Mar 2024
+
+* *2 hours* Continued writing dissertation
+
+### 14 Mar 2024
+
+* *4 hours* Continued writing dissertation
+
+### 15 Mar 2024
+
+* *4 hours* Continued writing dissertation
+
+## Week 25
+
+### 17 Mar 2024
+
+* *1.5 hours* Prepared video script
+
+### 18 Mar 2024
+
+* *5 hours* Continued writing dissertation
+
+### 19 Mar 2024
+
+* *6 hours* Continued writing dissertation
+
+### 20 Mar 2024
+
+* *2 hours* Recorded demo video
+* *2 hours* Prepared slides for video
+* *5 hours* Continued writing dissertation
+
+### 21 Mar 2024
+
+* *8 hours* Continued writing dissertation
+* *2 hours* Recorded voice over for and edited video
+
+### 22 Mar 2024
+
+* *2 hours* Continued writing dissertation
+* *2 hours* Prepared for submission
