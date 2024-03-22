@@ -7,6 +7,7 @@
 * This means that without the correct license file, it will not build.
 * The license which should be provided in the Unity scene will not work on any other devices but the device it was built on.
 * Make sure that the project is set up correctly to build (This official guide shows the correct project set up to build to the Hololens 2: https://learn.microsoft.com/en-us/windows/mixed-reality/develop/unity/unity-development-overview?tabs=arr%2CD365%2Chl2).
+* Required version of Unity is 2021.3.13f1
 
 * To use you must import these Unity Packages:
 
