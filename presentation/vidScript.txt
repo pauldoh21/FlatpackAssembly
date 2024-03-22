@@ -1,0 +1,101 @@
+Hi I'm Paul and this is my presentation on augmented reality flatpack furniture assembly.
+
+The Problem
+
+Augmented reality is a field in technology which is becoming increasingly prevalent in the market.
+With the possibilty on the horizon of mixed reality headsets, such as the Apple Vision Pro or the Microsoft Hololens, becoming regular consumer products, 
+it is important to look at the potential uses for the technology.
+
+One potential use that was identified is guiding consumers on flatpack furniture assembly. 
+Assembling furniture is known to cause issues for many people. 67% of adults admitted to having diffivulty with assembling flatpack furniture.
+
+AR has previously been proven to help people with assembly tasks in industrial contexts, in some cases reducing error rates by 82%.
+For this reason, the project aimed to find out if this could be transferred effectively to consumer flatpack furniture assembly.
+
+Design
+
+The main source of requirements for this design was the IKEA paper instructions.
+For example, the instructions show which part should be added, where it should be added, the orientation it should be added and more.
+
+The nature of using augmented reality for this task helped to design how the instructions can be shown in this form.
+Object tracking was chosen as a good option for showing users how to correctly assemble a piece of furniture.
+This allows for users to be shown in real time what to do, and if what they are doing is correct.
+An idea for animations to show how a part should be added was also planned as a backup to object tracking.
+
+A framework for transferring paper instructions into a 3D environment was planned.
+It was based on the composite design patter with some modifications.
+The system is built using a list of steps.
+Every step has a part and a next step.
+If a part is a component then it has its own list of steps.
+When a next step is a component it will direct to the first step of the components steps.
+Tracking parts and animation parts are copies of the current part which carry out the demonstration of the instruction.
+
+Platform
+
+Unity was chosen as the platform to implement this project as it has a strong library of AR tools.
+I have previous experience in using Unity for augmented reality and other types of projects.
+
+DEMO
+
+The design was implemented on the Microsoft Hololens 2.
+An education license for VisionLib 3D model tracking was acquired to handle the object tracking instructions.
+The following is a demonstration of the application in use, starting with the animation instructions.
+Please note that objects in the footage recorded on the Hololens appear in slightly different positions and forms compared to how they are viewed when actually using the device.
+All inputs are done with voice commands which you will hear are used to start the program.
+
+You can see how the animations communicate the instructions.
+
+Here the view command is used to get a better idea of what the correct part is
+
+One of the unique advantages of using AR is shown here. Users can manoeuvre their way around the assembly and get different angles to understand the step better.
+
+Another feature is highlighted here, the next step has appeared outside of the field of view. An arrow indicator then appears to guide the user to the location of the next step
+
+A unique feature of the Hololens is shown here. Users can lift the visor on the front to get a clear view of what they are doing.
+
+And the assembly is completed. Next we will take a brief view of the capabilities of the tracking instructions
+
+Here you can see the current part in its init pose, this pose must be matched by the real part to begin tracking
+
+It becomes clear quite quickly how tedious a process this can be
+
+With a minute or two of attempting cut out, the part finally began tracking again
+
+You can see that the part remains red until it has matched the correct position
+It then turns green to validate to the user that it has been placed correctly
+
+Evaluation
+
+To evaluate the effectiveness a think aloud experiment was proposed.
+Participants in the experiment were instructed to assmeble a provided piece of flatpack furniture using the given set of instructions.
+They were split into three groups. Paper (the control group), Animation and Tracking (the two experimental groups)
+Participants were asked to speak aloud at any moment they felt any form of confusion or had any issue at all as well as any other comments they had.
+These comments were categorised for evaluation.
+The categories included difficulty with part identification, location, orientation and progression. Errors in the assembly were also recorded.
+These recorded issues were given a score of one, two or three depending on their severity.
+Issues which caused almost no trouble to the overall progression were given a one whereas issues which stopped progression and required assistance to deal with were given a score of 3.
+
+Unfortunately the tracking instructions proved to be very ineffective.
+Using them was very tedious with one user describing that "tracking had to be forced into position rather than being a guide on position"
+For this reason most participants gave up on utilising the tracking functionality.
+This meant they were essentially usingthe animation instructions without animation or the view command.
+
+The results of this experiment showed that paper instructions had a higher average score calculated from the issues.
+The amount of issues and their timing highlight a trend showing that animation and tracking instuctions start with a very high amount of issues but trail off quickly whereas paper instructions stay at a more consitent level of issues throughout.
+This data was backed up by the qualitative feedback noted during the experiment.
+Most of the issues participants faced in the animation instructions came when reaching a new type of step or when using a new function.
+Issues with the paper instructions mostly remained consistent throughout.
+
+Conclusion
+
+Despite most of the effort of development going into the tracking functionality, its backup, the animation, proved to be the most effective version of instructions.
+Overall, they decreased the number of errors and issues. 
+Its main drawback was the learning curve.
+A better user guide and user interface could help to mitigate the issue.
+In its current state, object tracking using 3D models is not ready to be effective as a validation method.
+It can be inaccurate and is very demanding on the Hololens.
+In future research, until object tracking is better suited, image tracking could be used as a proof of concept
+A combination of animating parts and detecting when users have them in the correct location could be an idea that is worth looking into.
+
+
+
