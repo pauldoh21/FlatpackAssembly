@@ -22,7 +22,7 @@
 %==============================================================================
 %% ABSTRACT
 \begin{abstract}
-    Augmented reality has proved to be an effective tool in manufacturing and assembly. Despite this, it has yet to find a place as a common tool for consumers, especially in the case of flatpack furniture assembly, a task which many people struggle with. With head mounted displays starting to appear more on the market for consumers, an application was designed to communicate assembly instructions using the Microsoft Hololens 2. The application aimed to transfer the proven benefits of augmented reality in industrial assembly tasks to flatpack furniture assembly for consumers. A user study was carried out to compare the augmented reality instructions to paper instructions. It was found that the augmented reality instructions reduced the error rate over paper but there was a steep learning curve for users in getting used to them.
+    Augmented reality has proved to be an effective tool in manufacturing and assembly. Despite this, it has yet to find a place as a common product for consumers. AR has the potential to be a useful tool useful in the case of flatpack furniture assembly, a task which many people struggle with. With head mounted displays starting to appear more on the market for consumers, an application was designed to communicate assembly instructions using the Microsoft Hololens 2. The application aimed to transfer the proven benefits of augmented reality in industrial assembly tasks to flatpack furniture assembly for consumers. A user study was carried out to compare the augmented reality instructions to paper instructions. It was found that the augmented reality instructions reduced the error rate over paper, but there was a steep learning curve for users in getting used to them.
 \end{abstract}
 
 %==============================================================================
@@ -100,11 +100,11 @@ Chapter \ref{chap:design} covers the design of the application. It describes the
 
 Chapter \ref{chap:implementation} describes the process of developing the application. It explains the reasons for particular development decisions and describes how every aspect was implemented. It also explains certain issues that were encountered during development.
 
-Chapter \ref{chap:expdesign} details the experimental design of the user study. It covers potential options for a design and then explains how the final design was reached. It goes into detail about the exact procedure of the final design.
+Chapter \ref{chap:expdesign} details the experimental design of the user study. It covers potential options for a design and then explains how the final design was reached. It goes into detail about the exact procedure of the final experimental design.
 
 Chapter \ref{chap:evaluation} describes and evaluates the results of the experiment. It shows the results of every participant group and then compares them together. It discusses what the results could mean and then explains the limitations of the experiment.
 
-Chapter \ref{chap:conclusion} concludes the report by giving a summary of the most important points and then points to how any future work could improve upon this research.
+Chapter \ref{chap:conclusion} concludes the report by giving a summary of the most important points and then describes how any future work could improve upon this research.
 
 %==================================================================================================================================
 \chapter{Background}
@@ -112,7 +112,7 @@ Chapter \ref{chap:conclusion} concludes the report by giving a summary of the mo
 
 \section{Augmented Reality}
 
-Augmented reality as a name for the technology has existed since the early 1990s when the term was created and described by scientists for Boeing to be used in a system for reducing errors with wiring in aircrafts and other systems \citep{caudell1992augmented}. However, the idea for overlaying generated images on a person's perspective goes back much further than this. In 1901, Frank L. Baum thought up glasses which would display a persons nature on their foreheads in his book \textit{The Master Key} \citep{vertucci_history_2023}. It was in 1968, the first head-mounted display was invented and presented by \cite{sutherland1965ultimate}. It was known as The Ultimate Display and was a device that was attached to the ceiling and could track head movements, was see-through and could project images to the user's point of view. Later in the 1980s, Stephen W. G. Mann revealed his prototype for the EyeTap which was a wearable device that would display the image from a camera onto the user's perspective \citep{vertucci_history_2023}.
+Augmented reality as a name for the technology has existed since the early 1990s when the term was created and described by scientists for Boeing to be used in a system for reducing errors with wiring in aircrafts and other systems \citep{caudell1992augmented}. However, the idea for overlaying generated images on a person's perspective goes back much further than this. In 1901, Frank L. Baum thought up glasses which would display a persons true nature on their foreheads in his book \textit{The Master Key} \citep{vertucci_history_2023}. It was in 1968, the first head-mounted display was invented and presented in \citet{sutherland1965ultimate}. It was known as The Ultimate Display and was a device that was attached to the ceiling, could track head movements, was see-through and could project images to the user's point of view. Later in the 1980s, Stephen W. G. Mann revealed his prototype for the EyeTap which was a wearable device that would display the image from a camera onto the user's perspective \citep{vertucci_history_2023}.
 
 In 1994, the concept of the virtual continuum was created. It presents a spectrum of mixing reality with virtuality, starting with the real environment and ending with the virtual environment as shown in figure \ref{fig:rvContinuum}. It shows a difference between placing augmented objects in the real world and merging real objects with a virtual environment \citep{milgram1994taxonomy}.
 
@@ -125,7 +125,7 @@ In 1994, the concept of the virtual continuum was created. It presents a spectru
 
 In 1999, Hirokazu Kato developed ARTookKit. This is an open source library which can track the rotation of a camera in real time using markers \citep{kato1999marker}. This was revolutionary in the field of AR as research was still unable to find a good way to track the direction a user was looking. ARToolKit is still used in platforms such as Unity today \citep{vertucci_history_2023}.
 
-Since the 2000s, there has been rapid growth in processing power, especially in smaller, mobile devices. This has allowed AR development to improve exponentially. A multitude of AR applications have been developed for handheld devices. This includes the first handheld AR application on a PDA, created by Daniel Wagner and Dieter Schmalstieg \citep{1241402}. In 2005, the ARToolKit was ported to allow development of AR on mobile devices \citep{10.1145/1179849.1179865}. In 2008, the first AR web browser was released by Mobilizy \citep{vertucci_history_2023}. In 2013, Google released the Google Glass which enabled users to view content through glasses \citep{vertucci_history_2023}. In 2016, Microsoft released a product which improved on almost every aspect of the Google Glass, the Hololens \citep{vertucci_history_2023}.
+Since the 2000s, there has been rapid growth in processing power, especially in smaller, mobile devices. This has allowed AR development to improve exponentially \citep{vertucci_history_2023}. A multitude of AR applications have been developed for handheld devices. This includes the first handheld AR application on a PDA, created by Daniel Wagner and Dieter Schmalstieg \citep{1241402}. In 2005, the ARToolKit was ported to allow development of AR on mobile devices \citep{10.1145/1179849.1179865}. In 2008, the first AR web browser was released by Mobilizy \citep{vertucci_history_2023}. In 2013, Google released the Google Glass which enabled users to view content through glasses \citep{vertucci_history_2023}. In 2016, Microsoft released a product which improved on almost every aspect of the Google Glass, the Hololens \citep{vertucci_history_2023}.
 
 Since then, AR tools have become more standardised for developers to create AR apps across multiple platforms. This change has been heralded by SDKs provided by Apple and Google. ARKit by Apple is an SDK designed to create AR applications for iOS. 
 It comes with features such as environment tracking, image tracking, face tracking and more \citep{9204243}. ARCore is Google's answer to ARKit. It works across a range of devices including Android and iOS devices. It's features are mostly similar to that of ARKit \citep{9204243}. These platforms open up the opportunity for problems with an effective AR solution to be easily implemented and be accessible across most modern mobile devices.
@@ -133,15 +133,15 @@ It comes with features such as environment tracking, image tracking, face tracki
 % Consider discussing relevant AR terms e.g. three tracking categories
 % Perhaps more about HMDs
 
-Today, the market for AR specific devices for consumers is beginning to form. This has taken the shape of head mounted displays. The Microsoft Hololens 2 \citep{microsoft_hololens_2019} released in 2019 with a focus on being used for industrial purposes.After this, the Apple Vision Pro \citep{apple_apple_2024} released in February 2024 with a marketing focus on the consumer. Head mounted displays offer a hands free alternative to smartphone AR for consumers
+Today, the market for AR specific devices aimed at consumers is beginning to form. This has taken the shape of head mounted displays. The Microsoft Hololens 2 \citep{microsoft_hololens_2019}, released in 2019, had a focus on being used for industrial purposes but was available to purchase for consumers. After this, the Apple Vision Pro \citep{apple_apple_2024} released in February 2024 with a marketing focus on the consumer. Head mounted displays offer a hands free alternative to smartphone AR for consumers. 
 
 \section{Industrial Use of AR}
 
 With the first use of the term augmented reality being for the use case of helping with assembling airplanes \citep{caudell1992augmented}, it is clear that industry is a key area in the advancement of AR technology. Since then, AR has been researched and used in a range of different industrial contexts.
 
-\citet{Tang2004} found that using 3D AR instructions reduced error rate by 82\% for an assembly task. This was found through an experiment to test the effectiveness of AR assisted assembly in an industrial manufacturing environment. The experiment consisted of testing the effectiveness of AR instructions on a head-mounted display compared to paper instructions and computer-based instructions on a monitor \citep{Tang2004}. \citet{upskill_upskill_2017} gave a worker in a warehouse new picklist orders through an AR display which resulted in the process being 46\% faster than the regular operation.
+\citet{Tang2004} found that using 3D AR instructions reduced error rate by 82\% for an assembly task. This was found through an experiment to test the effectiveness of AR assisted assembly in an industrial manufacturing environment. The experiment consisted of testing the effectiveness of AR instructions on a head mounted display compared to paper instructions and computer-based instructions on a monitor \citep{Tang2004}. \citet{upskill_upskill_2017} gave a worker in a warehouse new picklist orders through an AR display which resulted in the process being 46\% faster than the regular operation.
 
-\citet{wu_cognitive_2023} puts forward the idea of using wearable AR technology as a way to improve productivity in the field of construction. An AR application was designed that would guide construction workers on tasks and provide real-time information. It offered features such as 3D animations, translucent 3D representations of objects with x-ray vision, live warnings and more \citep{wu_cognitive_2023}. This was tested with two groups, one using paper instructions and another using the Hololens AR application. Participants completed a rebar-tying task and metrics such as time, quality and subjective experience was measured as shown in figure \ref{fig:arConstruction} \citep{wu_cognitive_2023}. 
+\citet{wu_cognitive_2023} puts forward the idea of using wearable AR technology as a way to improve productivity in the field of construction. An AR application was designed that would guide construction workers on tasks and provide real-time information. It offered features such as 3D animations, translucent 3D representations of objects with x-ray vision, live warnings and more \citep{wu_cognitive_2023}. This was tested with two groups, one using paper instructions and another using the Hololens AR application. Participants completed a rebar-tying task and metrics such as time, quality and subjective experience were measured as shown in figure \ref{fig:arConstruction} \citep{wu_cognitive_2023}. 
 
 \begin{figure}[hbt!]
     \centering
@@ -150,21 +150,21 @@ With the first use of the term augmented reality being for the use case of helpi
     \label{fig:arConstruction}
 \end{figure}
 
-Results from the experiment found that the AR application significantly improved performance and understanding. Using the AR application improved kinaesthetic performance by around 40\% \citep{wu_cognitive_2023}. AR participants experience less frustration despite a similar amount of physical strain than the other group as they could quickly find information they needed for the tasks \citep{wu_cognitive_2023}. While \citet{wu_cognitive_2023} highlights that more research still needs to be done in the field, it emphasises the potential of the technology and the clear improvement it provides in productivity.
+Results from the experiment found that the AR application significantly improved performance and understanding. Using the AR application improved kinaesthetic performance by around 40\% \citep{wu_cognitive_2023}. AR participants experienced less frustration despite a similar amount of physical strain to the other group as they could quickly find information they needed for the tasks \citep{wu_cognitive_2023}. While \citet{wu_cognitive_2023} highlights that more research still needs to be done in the field, it emphasises the potential of the technology and the clear improvement it provides in productivity.
 
-AR has proven to be a useful tool for workers in an industrial environment. A number of tests and studies have shown how effective it can be improving the productivity and experience of a worker, especially with manufacturing and assembly tasks. Despite the clear and great potential, the implementation of AR technology in manufacturing is not at the point it could be \citep{jalo_state_2021}.
+AR has proven to be a useful tool for workers in an industrial environment. A number of tests and studies have shown how effective it can be improving the productivity and experience of a worker, especially with manufacturing and assembly tasks. Despite the clear and great potential, the implementation of AR technology in manufacturing is not yet at the point it could be \citep{jalo_state_2021}.
 
 \section{AR For Instructions}
 
 With the success of using augmented reality for industrial purposes, research is being put into transferring the advantages to commercial use cases. The proven increase in productivity and reduction of error rates in industrial AR assembly tasks make for transferable benefits in AR tools for consumers. Many different types of product come with some sort of assembly requirement with provided instructions. Some of these products include furniture, home appliances, exercise equipment and outdoor equipment. This concept can also apply to products where assembly is a motivating factor in the purchase decision such as DIY model kits and \textit{LEGO} sets.
 
-\citet{blattgerste_comparing_2017} tested the suitability of AR in providing assistance in different tasks. The focus of the study was on testing a range of devices and paper instructions on a Lego assembly task. There were three devices used in the study, a smartphone, a Microsoft Hololens and an Epson Moverio BT-200. Instructions were implemented into these devices and split into two groups. The smartphone and Hololens used instructions which placed a representation of the next block to be added in its correct location. The Epson Moverio BT-200 displayed pictures of the paper instructions to the view of the user \citep{blattgerste_comparing_2017}. The number of errors, cognitive load and task completion times were measured across instruction systems. Each participant carried out all four instruction methods \citep{blattgerste_comparing_2017}. Feedback from the experiment was generally negative towards the AR instructions. Handling the smartphone while trying to assemble was described as a difficulty. The pictures on the screen of the Epson Moverio BT-200 were too obstructive. The Hololens field of view was too small \citep{blattgerste_comparing_2017}. Despite the issues, one aspect that was commented positively on was the 3D placement of objects in the world, especially on the Hololens. Participants commented that it made sense and felt natural. They also described their appreciation of the hands-free nature of this option \citep{blattgerste_comparing_2017}. 
+\citet{blattgerste_comparing_2017} tested the suitability of AR in providing assistance during different tasks. The focus of the study was on testing a range of devices and paper instructions on a Lego assembly task. There were three devices used in the study, a smartphone, a Microsoft Hololens and an Epson Moverio BT-200. Instructions were implemented into these devices and split into two groups. The smartphone and Hololens used instructions which placed a representation of the next block to be added in its correct location. The Epson Moverio BT-200 displayed pictures of the paper instructions to the view of the user \citep{blattgerste_comparing_2017}. The number of errors, cognitive load and task completion times were measured across instruction systems. Each participant carried out all four instruction methods \citep{blattgerste_comparing_2017}. Feedback from the experiment was generally negative towards the AR instructions. Handling the smartphone while trying to assemble was described as a difficulty. The pictures on the screen of the Epson Moverio BT-200 were too obstructive. The Hololens field of view was too small \citep{blattgerste_comparing_2017}. Despite the issues, one aspect that was commented positively on was the 3D placement of objects in the world, especially on the Hololens. Participants commented that it made sense and felt natural. They also described their appreciation of the hands-free nature of this option \citep{blattgerste_comparing_2017}. 
 
-\citet{yang_comparing_2020} Conducted a very similar study by comparing paper to AR instructions on a Lego assembly task. Participants were split into two groups for paper and AR instructions. The AR instructions were on an Android app on a tablet. The app was created using Unity and Vuforia \citep{yang_comparing_2020}. Each group completed a set of training and experimental instructions, with the training set using a different model to the experimental set \citep{yang_comparing_2020}. The experiment measured effectiveness, efficiency, cognitive load and motivation. The study found that the effectiveness was improved on the AR instructions over the paper counterpart. This means that overall error rate was lower in AR \citep{yang_comparing_2020}. Within the qualitative feedback, participants reported that while the paper instructions were clear and easy to understand, the AR instructions felt intuitive and attractive \citep{yang_comparing_2020}. An interesting feature of the AR instructions was an animation function which shows the path of adding a part. Participants thought this was a helpful feature, "it shows the assembly path, so you can easily understand where bricks come from and how two bricks are connected." \citep{yang_comparing_2020}
+\citet{yang_comparing_2020} Conducted a very similar study by comparing paper to AR instructions on a Lego assembly task. Participants were split into two groups for paper and AR instructions. The AR instructions were on an Android app on a tablet. The app was created using Unity and Vuforia \citep{yang_comparing_2020}. Each group completed a set of training and experimental instructions, with the training set using a different model to the experimental set \citep{yang_comparing_2020}. The experiment measured effectiveness, efficiency, cognitive load and motivation. The study found that the effectiveness was improved on the AR instructions over the paper counterpart. This means that overall error rate was lower in AR \citep{yang_comparing_2020}. Within the qualitative feedback, participants reported that while the paper instructions were clear and easy to understand, the AR instructions felt intuitive and attractive \citep{yang_comparing_2020}. An interesting feature of the AR instructions was an animation function which showed the path of adding a part. Participants thought this was a helpful feature, "it shows the assembly path, so you can easily understand where bricks come from and how two bricks are connected." \citep{yang_comparing_2020}
 
 \citet{chen_papertoplace_2023} created a tool for converting paper instructions to AR versions named PaperToPlace. The tool consists of two sections, a tool for authors to convert existing instructions to an AR format and an instruction viewing experience which dynamically places instructions in ideal locations \citep{chen_papertoplace_2023}. User studies were conducted for both sections but this research will focus on the results of the instruction consumption section. The study tested whether the AR instructions allowed users to complete tasks more efficiently and easily. Participants were given unfamiliar tasks and asked to complete them. Effectiveness was measured using performance analysis, a questionnaire and interviews \citep{chen_papertoplace_2023}. Results found that participants believed the tool made them work faster and easier. Switching contexts required less effort, with less head movement. Hands-free use was appreciated by the participants \citep{chen_papertoplace_2023}.
 
-Bringing the innovations made in industry to the commercial market has proven to be fairly successful for users. AR is a tool which research shows, has an ability to improve user's performance in assembly tasks. Following from this, it is important to analyse whether there is a precedent for the use of AR in the case of flatpack furniture manufacturers and if it could be a commercially viable endeavour. 
+Bringing the innovations made in industry to the commercial market has proven to be fairly successful for users. AR is a tool which, research shows, has an ability to improve user's performance in assembly tasks. Following from this, it is important to analyse whether there is a precedent for the use of AR in the case of flatpack furniture manufacturers and if it could be a commercially viable endeavour. 
 
 \section{IKEA AR Apps}
 
@@ -187,17 +187,17 @@ From this we can gather that using AR technology has potential to improve the pe
 
 \section{Flatpack Furniture}
 
-Flatpack furniture, also known as ready-to-assemble furniture (RTA), provides a cheaper alternative to furnishing a space than pre-assembled furniture. The customer receives a flat box full of parts with a set of instructions. They then are required to follow the instructions to assemble the furniture themselves \citep{fleming_ritsy_nodate}. The concept for flatpack furniture came about in the early 20th century when Louise Brigham tried to popularise her idea for ready-made box furniture \citep{lafarge_ready--assemble_2019}. Despite this, the idea for RTA only gained widespread recognition later in the mid-20th century with different businesses being established in the 1950s \citep{lafarge_ready--assemble_2019}. Many of the inspirations for starting a RTA business stem from a lack of affordable furniture options for working class people \citep{lafarge_ready--assemble_2019}. Nowadays, companies like IKEA dominate the market with their flatpack furniture options.
+Flatpack furniture, also known as ready-to-assemble furniture (RTA), provides a cheaper alternative to furnishing a space than pre-assembled furniture. The customer receives a flat box full of parts with a set of instructions. They then are required to follow the instructions to assemble the furniture themselves \citep{fleming_ritsy_nodate}. The concept for flatpack furniture came about in the early 20th century when Louise Brigham tried to popularise her idea for ready-made box furniture \citep{lafarge_ready--assemble_2019}. Despite this, the idea for RTA only gained widespread recognition later in the mid-20th century with different businesses being established in the 1950s \citep{lafarge_ready--assemble_2019}. Many of the inspirations for starting a RTA business stem from a lack of affordable furniture options for working class people \citep{lafarge_ready--assemble_2019}. Nowadays, companies like IKEA dominate the market with their flatpack furniture options \citep{statista_topic_2023}.
 
-Despite the longstanding popularity of flatpack furniture, people still have difficulty assembling their own products. According to a study in 2007 by Miles Richardson, 67\% of adults had difficulty in assembling flatpack furniture, out of a 52\% that had assembled in the previous two years. 13.8\% of these people claimed to have damaged the furniture they were assembling and a further 7.8\% of people say they ended up with some form of injury from the assembly process \cite{Richardson11}. With such a high percentage of people having trouble with these assembly tasks, it leaves a gap for research to find a definitive solution to this problem.
+Despite the longstanding popularity of flatpack furniture, people still have difficulty assembling their own products. According to a study in 2007 by Miles Richardson, 67\% of adults had difficulty in assembling flatpack furniture, out of a 52\% that had assembled in the previous two years. 13.8\% of these people claimed to have damaged the furniture they were assembling and a further 7.8\% of people say they ended up with some form of injury from the assembly process \citep{Richardson11}. With such a high percentage of people having trouble with these assembly tasks, it leaves a gap for research to find a definitive solution to this problem.
 
 \section{Gap In Research}
 
-Augmented reality has become a very large field in the last two decades. It is being proven to be an effective tool in manufacturing and assembly for industrial purposes. The benefits of this are also being harnessed in providing instructions and guidance to users of commercial products. Along with this it is also being used in the specific case of flatpack furniture to provide IKEA customers with a view of how a piece of furniture will look and fit in a particular space. This has proven to be a valuable and effective venture for IKEA. 
+Augmented reality has become a very large field in the last two decades. It has been proven to be an effective tool in manufacturing and assembly for industrial purposes. The benefits of this are also being harnessed in providing instructions and guidance to users of commercial products. Along with this it is also being used in the specific case of flatpack furniture to provide IKEA customers with a view of how a piece of furniture will look and fit in a particular space. This has shown to be a valuable and effective venture for IKEA. 
 
-Flatpack furniture is a popular solution to providing those who require it, quick and cheap furniture. The issue is that many people struggle with the task of assembling the furniture. Research to finding a solution to this is vital and the proven benefits of AR offer a potential path to finding one.
+Flatpack furniture is a popular solution to providing those who require it, quick and cheap furniture. The issue is that many people struggle with the task of assembling the furniture. Researching a solution to this problem is vital and the proven benefits of AR offer a potential path to finding one.
 
-Studies which look to the use of AR to help with the assembly of flatpack furniture have been conducted. \citet{hartanto_development_2019} shows the creation of an application which used AR to guide users with manipulable and interactable tools. The application, named ARSembly, worked on android devices and was tested using a questionnaire \citep{hartanto_development_2019}. While the results did show positive feedback for the product, there are a few issues with the research. Firstly, the user study is not particularly well designed. A random 50 users of the app were selected to respond to the questionnaire \citep{hartanto_development_2019}. No in-person or live trials were conducted on the app's effectiveness. The AR instructions were never directly compared to paper instructions, the only comparison is through the response to a question that showed that most users found it easier to use than paper instructions \citep{hartanto_development_2019}. The question this data comes from is not particularly clear as the questions are not directly given, only tables of the results with explanations of the theme of the question. It is not confirmed if respondents were even instructed to compare this against paper instructions. Overall, this research is very weak and unreliable. The questionnaire is not strong enough evidence to prove the effectiveness of this method in the field of flatpack furniture. Furthermore, this research uses an application on a phone as the base of the study. A head mounted display is better for completing tasks, especially due to the hands-free nature, as shown in \citep{blattgerste_comparing_2017, chen_papertoplace_2023}.
+Studies which look to the use of AR to help with the assembly of flatpack furniture have been conducted. \citet{hartanto_development_2019} shows the creation of an application which used AR to guide users with manipulable and interactable tools. The application, named ARSembly, worked on Android devices and was tested using a questionnaire \citep{hartanto_development_2019}. While the results did show positive feedback for the product, there are a few issues with the research. Firstly, the user study is not particularly well designed. A random 50 users of the app were selected to respond to the questionnaire \citep{hartanto_development_2019}. No in-person or live trials were conducted on the app's effectiveness. The AR instructions were never directly compared to paper instructions, the only comparison is through the response to a question that showed that most users found it easier to use than paper instructions \citep{hartanto_development_2019}. The question this data comes from is not particularly clear as the questions are not directly given, only tables of the results with explanations of the theme of the question. It is not confirmed if respondents were even instructed to compare this against paper instructions. Overall, this research is very weak and unreliable. The questionnaire is not strong enough evidence to prove the effectiveness of this method in the field of flatpack furniture. Furthermore, this research uses an application on a phone as the base of the study. A head mounted display is better for completing tasks, especially due to the hands-free nature, as shown in \citep{blattgerste_comparing_2017, chen_papertoplace_2023}.
 
 More research needs to be conducted in this field. The previous literature point towards AR instructions on a head mounted display being a strong contender for improving the experience of assembling flatpack furniture. There is a lack of significant research to prove or disprove this potential.
 
@@ -209,18 +209,18 @@ More research needs to be conducted in this field. The previous literature point
 
 An AR solution to flatpack furniture instructions is required in the problem. These instructions are commonly paper-based and give a picture-by-picture guide to assembling the furniture, as shown in figure \ref{fig:instructions}. Taking this to the world of augmented reality opens up a plethora of opportunities. AR takes digital content into the real 3D world and is much more dynamic and fluid than the 2D paper methods.
 
-Creating a new AR platform to communicate instructions on assembling flatpack furniture to a user requires the translation of certain concepts into an AR environment. For this to be done effectively, a user must be able to fully follow through with the instructions without any outside help or guessing. To ensure that this is the case, a set of requirements have been created for the platform to follow.
+Creating a new AR platform to communicate instructions on assembling flatpack furniture requires the translation of certain concepts into an AR environment. For this to be done effectively, a user must be able to fully follow through with the instructions without any outside help or guessing. To ensure that this is the case, a set of requirements have been created for the platform to follow.
 
 \section{Functional Requirements}
 
 \subsection{Requirements from Paper Instructions}
 
-It was important to analyse the paper instructions provided with a set of flatpack furniture to understand the baseline that the AR instructions would be compared to. The paper instructions for the IKEA HEMNES bedside table \ref{fig:instructions} were inspected to find the most important factors in helping a person assemble furniture.
+It was important to analyse the paper instructions provided with a set of flatpack furniture to understand the baseline that the AR instructions would be compared to. The paper instructions for the IKEA HEMNES bedside table \citep{noauthor_hemnes_nodate} as shown in figure \ref{fig:instructions} were inspected to find the most important factors in helping a person assemble furniture.
 
 \begin{figure}[hbt!]
     \centering
     \includegraphics[width=1\linewidth]{dissertation//images/instructions.jpg}
-    \caption{Paper instructions for IKEA HEMNES bedside table \cite{noauthor_hemnes_nodate}}
+    \caption{Paper instructions for IKEA HEMNES bedside table \citep{noauthor_hemnes_nodate}}
     \label{fig:instructions}
 \end{figure}
 
@@ -241,7 +241,7 @@ The main steps covered in each page include:
     \item Adding a screw to the front of the drawer and screwing in the handle.
 \end{enumerate}
 
-There are a few important techniques used in these instructions that can be carried over as functional requirements for the AR instructions. To prioritise which requirements are the most important to be implemented, the MoSCoW method was used \citep{business_chapter_2024}. Requirements are either labelled must have, should have, could have or won't have this time. These features are key to making it clear to a user how to progress in assembly. The requirements gained from assessment of the paper instructions include:
+There are a few important techniques used in these instructions that can be carried over as functional requirements for the AR instructions. To prioritise which requirements were the most important to be implemented, the MoSCoW method was used \citep{business_chapter_2024}. Requirements are either labelled must have, should have, could have or won't have this time. These features are key to making it clear to a user how to progress in assembly. The requirements gained from assessment of the paper instructions include:
 
 \begin{itemize}
     \item Covering all of the steps to complete the assembly (must have)
@@ -279,7 +279,7 @@ Adding on to the functional requirements, non-functional requirements were set. 
 Microsoft's Hololens 2 is the chosen platform for this task. Due to this there are particular requirements it must follow to be compatible. 
 
 \begin{itemize}
-    \item The application must be able to built to the Hololens 2 (must have)
+    \item The application must be able to be built to the Hololens 2 (must have)
     \item The application must run well on the Hololens 2 (must have)
     \item The application must only use features which are available on the Hololens 2 (must have)
 \end{itemize}
@@ -364,7 +364,7 @@ In order to visualise the system there had to be 3D models for each part of the 
     \label{fig:modelStruct}
 \end{figure}
 
-Each part is an individual 3D model which can be grouped together to make a component or left alone. All components and parts are then grouped to the full furniture model and positioned correctly. Once this model is correct, a list of each part and component is created which is ordered in the order of when parts are added. The list also contains a position and rotation which the parent of a part should be moved to while the part is being added.
+Each part is an individual 3D model which can be grouped together to make a component or left alone. All components and parts are then grouped to the full furniture model and positioned correctly. Once this model is correct, a list of each part and component is created which is sorted in the order of when parts are added. The list also contains a position and rotation which the parent of a part should be moved to while the part is being added.
 
 
 %==================================================================================================================================
@@ -377,13 +377,13 @@ Selecting an appropriate development platform was a pivotal step in ensuring a s
 
 In this case, Unity was the best choice for a development platform. Unity is an extremely versatile platform. At a base level it comes with capabilities to easily set up a project and render in 3D. Unity uses a system which encourages adding packages based on what the project is. It has a range of AR packages, provided by Unity, which can be installed in a click using the package manager window. Any other packages required can be installed from the same window using a link or download file. The project benefits from being able to use the enhancements provided by external packages which can be easily integrated in Unity.
 
-Moreover, Unity was the first choice based on prior experience gained in development of other projects. Having previous experience in Unity development with projects of a similar nature, including AR projects, familiarity of the functionality and features allows for a significantly smaller learning curve than trying to learn a new platform. This allows for a more efficient workflow and more time that can be dedicated to development. Unity uses C# as its development language. This has been used in previous projects which means the project will be written in a familiar language. Choosing Unity results in a stronger final project due to the extra time and higher quality implementation.
+Moreover, Unity was the first choice based on prior experience gained in development of other projects. Having previous experience in Unity development with projects of a similar nature, including AR projects, familiarity of the functionality and features allows for a significantly smaller learning curve than trying to learn a new platform. This allows for a more efficient workflow and more time that can be dedicated to development. Unity uses C\# as its development language. This has been used in previous projects which means the project will be written in a familiar language. Choosing Unity results in a stronger final project due to the extra time saved learning the platform and a higher quality implementation.
 
 The selection of Unity as the development platform was a clear decision informed by prior experience, technical suitability and versatility. These factors allow the project to reach the requirements at a high standard in a suitable amount of time.
 
 \section{Tracking Method}
 
-Object tracking was an important part of the project design. Objects, such as parts of the furniture, were to be tracked in the camera view. These parts had to be accurately tracked in real time in order to verify the placement and highlight errors to users. This is a very complex task and requires the right framework for it to be done effectively. A selection of different options for this test were reviewed and tested.
+Object tracking was an important part of the project design. Objects, such as parts of the furniture, were to be tracked in the camera view. These parts had to be accurately tracked in real time in order to verify the placement and highlight errors to users. This is a very complex task and requires the right framework for it to be done effectively. A selection of different options for this task were reviewed and tested.
 
 \subsection{Unity Image Tracking}
 
@@ -395,7 +395,7 @@ Image tracking is a particularly useful feature for this project. If unique imag
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
 \begin{table}[hbt!]
-\caption{List of available features across all Unity supported AR platforms. \cite{noauthor_ar_nodate}}
+\caption{List of available features across all Unity supported AR platforms. \citep{noauthor_ar_nodate}}
 \label{tab:arfFeatures}
 \centering
 %\tt 
@@ -426,13 +426,13 @@ Furthermore, the image tracking feature is unavailable on Hololens. If this feat
 
 \subsection{Azure Object Anchors}
 
-Object Anchors is a Microsoft Azure service for tracking 3D models in real space. Azure Object Anchors is an SDK specifically designed for use on the Hololens. It works by uploading a 3D model to the Azure servers which then return a converted Azure Object Anchors model. This model is stored on the Hololens and is used for tracking. 
+Object Anchors is a Microsoft Azure service for tracking 3D models in real space. Azure Object Anchors is an SDK specifically designed for use on the Hololens. It works by uploading a 3D model to the Azure servers which then returns a converted Azure Object Anchors model. This model is stored on the Hololens and is used for tracking. 
 
 There are many drawbacks to using Object Anchors. One of which is that using the service costs money. There are a set amount of student credits available but the pricing of use was unclear. Another issue is that Object Anchors does not support tracking moving objects which would hinder a users ability to get a live idea about when they have a part in the correct location. When tested using a custom 3D model, the tracking proved to be very difficult to use.
 
 \subsection{VisionLib}
 
-VisionLib is a library developed for augmented reality model tracking created by Visometry \citep{visometry_visionlib_nodate}. VisionLib can be used across multiple platforms including Unity and Unreal Engine. When used in Unity, if the scene is set up correctly, all VisionLib needs to start tracking a model is a game object with a mesh. This means that there are no restrictions on model formats, as long as they work in Unity, and there is no conversion process. It uses init poses to detect models. This means that models are displayed in a certain pose and when this pose is matched by the real counterpart, it begins tracking it. This is very useful for the case of this project as it allows parts to be clearly displayed to the user before it can be tracked to the correct location. % more probably
+VisionLib is a library developed for augmented reality model tracking, created by Visometry \citep{visometry_visionlib_nodate}. VisionLib can be used across multiple platforms including Unity and Unreal Engine. When used in Unity, if the scene is set up correctly, all VisionLib needs to start tracking a model is a game object with a mesh. This means that there are no restrictions on model formats, as long as they work in Unity, and there is no conversion process. It uses init poses to detect models. This means that models are displayed in a certain pose and when this pose is matched by the real counterpart, it begins tracking it. This is very useful for the case of this project as it allows parts to be clearly displayed to the user before it can be tracked to the correct location. % more probably
 
 VisionLib requires a license to use. A trial license can be acquired that lasts 30 days but after this, Visometry must be contacted to seek a price for a full license.
 
@@ -443,13 +443,13 @@ Visometry was contacted to request a price to use VisionLib for this project. Ho
 
 \section{Setting Up Project}
 
-A Unity project was set up using the base 3D template on Unity version 2021.3.13f1. To prepare the project the VisionLib SDK was imported from the package manager. The application offers a part outlining feature which is not active in the final product but is still integrated into the scripts. The outline system was developed using the Quick Outline package from the Unity store \citep{nolet_quick_2022}. The Mixed Reality Feature Tool \citep{kerawala_welcome_2022} was used to import particular packages which are required for AR Hololens projects in Unity. Setting up Unity for building to the Hololens is a very tedious task, therefore a guide was used to set up the project settings properly \citep{qianw211_unity_2022}. VisionLib provides packages which import a selection of scenes which are pre-made for different purposes. For example, a multi-model tracking scene, a model switching scene and a Hololens model tracking scene. A copy of the Hololens model tracking scene was created as a base for this project.
+A Unity project was set up using the base 3D template on Unity version 2021.3.13f1. To prepare the project the VisionLib SDK was imported from the package manager. The application offers a part outlining feature which is not active in the final product but is still integrated into the scripts. The outline system was developed using the Quick Outline package from the Unity store \citep{nolet_quick_2022}. The Mixed Reality Feature Tool \citep{kerawala_welcome_2022} was used to import particular packages which are required for AR Hololens projects in Unity. Setting up Unity for building to the Hololens is a very tedious task, therefore a guide was used to set up the project settings properly \citep{qianw211_unity_2022}. VisionLib provides packages which import a selection of scenes that are pre-made for different purposes. For example, a multi-model tracking scene, a model switching scene and a Hololens model tracking scene. A copy of the Hololens model tracking scene was created as a base for this project.
 
 The scene was set up with five top level objects \textit{VLTracking}, \textit{SceneContent}, \textit{Input}, \textit{XRRig} and \textit{Manager}.
 
 \textit{VLTracking} was created in the VisionLib Hololens model tracking template and it handles setting up the tracking capabilities. This is where the provided license file is placed and also provides some different tracking paramaters which can be edited.
 
-\textit{SceneContent} is where all of the tracking and animation parts are stored. It has the children objects \textit{VLTrackingAnchor} and \textit{AnimationParts}. Parts under \textit{VLTrackingAnchor} have tracking mesh scripts attached which means that VisionLib can use their mesh for tracking. These parts are all positioned in front of the camera in a precisely chosen pose as these are the init poses required to start tracking. Parts under \textit{AnimationParts} are used for animation instructions and are all set in the position their animation should start. \textit{SceneContent} also includes a light for the scene.
+\textit{SceneContent} is where all of the tracking and animation parts are stored. It has the children objects \textit{VLTrackingAnchor} and \textit{AnimationParts}. Parts under \textit{VLTrackingAnchor} have tracking mesh scripts attached which means that VisionLib can use their mesh for tracking. These parts are all positioned in front of the camera in a precisely chosen pose as these are the init poses required to start tracking. Parts under \textit{AnimationParts} are used for animation instructions and are all set in the position their animation should start from. \textit{SceneContent} also includes a light for the scene.
 
 \textit{Input} contains the object which detects speech and keyboard input and points to the given command when input is received.
 
@@ -461,9 +461,9 @@ The scene was set up with five top level objects \textit{VLTracking}, \textit{Sc
 
 The framework designed in figure \ref{fig:classDiagram} was implemented using C\# in Unity. 
 
-Two extra scripts, \textit{Instructions.cs} and \textit{Manager.cs}, were created to integrate the instructions framework with the Unity editor. The manager script was attached to a permanent game object in the scene and was used to set up the scene properly in runtime. It also handled all of the input. The manager script handled instantiating the correct furniture prefab depending on if tracking or animation was being used. Furthermore, it set up their instructions script. Lastly, it would set the position and visibility of the pointer arrow in listing \ref{lst:arrow}.
+Two extra scripts, \textit{Instructions.cs} and \textit{Manager.cs}, were created to integrate the instructions framework with the Unity editor. The manager script was attached to a permanent game object in the scene and was used to set up the scene properly in runtime. It also handled all of the input. The manager script handled instantiating the correct furniture prefab depending on if tracking or animation was being used. Furthermore, it set up their instructions script. Lastly, it would set the position and visibility of the pointer arrow in section \ref{chap:pilotTest1}.
 
-The instructions script is used to transfer data from the Unity editor and properly set up the furniture object. When a game object contains the instructions script, it has a range of editable properties in the Unity editor shown in \ref{fig:properties}.
+The instructions script is used to transfer data from the Unity editor and properly set up the furniture object. When a game object contains the instructions script, it has a range of editable properties in the Unity editor, as shown in figure \ref{fig:properties}.
 
 \begin{figure}[hbt!]
     \centering
@@ -472,16 +472,16 @@ The instructions script is used to transfer data from the Unity editor and prope
     \label{fig:properties}
 \end{figure}
 
-The editor contains a list of parts and components which are generated from the given furniture object, which is the top parent of the furniture model. These lists are generated using the InstructionsEditor.cs script. This script checks for a change to the furniture object field and creates a parts and components list based on the children of the new object. If a child is a parent itself, it is added to the components list, otherwise it is added to the parts list. This list is passed by the instructions script to the furniture object which combines it into one list to create all of the parts and components, it also creates all of the steps in the order of the list. A limitation of this system is that instructions must be in the order of either parts first or components first. Ideally, the editor could have one list which can contain parts and components, since they both inherit from part, however, the Unity editor by default does not support polymorphism in serialised lists. Solving this would require dedicating a large amount of time to creating a stronger editor or downloading a custom editor which can be costly. Instead, a workaround was created that exclusively works for the specific furniture used in this project. If the 'Use Prewritten Order' toggle is checked in the instructions script, the furniture object will detect if there is a recognised piece of furniture being used and then use another function to combine the lists. This function has a hard coded order to select parts and components from both the lists in the instructions script. Each selected item is then added to the furniture with a corresponding step being created in that order.
+The editor contains a list of parts and components which are generated from the given furniture object, which is the top parent of the furniture model. These lists are generated using the InstructionsEditor.cs script. This script checks for a change to the furniture object field and creates a parts and components list based on the children of the new object. If a child is a parent itself, it is added to the components list, otherwise it is added to the parts list. This list is passed by the instructions script to the furniture object which combines it into one list to create all of the parts and components. It also creates all of the steps in the order of the list. A limitation of this system is that instructions must be in the order of either parts first or components first. Ideally, the editor could have one list which can contain parts and components, since they both inherit from part, however, the Unity editor by default does not support polymorphism in serialised lists. Solving this would require dedicating a large amount of time to creating a stronger editor or downloading a custom editor which can be costly. Instead, a workaround was created that exclusively works for the specific furniture used in this project. If the 'Use Prewritten Order' toggle is checked in the instructions script, the furniture object will detect if there is a recognised piece of furniture being used and then use another function to combine the lists. This function has a hard coded order to select parts and components from both the lists in the instructions script. Each selected item is then added to the furniture with a corresponding step being created in that order.
 
 \section{Setup of Bedside Table Prefab}
 
 % 2 prefabs were set up for animation and tracking
 In Unity, a prefab is a game object that can be saved and reused in its exact form. The components and children of the game object are stored in the state they are saved at. They can then be newly instantiated into a scene and edits to their properties can be made.
 
-Since the project was going to be tested using an animation version and a tracking version, two prefabs were created of the bedside table model with the instructions script attached. The properties of each prefab were almost exactly the same with the only difference between them being that the tracking prefab had 'Use Tracking' checked for particular parts. This meant that if the tracking option was selected at the start of runtime, the tracking prefab would be spawned and certain parts would use VisionLib tracking while the rest would use animation. If the animation option was selected then all parts would use animation.
+Since the project was going to be tested using an animation version and a tracking version, two prefabs were created of the bedside table model with the instructions script attached. The properties of each prefab were almost exactly the same with the only difference between them being that the tracking prefab had `Use Tracking' checked for particular parts. This meant that if the tracking option was selected at the start of runtime, the tracking prefab would be spawned and certain parts would use VisionLib tracking while the rest would use animation. If the animation option was selected then all parts would use animation.
 
-The rest of the properties in each prefab were adjusted to suit the steps of the furniture assembly. Parts that had the 'Screws' toggle selected would be indicated on the screen that they were to be screwed in rather than just placed in. The 'Parent Position' and 'Parent Rotation' properties represent a 3D vector location and rotation for the parent of the current part to be in while the part is being added. This is useful for showing the user the ideal position to place the work in progress assembly during the current step.
+The rest of the properties in each prefab were adjusted to suit the steps of the furniture assembly. Parts that had the `Screws' toggle selected would be indicated on the screen that they were to be screwed in rather than just placed in. The `Parent Position' and `Parent Rotation' properties represent a 3D vector location and rotation for the parent of the current part to be in while the part is being added. This is useful for showing the user the ideal position to place the work in progress assembly during the current step.
 
 \section{Input}
 
@@ -525,17 +525,18 @@ The free 3D modelling platform Blender was used to create the model. Blender is 
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
     %(or a blank line to force the subfigure onto a new line)    
-    \caption{The fully assembled model of the IKEA HEMNES bedside table, including custom 3D models for each part, a view showing parts all in accurate locations and a view showing each individual part.}
+    \caption{The fully assembled model of the IKEA HEMNES bedside table \citep{noauthor_hemnes_nodate}, including custom 3D models for each part, a view showing parts all in accurate locations and a view showing each individual part.}
     \label{fig:explode}
 \end{figure}
 
 % exploded view of 3D model
 
 \section{Pilot Test}
+\label{chap:pilotTest1}
 
 After implementation was initially complete a pilot test was conducted which helped to highlight any issues with the system. One issue which became apparent during the pilot test was that the participant often was not sure if they had to screw in particular parts. Another issue was that if the location of a step was outside of the field of view of the participant, they would sometimes struggle to find the part to add. Lastly, when using the 'view' command, some parts did not appear large enough to be able to tell what they were.
 
-Before conducting final tests, these issues were solved. To help inform users when to screw a part in, a text indicator was added that would send a message to the display when a part was to be screwed in. Since there is no text when a part is not to be screwed, the text appearing on particular steps should make it clear that the step is completed in a different manner. If more time was available before final testing, a better solution to this issue would be to animate arrows pointing in the rotation to screw a part on the spot where it should be added.
+Before conducting final tests, these issues were solved. To help inform users when to screw a part in, a text indicator was added that would send a message to the display when a part was to be screwed in. Since there is no text when a part is not to be screwed, the text appearing on particular steps should make it clear that the step is completed in a different manner. If more time was available before final testing, a better solution to this issue would be to animate arrows pointing in the rotation direction to screw a part, on the spot where it should be added, as described in the design.
 
 In order to solve the issue with parts being outside of the user's point of view, a small arrow was added to the viewport that points in the direction of where the part is to be added. When the part is not in the field of view the arrow is visible and pointing in its direction and when it enters the centre of the field of view, the arrow disappears. To implement this, first an image of an arrow was created. It is a tall transparent .png image with a small arrow at the top. This means that the image can be rotated around its centre point and appear as if the arrow is rotating around in a circle at the edge of the screen. The direction for the arrow to point on the screen was calculated using the code in listing \ref{lst:arrow}.
 
@@ -588,11 +589,10 @@ The final product after implementation appeared as follows (note that the positi
     \end{figure}
 
     For animation, the animation object will start cycling it's animation.
-    \item When the tracking/animation part reaches the correct position, it will appear green as shown in figure \ref{fig:correctPos}.
+    \item When the tracking/animation part reaches the correct position, it will appear green, as shown in figure \ref{fig:correctPos}.
 
     \item The user then moves onto the next step and repeats until the process is complete.
     \item Once the last step is complete, a message is displayed to declare that the assembly is done (figure \ref{fig:complete}).
-
     
 \end{enumerate}
 
@@ -612,13 +612,18 @@ The final product after implementation appeared as follows (note that the positi
     \label{fig:complete}
 \end{figure}
 
+
 \subsection{Issues}
+
+Due to a difficult time restraint, not all features matched the design and some issues made it into the final product
 
 \begin{itemize}
     \item The screw indicator did not match the way it was designed. This was due to time limitations.
     \item Tracking parts do not follow the users perspective and move strangely when the head tilts and moves. This was caused by issues with the camera offset from the ground.
-    \item During particular steps which involve components, the full assembly appear wrong. This is because of the way the parent positions are set. Components cannot set their parent's position while their children parts are the active steps.
+    \item During particular steps which involve components, the full assembly appears wrong. This is because of the way the parent positions are set. Components cannot set their parent's position while their children parts are the active steps.
 \end{itemize}
+
+The GitHub repo for the project can be found here: \url{https://github.com/pauldoh21/FlatpackAssembly.git}
 
 %==================================================================================================================================
 
@@ -627,7 +632,7 @@ The final product after implementation appeared as follows (note that the positi
 
 \section{Experiment Options}
 
-There are a range of options when it comes to evaluating the effectiveness of a system. Potential users in this scenario would be assembling a piece of flatpack furniture with only a set of instructions and possibly another person to work with. Each user will have different skill levels when it comes to using tools and putting together pieces which means that assessing different types of instructions can be difficult. There are different aspects of the building process which can be measured such as assembly time, error rate or user approval rating. Measuring quantitative data alone was an option that was considered as if done well, would provide good data and allow for a strong analysis. However, it was deemed unsuitable for this case. Quantitative data such as time taken to assemble furniture would differ greatly between participants based on skill level and ability. This could cause mixed results across different types of instructions and would be useless data. Another option was to make each participant build a piece of furniture once with the paper instructions and once with the AR instructions. This was rejected as participants would be able to assemble the furniture quicker and easier after they already had done it once. In the end it was decided that a qualitative think aloud experiment in conjunction with recording error rates would result in the best findings. The data consists of strong user feedback and can be categorised to allow for effective evaluation. More specifically, the idea was for participants to speak aloud any time they felt confused or unsure what to do during the assembly process. These complaints could be categorised and and results could be compared across instruction types.
+There are a range of options when it comes to evaluating the effectiveness of a system. Potential users in this scenario would be assembling a piece of flatpack furniture with only a set of instructions and possibly another person to work with. Each user will have different skill levels when it comes to using tools and putting together pieces which means that assessing different types of instructions can be difficult. There are different aspects of the building process which can be measured such as assembly time, error rate or user approval rating. Measuring quantitative data alone was an option that was considered as, if done well, would provide good data and allow for a strong analysis. However, it was deemed unsuitable for this case. Quantitative data such as time taken to assemble furniture would differ greatly between participants based on skill level and ability. This could cause mixed results across different types of instructions and would be useless data. Another option was to make each participant build a piece of furniture once with the paper instructions and once with the AR instructions. This was rejected as participants would be able to assemble the furniture quicker and easier after they already had done it once. In the end it was decided that a qualitative think aloud experiment in conjunction with recording error rates would result in the best findings. The data consists of strong user feedback and can be categorised to allow for effective evaluation. More specifically, the idea was for participants to speak aloud any time they felt confused or unsure what to do during the assembly process. These complaints could be categorised and results could be compared across instruction types.
 
 \section{Pilot Test}
 
@@ -685,19 +690,19 @@ Participants were asked to think aloud as they were assembling the piece. Specif
     
 \end{itemize}
 
-Once the issues were categorised, they were given a severity score between 1 and 3. It was important that the distinction between these scores were made very clear to avoid bias in the rankings. Therefore each score level was given a clear definition. Issues which were small and insignificant to the overall progression were ranked one. Issues ranked with a two were issues that caused some delay but were not be detrimental to the ability to finish the assembly. Finally, issues ranked with a three were issues which would stop the assembly from being completable, these issues required assistance to be given to the participants to get them back on track.
+Once the issues were categorised, they were given a severity score between 1 and 3. It was important that the distinction between these scores were made very clear to avoid bias in the rankings. Therefore each score level was given a clear definition. Issues which were small and insignificant to the overall progression were ranked one. Issues ranked with a two were issues that caused some delay but were not be detrimental to the ability to finish the assembly. Finally, issues ranked with a three were issues which would stop the assembly from being completable, these issues required assistance to be given to the participants to get them back on track. All errors were given this ranking.
 
 \subsection{Procedure}
 
-At the start of the experiment the introduction script is read to the participant along with a brief introduction of the Hololens and how to use the application if they will be using it. The application is a prototype and does not put a strong focus on the user interface or a tutorial. This means that a user introduction is required to not allow difficulty in understanding the application or hardware to get in the way of evaluating the effectiveness of the instructions method.
+At the start of the experiment the introduction script is read to the participant along with a brief introduction of the Hololens and how to use the application if they will be using it. The application is a prototype and does not put a strong focus on the user interface or a tutorial. This means that a user introduction is required to avoid difficulty in understanding the application or hardware getting in the way of evaluating the effectiveness of the instructions method.
 
 A short survey was conducted after the introduction of the experiment to get an initial understanding of the experience and variety of the participant group.
 
 A group of nine participants were selected for the experiment. The group had a four to five female-male split and covered an age range of 20-25. The members of the group had varied experience in using AR technologies. A few had used simple AR applications on smartphones while others had used VR headsets. Only one had used a head mounted display previously. There was also a variance in their confidence with building flatpack furniture. Every participant said they had previously assembled flatpack furniture. The average confidence level for an assembly task was 3.33 out of 5. All but one participants said they had previously felt confused by paper instructions.
 
-Participants were equally split into three different groups, one control group and two experimental groups. The control group were asked to assemble the bedside table using only the paper instructions. The first experimental group used the Hololens instructions without any object tracking. This entailed assembling the bedside table exclusively using the part animations to show where parts should be added. The last experimental group used the Hololens instructions with a mix of animated parts and tracked parts. This meant that while some parts of the assembly were animated, others were tracked to help confirm the positioning of a part.
+Participants were equally split into three different groups, one control group and two experimental groups. The control group was asked to assemble the bedside table using only the paper instructions. The first experimental group used the Hololens instructions without any object tracking. This entailed assembling the bedside table exclusively using the part animations to show where parts should be added. The last experimental group used the Hololens instructions with a mix of animated parts and tracked parts. This meant that while some parts of the assembly were animated, others were tracked to help confirm the positioning of a part.
 
-During the experiment, any time the participant reached a moment of being unsure or confused, it was noted into this table, \ref{tab:blankissues} with a brief description, at the correct step. A category was selected in the moment but experiments were recorded and viewed later to confirm that issues were noted correctly.
+During the experiment, any time the participant reached a moment of being unsure or confused, it was noted into table \ref{tab:blankissues} with a brief description, at the correct step. A category was selected in the moment but experiments were recorded and viewed later to confirm that issues were noted correctly.
     \begin{table}[!ht]
          \caption{
          Blank template for recording issues from participants
@@ -796,7 +801,7 @@ The table highlights the range in different scores per participant. Across all f
     \label{fig:avgScores}
 \end{figure}
 
-On average, participants using the paper instructions had more difficulty and made more mistakes than both the other groups. While this demonstrates that the difficulty levels were higher for paper instructions than any augmented reality instructions, it is important to evaluate where participants had trouble and what may have caused it. Figure \ref{fig:stepScores} shows where in the assembly process participants had the most trouble.
+On average, participants using the paper instructions had more difficulty and made more mistakes than both the other groups. While this demonstrates that the difficulty levels were higher for paper instructions than any augmented reality instructions, it is important to evaluate where participants had trouble and what may have caused it. Figure \ref{fig:issuesPerCategory} shows the number of issues each group had per category. Figure \ref{fig:stepScores} shows where in the assembly process participants had the most trouble.
 
 % add average score per issue type
 
@@ -905,7 +910,7 @@ A common issue across multiple steps of the process was confusion with the orien
 
 Part identification and orientation issues were the most common for participants throughout the process. Difficulty with orientation led to seven errors overall whereas part identification only led to two errors. Examples of these issue are shown in \ref{fig:expAnim}
 
-Some other comments of note were recorded during the animation instructions. One participant pointed out during a step which involved adding a very small part that they were struggling to see that part animating. A participant encountered an error that required help to fix as they accidentally skipped a step when they failed to notice the new step had started. On the other hand, another commented that using the instructions was 'quite good fun'. One participant said that the name of the part on the screen was very useful to identifying the correct part.
+Some other comments of note were recorded during the animation instructions. One participant pointed out during a step which involved adding a very small part, that they were struggling to see that part animating. A participant encountered an error that required help to fix as they accidentally skipped a step when they failed to notice the new step had started. On the other hand, another commented that using the instructions was 'quite good fun'. One participant said that the name of the part on the screen was very useful to identifying the correct part.
 
 \subsection{Tracking Instructions Analysis}
 
@@ -915,9 +920,9 @@ The reason for this is that tracking was very difficult to use in the context of
 
 One participant tried to use tracking until step 14 at which point they gave up. They only used tracking to highlight the part in the correct location for one step. Another participant attempted to use tracking until step 10 and got the correct location from it for two steps. The other participant tried to use tracking all the way to the end but only successfully used it on three steps. When a participant uses the tracking instructions without utilising the tracking aspect, they are essentially using the animation instructions without the animation to guide them on the correct position or the 'view' command.
 
-A reoccurring issue across the tracking instructions was finding the correct location for parts. Every participant had multiple steps in which they could not find a location. Participants commented that at a distance, the part showing the correct location would disappear, this is likely a unique bug to the tracking instructions. Overall, there were 14 issues involving part location across all of the tracking group. Each of these issues involved small parts like screws and dowels. 
+A reoccurring issue across the tracking instructions was finding the correct location for parts. This was very high in comparison to the animation instructions, it was the only category in which they did not follow a similar level of issues. Every participant had multiple steps in which they could not find a location. Participants commented that at a distance, the part showing the correct location would disappear, this is likely a unique bug to the tracking instructions. Overall, there were 14 issues involving part location across all of the tracking group. Each of these issues involved small parts like screws and dowels. 
 
-Another issue that occurred multiple times throughout the tracking instructions was identifying the correct part. This was very high in comparison to the animation instructions, it was the only category in which they did not follow a similar level of issues. Each participant had multiple moments of difficulty involving finding the correct part. These issues involved both smaller and larger parts. There were 12 part identification issues in total across all the tracking participants. Two participants said that the name of the part being on the screen was a useful solution to this issue.
+Another issue that occurred multiple times throughout the tracking instructions was identifying the correct part. Each participant had multiple moments of difficulty involving finding the correct part. These issues involved both smaller and larger parts. There were 12 part identification issues in total across all the tracking participants. Two participants said that the name of the part being on the screen was a useful solution to this issue.
 
 The next most common issue in the tracking instructions involved finding the correct orientation for parts. Each participant had at least one issue with orientation. This happened mostly on larger parts. There were eight orientation issues in total.
 
@@ -926,7 +931,7 @@ Two participants commented that it was not obvious enough when they had to screw
 % Discussion about survey results
 \subsection{Survey Feedback}
 
-The main aim of the survey was to gain feedback from the experimental groups to confirm if it is similar to the results from the issues recorded during the experiment. The results mostly matched what was expected but a few interesting points were highlighted.
+The main aim of the survey was to gain feedback from the experimental groups to confirm if it was similar to the results from the issues recorded during the experiment. The results mostly matched what was expected but a few interesting points were highlighted.
 
 \begin{figure}[hbt!]
     \centering
@@ -958,7 +963,7 @@ Another issue related to the Hololens was that there was a participant who wore 
 
 The research aimed to prove that AR instructions could offer a better experience for users than paper instructions. The experiment compared two versions of AR instructions against paper instructions, animated instructions and object tracking instructions. 
 
-The nature of the issues in the paper and animated instructions were mostly very different. Issues in the tracking instructions were generally similar to the animated instructions. The exception to this being in part location. This emphasises how successful the animations were in highlighting locations of parts. However it is difficult to draw comparisons and evaluate the true effectiveness of them due to the tracking and technical difficulties encountered during testing. Tracking proved to be very tedious to use and attempting to use it severely decreased participant enjoyment. Despite this, due to the similarity to the animation instructions, the results help to highlight some of the benefits and downfalls of using the Hololens and AR instructions.
+The nature of the issues in the paper and animated instructions were mostly very different. Issues in the tracking instructions were generally similar to the animated instructions. The exception to this being in part location. This emphasises how successful the animations were in highlighting locations of parts. However it is difficult to draw comparisons and evaluate the true effectiveness of the tracking instructions due to the tracking and technical difficulties encountered during testing. Tracking proved to be very tedious to use and attempting to use it severely decreased participant enjoyment. Despite this, due to the similarity to the animation instructions, the results help to highlight some of the benefits and downfalls of using the Hololens and AR instructions.
 
 Paper instructions faced the lowest number of issues with part identification. This means that 3D models in an AR context may not be as useful to identify parts as may be expected. There are a few possible explanations for this. Parts appearing slightly transparent in the view of the Hololens might make it more difficult to make out their form. Without accurate shading it can be hard to identify features such as holes and grooves. The paper instructions have hard and bold outlines showing off every detail of the part which makes it clear to the user what features they are looking for.
 
@@ -983,7 +988,7 @@ Lastly, a common theme from participants that used the animation instructions wa
 \section{Limitations}
 \label{sec:exLimitations}
 
-There were aspects to this experiment which hindered its overall effectiveness. Firstly, with only one assessor reviewing assembly task, it is difficult to mitigate bias in selecting when something should be noted. If a participant said nothing but appeared to be having difficulty, this was noted. Having more than one assessor to agree on what counts as an issue would help to reduce bias in the results.
+There were aspects to this experiment which hindered its overall effectiveness. Firstly, with only one assessor reviewing the assembly task, it is difficult to mitigate bias in selecting when something should be noted. If a participant said nothing but appeared to be having difficulty, this was noted. Having more than one assessor to agree on what counts as an issue would help to reduce bias in the results.
 
 With a sample size of nine participants, displaying data in the form of charts could be misleading. Outliers can have a big impact on the appearance of the results. A larger sample size or less focus on quantitative data could reduce this issue.
 
@@ -1013,7 +1018,9 @@ Since the animation instructions were a bigger success than expected, they shoul
 
 A feature which could be helpful for users is an ability to declare the space they want to assemble the furniture. In the current application it is required that the user starts the application facing away from where they want the build space to be. The assembly process then requires a certain amount of space in this area which may not suit the space the user is in. Allowing users to adjust their available workspace would give them more freedom and likely improve the assembly experience.
 
-Finally, due to a limitation in the Unity editor's serialisation system, part and component objects could not be put in a list together, even though they could be within scripts. This meant that the instruction setup within the editor did not work for furniture which require adding parts and components between each other. To deal with this, the order of instructions had to be hard coded into the script. In future, a custom editor should be set up to create a better experience when developing AR instructions for other pieces of furniture.
+Using custom 3D models for the furniture was not ideal as parts were not all created to perfection. In future a better method to acquire accurate 3D models of funiture parts should be utilised.
+
+Finally, due to a limitation in the Unity editor's serialisation system, part and component objects could not be put in a list together, even though they could be within scripts. This meant that the instruction setup within the editor did not work for furniture which required adding parts and components between each other. To deal with this, the order of instructions had to be hard coded into the script. In future, a custom editor should be set up to create a better experience when developing AR instructions for other pieces of furniture.
 
 %==================================================================================================================================
 %
@@ -1025,92 +1032,138 @@ Finally, due to a limitation in the Unity editor's serialisation system, part an
 
 \chapter{Appendices}
 
-Typical inclusions in the appendices are:
+The GitHub repo for the project can be found here: 
 
-\begin{itemize}
-\item
-  Copies of ethics approvals (required if obtained)
-\item
-  Copies of questionnaires etc. used to gather data from subjects.
-\item
-  Extensive tables or figures that are too bulky to fit in the main body of
-  the report, particularly ones that are repetitive and summarised in the body.
+\url{https://github.com/pauldoh21/FlatpackAssembly.git}
 
-\item Outline of the source code (e.g. directory structure), or other architecture documentation like class diagrams.
+\textbf{Below is the survey given to participants before the user study:}
 
-\item User manuals, and any guides to starting/running the software.
+\textit{Have you ever used an AR application on a smartphone before?}
 
-\end{itemize}
+\textit{Have you ever used an AR application on a XR device before?}
 
-\textbf{Don't include your source code in the appendices}. It will be
-submitted separately.
+\textit{Have you ever used a VR headset before?}
 
-\begin{table}[!ht]
-    \centering
-    \rowcolors{2}{}{gray!3}
-    \begin{tabular}{@{}l|llllll@{}}
-        \textbf{Part} & \textbf{Part Identification} & \textbf{Location} & \textbf{Orientation} & \textbf{Progression}  & \textbf{Error} & \textbf{Other} \\ \hline
-        \textbf{1}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{2}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{3}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{4}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{5}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{6}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{7}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{8}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{9}  & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{10} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{11} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{12} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{13} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{14} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{15} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{16} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{17} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{18} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{19} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{20} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{21} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{22} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{23} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{24} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{25} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{26} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{27} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{28} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{29} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{30} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{31} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{32} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{33} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{34} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{35} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{36} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{37} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{38} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{39} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{40} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{41} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{42} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{43} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{44} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{45} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{46} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{47} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{48} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{49} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{50} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{51} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{52} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{53} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{54} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{55} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{56} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{57} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{58} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-        \textbf{59} & ~ & ~ & ~ & ~ & ~ & ~ \\ 
-    \end{tabular}
+\textit{Have you ever assembled flatpack furniture before?}
+
+\textit{On a scale of 1 to 5, how confident are you in assembling flatpack furniture?}
+
+\textit{Do you feel like you could assemble a piece of flatpack furniture without instructions?}
+
+\textit{Have you ever felt confused by paper instructions?}
+
+\textbf{Below are the results to the survey taken at the start of the user study:}
+
+\begin{table}[hbt!]
+\begin{tabular}{l|lllllll}
+Participant & Q1  & Q2  & Q3  & Q4  & Q5 & Q6  & Q7  \\ \hline
+P1          & no  & no  & no  & yes & 3  & no  & yes \\
+P2          & no  & no  & yes & yes & 3  & no  & yes \\
+P3          & yes & no  & yes & yes & 5  & yes & no  \\
+P4          & yes & no  & yes & yes & 2  & no  & yes \\
+P5          & no  & no  & yes & yes & 4  & no  & yes \\
+P6          & yes & no  & yes & yes & 4  & no  & yes \\
+P7          & yes & yes & yes & yes & 4  & no  & yes \\
+P8          & no  & no  & no  & yes & 3  & no  & yes \\
+P9          & no  & no  & yes & yes & 2  & no  & yes
+\end{tabular}
 \end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/postAssemblySurvey.pdf}
+    \caption{Survey given to participants after they completed the assembly task (page 1)}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/postAssemblySurvey2.pdf}
+    \caption{Survey given to participants after they completed the assembly task (page 2)}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/2ndQuestionnaireResults1.pdf}
+    \caption{The results of the survey at the end of the user study (page 1)}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/2ndQuestionnaireResults2.pdf}
+    \caption{The results of the survey at the end of the user study (page 2)}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/2ndQuestionnaireResults3.pdf}
+    \caption{The results of the survey at the end of the user study (page 3)}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/ethicsChecklist1.pdf}
+    \caption{The ethics checklist (page 1)}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/ethicsChecklist2.pdf}
+    \caption{The ethics checklist (page 2)}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/consentFormHololens.pdf}
+    \caption{The consent form given to the Hololens instructions participants}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/consentFormPaper.pdf}
+    \caption{The consent form given to the Paper instructions participants}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/introductionScriptHololens.pdf}
+    \caption{The introduction script read to the Hololens instructions participants}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/introductionScriptPaper.pdf}
+    \caption{The introduction script read to the paper instructions participants}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/debriefingScript.pdf}
+    \caption{The debriefing script read to all participants}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/results1.pdf}
+    \caption{The recorded results from the user experiment (page 1)}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/results2.pdf}
+    \caption{The recorded results from the user experiment (page 2)}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/results3.pdf}
+    \caption{The recorded results from the user experiment (page 3)}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{dissertation//images/results4.pdf}
+    \caption{The recorded results from the user experiment (page 4)}
+\end{figure}
 
 \end{appendices}
 
@@ -1121,6 +1174,8 @@ submitted separately.
 % The bibliography always appears last, after the appendices.
 
 \bibliographystyle{abbrvnat}
+
+\renewcommand{\thechapter}{0}
 
 \bibliography{l4proj}
 
