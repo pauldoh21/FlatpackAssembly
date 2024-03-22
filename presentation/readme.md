@@ -1,4 +1,4 @@
 # Presentation
 
-Include your presentation slides here. You should include the slides in the original format you authored them in (e.g. PowerPoint, Keynote), *and*
-a `pdf` version of the slides. Any necessary videos, audio, images, figures, etc. should be present.
+* Presentation video was too large to upload to GitHub or Moodle submission page.
+* Links have been provided, one on OndeDrive and a bckup link on YouTube

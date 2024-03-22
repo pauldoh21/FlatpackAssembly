@@ -40,10 +40,12 @@ DEMO
 The design was implemented on the Microsoft Hololens 2.
 An education license for VisionLib 3D model tracking was acquired to handle the object tracking instructions.
 The following is a demonstration of the application in use, starting with the animation instructions.
-Please note that objects in the footage recorded on the Hololens appear in slightly different positions and forms compared to how they are viewed when actually using the device.
 All inputs are done with voice commands which you will hear are used to start the program.
 
 You can see how the animations communicate the instructions.
+
+Please note that objects in the footage recorded on the Hololens appear in slightly 
+different positions and forms compared to how they are viewed when actually using the device.
 
 Here the view command is used to get a better idea of what the correct part is
 
@@ -71,7 +73,7 @@ Participants in the experiment were instructed to assmeble a provided piece of f
 They were split into three groups. Paper (the control group), Animation and Tracking (the two experimental groups)
 Participants were asked to speak aloud at any moment they felt any form of confusion or had any issue at all as well as any other comments they had.
 These comments were categorised for evaluation.
-The categories included difficulty with part identification, location, orientation and progression. Errors in the assembly were also recorded.
+The categories included difficulty with part identification, location, orientation and progression. Errors in the assembly we re also recorded.
 These recorded issues were given a score of one, two or three depending on their severity.
 Issues which caused almost no trouble to the overall progression were given a one whereas issues which stopped progression and required assistance to deal with were given a score of 3.
 
